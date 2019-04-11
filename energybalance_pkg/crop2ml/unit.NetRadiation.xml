@@ -8,10 +8,10 @@
         <Institution>INRA Montpellier</Institution>
         <Reference>Modelling energy balance in the wheat crop model SiriusQuality2:
             Evapotranspiration and canopy and soil temperature calculations</Reference>
-        <Abstract>It is calculated at the surface of the canopy and is givenby the difference between incoming and outgoing radiation of both short 
+        <Abstract>It is calculated at the surface of the canopy and is givenby the difference between incoming and outgoing radiation of both short
                      and long wavelength radiation </Abstract>
     </Description>
-    
+
     <Inputs>
         <Input name="minTair" description="minimum air temperature" variablecategory="auxiliary" datatype="DOUBLE" min="-30" max="45" default="0.7" unit="°C" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547" inputtype = "variable"/>
         <Input name="maxTair" description="maximum air Temperature" variablecategory="auxiliary"  datatype="DOUBLE" min="-30" max="45" default="7.2" unit="°C" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547" inputtype = "variable"/>
@@ -22,17 +22,17 @@
         <Input name="vaporPressure" description="vapor Pressure" variablecategory="auxiliary" datatype="DOUBLE" default="6.1" min="0" max="1000" unit="hPa" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547" inputtype="variable"/>
         <Input name="extraSolarRadiation" description="extra Solar Radiation" variablecategory="auxiliary" datatype="DOUBLE" default="11.7" min="0" max="1000" unit="MJ m2 d-1" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547" inputtype="variable"/>
     </Inputs>
-    
+
     <Outputs>
         <Output name="netRadiation" description=" net radiation " variablecategory="state" datatype="DOUBLE" min="0" max="5000"  unit="g m-2 d-1" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547"/>
         <Output name="netOutGoingLongWaveRadiation" description="net OutGoing Long Wave Radiation " variablecategory="state" datatype="DOUBLE" min="0" max="5000"  unit="g m-2 d-1" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547"/>
      </Outputs>
-    
 
-    <Algorithm  language="Cyml" platform="" filename="algo/pyx/NetRadiation.pyx" />
- 
 
-     
+    <Algorithm  language="Cyml" platform="" filename="algo/pyx/netradiation.pyx" />
+
+
+
      <Parametersets>
         <Parameterset name="set1" description="some values in there" >
         	<Param name="elevation">0</Param>
@@ -46,10 +46,10 @@
 				<InputValue name="vaporPressure">6.1</InputValue>
 				<OutputValue name="netRadiation" precision ="3">1.566</OutputValue>
 				<OutputValue name="netOutGoingLongWaveRadiation" precision ="3">0.744</OutputValue>
-	
+
         	</Test>
 
         </Testset>
       </Testsets>
-	
+
 </ModelUnit>

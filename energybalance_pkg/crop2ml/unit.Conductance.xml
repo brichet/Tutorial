@@ -20,15 +20,15 @@
         <Input name="d" description="corresponding to 2/3. This is multiplied to the crop heigth for calculating the zero plane displacement height, FAO" inputtype="parameter" parametercategory="constant" datatype="DOUBLE" default="0.67" min="0" max="1" unit="" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547rl" />
         <Input name="plantHeight" description="plant Height"  datatype="DOUBLE" default="0" min="0" max="1000" unit="mm" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547" inputtype="variable" variablecategory="state"/>
         <Input name="wind" description="wind" variablecategory="auxiliary" datatype="DOUBLE" default="124000" min="0" max="1000000" unit="m d-1" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547" inputtype="variable"/>
-  
+
     </Inputs>
     <Outputs>
         <Output name="conductance" description="the boundary layer conductance" datatype="DOUBLE" min="0" max="10000"  unit="m d-1" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547"/>
 
     </Outputs>
-    
 
-    <Algorithm  language="Cyml" platform="" filename="algo/pyx/Conductance.pyx" />
+
+    <Algorithm  language="Cyml" platform="" filename="algo/pyx/conductance.pyx" />
 
 
     <Parametersets>
@@ -46,11 +46,11 @@
         		<InputValue name="wind">124000</InputValue>
         		<InputValue name="plantHeight">0</InputValue>
  				<OutputValue name="conductance" precision ="3">598.685</OutputValue>
-	
+
         	</Test>
 
         </Testset>
       </Testsets>
- 	
- 	
+
+
 </ModelUnit>

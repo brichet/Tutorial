@@ -19,7 +19,7 @@
         <Output name="soilHeatFlux" description="soil Heat Flux " variablecategory="state"  datatype="DOUBLE" min="0" max="10000"  unit="g m-2 d-1" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547"/>
    	</Outputs>
 
-    <Algorithm  language="Cyml" platform="" filename="algo/pyx/SoilHeatFlux.pyx" />
+    <Algorithm  language="Cyml" platform="" filename="algo/pyx/soilheatflux.pyx" />
 
 
     <Parametersets>
@@ -35,12 +35,12 @@
         		<InputValue name="netRadiationEquivalentEvaporation">638.142</InputValue>
         		<InputValue name="soilEvaporation">448.240</InputValue>
  				<OutputValue name="soilHeatFlux" precision ="3">188.817</OutputValue>
-	
+
         	</Test>
 
         </Testset>
       </Testsets>
- 	
- 	
- 	
+
+
+
 </ModelUnit>
