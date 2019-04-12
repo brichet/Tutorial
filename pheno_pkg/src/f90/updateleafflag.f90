@@ -137,8 +137,8 @@ CONTAINS
     !                          - unit : °C d
         IF(phase .GE. 1.0 .AND. phase .LT. 4.0) THEN
             IF(leafNumber .GT. 0.0) THEN
-                IF(hasFlagLeafLiguleAppeared .EQ. 0 .AND. finalLeafNumber .GT. 0.0  &
-                        .AND. leafNumber .GE. finalLeafNumber) THEN
+                IF(hasFlagLeafLiguleAppeared .EQ. 0 .AND. (finalLeafNumber .GT. 0.0  &
+                        .AND. leafNumber .GE. finalLeafNumber)) THEN
                     hasFlagLeafLiguleAppeared = 1
                     IF(ALL(calendarMoments .NE. 'FlagLeafLiguleJustVisible')) THEN
                         call Add(calendarMoments, 'FlagLeafLiguleJustVisible')

@@ -5,7 +5,6 @@ def potentialtranspiration_(float evapoTranspiration=830.958,
                             float tau=0.9983):
     """
 
-
     PotentialTranspiration Model
     Author: Pierre Martre
     Reference: Modelling energy balance in the wheat crop model SiriusQuality2:
@@ -16,5 +15,5 @@ def potentialtranspiration_(float evapoTranspiration=830.958,
 
     """
     cdef float potentialTranspiration
-    potentialTranspiration= evapoTranspiration * (1 - tau)
+    potentialTranspiration= evapoTranspiration * (1.0 - tau)
     return  potentialTranspiration

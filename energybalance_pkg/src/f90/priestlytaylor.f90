@@ -1,15 +1,16 @@
 MODULE Priestlytaylor_mod
-    USE list_sub
     IMPLICIT NONE
 CONTAINS
     SUBROUTINE priestlytaylor_(netRadiationEquivalentEvaporation, &
         hslope, &
+        psychrometricConstant, &
+        Alpha, &
         evapoTranspirationPriestlyTaylor)
         REAL, INTENT(OUT) :: evapoTranspirationPriestlyTaylor
         REAL, INTENT(IN) :: netRadiationEquivalentEvaporation
         REAL, INTENT(IN) :: hslope
-        REAL, PARAMETER :: psychrometricConstant = 0.66
-        REAL, PARAMETER :: Alpha = 1.5
+        REAL, INTENT(IN) :: psychrometricConstant
+        REAL, INTENT(IN) :: Alpha
         !- Description:
     !            - Model Name: evapoTranspirationPriestlyTaylor  Model
     !            - Author: Pierre Martre
@@ -68,6 +69,6 @@ CONTAINS
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
         evapoTranspirationPriestlyTaylor = MAX(Alpha * hslope *  &
                 netRadiationEquivalentEvaporation / (hslope + psychrometricConstant),  &
-                0)
+                0.0)
     END SUBROUTINE priestlytaylor_
 END MODULE

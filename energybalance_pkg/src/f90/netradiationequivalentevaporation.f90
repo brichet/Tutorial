@@ -1,11 +1,11 @@
 MODULE Netradiationequivalentevaporation_mod
-    USE list_sub
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE netradiationequivalentevaporation_(netRadiation, &
+    SUBROUTINE netradiationequivalentevaporation_(lambdaV, &
+        netRadiation, &
         netRadiationEquivalentEvaporation)
         REAL, INTENT(OUT) :: netRadiationEquivalentEvaporation
-        REAL, PARAMETER :: lambdaV = 2.454
+        REAL, INTENT(IN) :: lambdaV
         REAL, INTENT(IN) :: netRadiation
         !- Description:
     !            - Model Name: NetRadiationEquivalentEvaporation Model

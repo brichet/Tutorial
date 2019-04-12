@@ -10,7 +10,6 @@ def canopytemperature_(float minTair=0.7,
                        float specificHeatCapacityAir=0.00101):
     """
 
-
     CanopyTemperature Model
     Author: Pierre Martre
     Reference: Modelling energy balance in the wheat crop model SiriusQuality2:
@@ -21,6 +20,6 @@ def canopytemperature_(float minTair=0.7,
     """
     cdef float minCanopyTemperature
     cdef float maxCanopyTemperature
-    minCanopyTemperature = minTair + cropHeatFlux / ((rhoDensityAir * specificHeatCapacityAir * conductance / lambdaV) * 1000)
-    maxCanopyTemperature = maxTair + cropHeatFlux / ((rhoDensityAir * specificHeatCapacityAir * conductance / lambdaV) * 1000)
+    minCanopyTemperature = minTair + cropHeatFlux / ((rhoDensityAir * specificHeatCapacityAir * conductance / lambdaV) * 1000.0)
+    maxCanopyTemperature = maxTair + cropHeatFlux / ((rhoDensityAir * specificHeatCapacityAir * conductance / lambdaV) * 1000.0)
     return  minCanopyTemperature, maxCanopyTemperature

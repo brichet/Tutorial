@@ -17,7 +17,6 @@ def phyllochron_(float fixPhyll=5.0,
                  str choosePhyllUse='Default'):
     """
 
-
     Phyllochron Model
     Author: Pierre Martre
     Reference: Modeling development phase in the 
@@ -30,16 +29,24 @@ def phyllochron_(float fixPhyll=5.0,
     cdef float phyllochron
     cdef float gai_
     if choosePhyllUse =="Default":
-        if (leafNumber < ldecr): phyllochron = fixPhyll * pdecr
-        elif (leafNumber >= ldecr and leafNumber < lincr): phyllochron = fixPhyll
-        else: phyllochron = fixPhyll * pincr
+        if (leafNumber < ldecr):
+            phyllochron = fixPhyll * pdecr
+        elif (leafNumber >= ldecr and leafNumber < lincr):
+            phyllochron = fixPhyll
+        else:
+            phyllochron = fixPhyll * pincr
     if choosePhyllUse =="PTQ":
         gai_ = max(pastMaxAI,gai)
         pastMaxAI = gai_
-        if (gai_ > 0.0): phyllochron = phylPTQ1 * ((gai_ * kl) / (1 - exp(-kl * gai_))) / (ptq + aPTQ)
-        else: phyllochron = phylPTQ1      
+        if (gai_ > 0.0):
+            phyllochron = phylPTQ1 * ((gai_ * kl) / (1 - exp(-kl * gai_))) / (ptq + aPTQ)
+        else:
+            phyllochron = phylPTQ1
     if choosePhyllUse == "Test":
-        if (leafNumber < ldecr): phyllochron = p * pdecr
-        elif (leafNumber >= ldecr and leafNumber < lincr): phyllochron = p
-        else: phyllochron = p * pincr
+        if (leafNumber < ldecr):
+            phyllochron = p * pdecr
+        elif (leafNumber >= ldecr and leafNumber < lincr):
+            phyllochron = p
+        else:
+            phyllochron = p * pincr
     return  phyllochron, pastMaxAI

@@ -10,7 +10,6 @@ def conductance_(float vonKarman=0.42,
                  float wind=124000.0):
     """
 
-
     Conductance Model
     Author: Pierre Martre
     Reference: Modelling energy balance in the wheat crop model SiriusQuality2:
@@ -23,6 +22,6 @@ def conductance_(float vonKarman=0.42,
     """
     cdef float conductance
     cdef float h
-    h = max(10, plantHeight) / 100.0
+    h = max(10.0, plantHeight) / 100.0
     conductance = (wind * pow(vonKarman, 2)) / (log((heightWeatherMeasurements - d * h) / (zm * h)) * log((heightWeatherMeasurements - d * h) / (zh * h)))
     return  conductance

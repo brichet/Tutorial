@@ -12,16 +12,15 @@ def penman_(float evapoTranspirationPriestlyTaylor=449.367,
             float conductance=598.685):
     """
 
-
     Penman Model
     Author: Pierre Martre
     Reference: Modelling energy balance in the wheat crop model SiriusQuality2:
             Evapotranspiration and canopy and soil temperature calculations
     Institution: INRA/LEPSE Montpellier
-    Abstract: This method is used when wind and vapor pressure daily data are available 
+    Abstract: This method is used when wind and vapor pressure daily data are available
         
 
     """
     cdef float evapoTranspirationPenman
-    evapoTranspirationPenman = evapoTranspirationPriestlyTaylor / Alpha + 1000 * ((rhoDensityAir * specificHeatCapacityAir * VPDair * conductance) / (lambdaV * (hslope + psychrometricConstant)))
+    evapoTranspirationPenman = evapoTranspirationPriestlyTaylor / Alpha + 1000.0 * ((rhoDensityAir * specificHeatCapacityAir * VPDair * conductance) / (lambdaV * (hslope + psychrometricConstant)))
     return  evapoTranspirationPenman

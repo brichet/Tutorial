@@ -1,6 +1,5 @@
 MODULE Shootnumber_mod
     USE list_sub
-    USE fibonacci_mod
     IMPLICIT NONE
 CONTAINS
     SUBROUTINE shootnumber_(canopyShootNumber, &
@@ -125,7 +124,7 @@ CONTAINS
     !                          - max : 10000
     !                          - unit : 
         oldCanopyShootNumber = canopyShootNumber
-        emergedLeaves = INT(MAX(1.0, REAL(CEILING(leafNumber - 1))))
+        emergedLeaves = INT(MAX(1.0, REAL(CEILING(leafNumber - 1.0))))
         call fibonacci_(emergedLeaves,shoots)
         canopyShootNumber = MIN(REAL(shoots * sowingDensity),  &
                 targetFertileShoot)

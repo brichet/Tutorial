@@ -11,7 +11,6 @@ def shootnumber_(float canopyShootNumber=288.0,
                  int tillerNumber=1):
     """
 
-
     CalculateShootNumber Model
     Author: Pierre MARTRE
     Reference: Modeling development phase in the 
@@ -25,13 +24,13 @@ def shootnumber_(float canopyShootNumber=288.0,
     cdef float oldCanopyShootNumber
     cdef int emergedLeaves, shoots, i
     oldCanopyShootNumber = canopyShootNumber
-    emergedLeaves = int(max(1.0, ceil(leafNumber - 1)))
+    emergedLeaves = int(max(1.0, ceil(leafNumber - 1.0)))
     shoots = fibonacci_(emergedLeaves)
     canopyShootNumber = min(float(shoots * sowingDensity), targetFertileShoot)
-    averageShootNumberPerPlant = canopyShootNumber / sowingDensity       
+    averageShootNumberPerPlant = canopyShootNumber / sowingDensity
     if (canopyShootNumber != oldCanopyShootNumber):
-        tilleringProfile.append(canopyShootNumber - oldCanopyShootNumber)         
-    tillerNumber = len(tilleringProfile)     
+        tilleringProfile.append(canopyShootNumber - oldCanopyShootNumber)
+    tillerNumber = len(tilleringProfile)
     for i in range(len(leafTillerNumberArray),int(ceil(leafNumber)),1):
         leafTillerNumberArray.append(tillerNumber)
     return  averageShootNumberPerPlant, canopyShootNumber, leafTillerNumberArray, tilleringProfile, tillerNumber

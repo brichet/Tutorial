@@ -264,13 +264,13 @@ CONTAINS
         IF(isVernalizable .EQ. 1 .AND. vernaprog .LT. 1.0) THEN
             tt = deltaTT
             IF(tt .GE. minTvern .AND. tt .LE. intTvern) THEN
-                vernaprog = vernaprog + vAI * tt + vBEE
+                vernaprog = vernaprog + (vAI * tt) + vBEE
             END IF
             IF(tt .GT. intTvern) THEN
                 maxVernaProg = vAI * intTvern + vBEE
                 dLverna = MAX(minDL, MIN(maxDL, dayLength))
-                vernaprog = vernaprog + MAX(0.0, maxVernaProg * (1.0 + (intTvern -  &
-                        tt) / (maxTvern - intTvern) * (dLverna - minDL) / (maxDL - minDL)))
+                vernaprog = vernaprog + MAX(0.0, maxVernaProg * (1.0 + ((intTvern -  &
+                        tt) / (maxTvern - intTvern) * ((dLverna - minDL) / (maxDL - minDL)))))
             END IF
             primordno = 2.0 * leafNumber + pNini
             minLeafNumber = minFinalNumber
@@ -281,7 +281,7 @@ CONTAINS
                 call Add(calendarDates, currentdate)
                 vernaprog = MAX(1.0, vernaprog)
             ELSE
-                potlfno = aMXLFNO - (aMXLFNO - minLeafNumber) * vernaprog
+                potlfno = aMXLFNO - ((aMXLFNO - minLeafNumber) * vernaprog)
                 IF(primordno .GE. potlfno) THEN
                     minFinalNumber = MAX((potlfno + primordno) / 2.0, minFinalNumber)
                     vernaprog = MAX(1.0, vernaprog)

@@ -10,7 +10,6 @@ def phylsowingdatecorrection_(int sowingDay=1,
                               float p=120.0):
     """
 
-
     PhylSowingDateCorrection Model
     Author: Loic Manceau
     Reference: Modeling development phase in the 
@@ -24,9 +23,11 @@ def phylsowingdatecorrection_(int sowingDay=1,
     if (latitude < 0.0):
         if (sowingDay > sDsa_sh):
             fixPhyll = p * (1 - rp * min(sowingDay - sDsa_sh, sDws))
-        else: fixPhyll = p
+        else:
+            fixPhyll = p
     else:
         if (sowingDay < sDsa_nh):
             fixPhyll = p * (1 - rp * min(sowingDay, sDws))
-        else: fixPhyll = p
+        else:
+            fixPhyll = p
     return  fixPhyll

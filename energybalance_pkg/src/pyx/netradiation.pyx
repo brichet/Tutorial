@@ -11,23 +11,22 @@ def netradiation_(float minTair=0.7,
                   float extraSolarRadiation=11.7):
     """
 
-
     NetRadiation Model
     Author: Pierre Martre
     Reference: Modelling energy balance in the wheat crop model SiriusQuality2:
             Evapotranspiration and canopy and soil temperature calculations
     Institution: INRA Montpellier
-    Abstract: It is calculated at the surface of the canopy and is givenby the difference between incoming and outgoing radiation of both short 
+    Abstract: It is calculated at the surface of the canopy and is givenby the difference between incoming and outgoing radiation of both short
                      and long wavelength radiation 
 
     """
     cdef float netRadiation
     cdef float netOutGoingLongWaveRadiation
     cdef float Nsr, clearSkySolarRadiation, averageT, surfaceEmissivity, cloudCoverFactor, Nolr
-    Nsr = (1 - albedoCoefficient) * solarRadiation
+    Nsr = (1.0 - albedoCoefficient) * solarRadiation
     clearSkySolarRadiation = (0.75 + 2 * pow(10, -5) * elevation) * extraSolarRadiation
-    averageT = (pow(maxTair + 273.16, 4) + pow(minTair + 273.16, 4)) / 2
-    surfaceEmissivity = (0.34 - 0.14 * sqrt(vaporPressure / 10))
+    averageT = (pow(maxTair + 273.16, 4) + pow(minTair + 273.16, 4)) / 2.0
+    surfaceEmissivity = (0.34 - 0.14 * sqrt(vaporPressure / 10.0))
     cloudCoverFactor = (1.35 * (solarRadiation / clearSkySolarRadiation) - 0.35)
     Nolr = stefanBoltzman * averageT * surfaceEmissivity * cloudCoverFactor
     netRadiation= Nsr - Nolr

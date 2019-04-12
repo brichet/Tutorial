@@ -1,5 +1,4 @@
 MODULE Phyllochron_mod
-    USE list_sub
     IMPLICIT NONE
 CONTAINS
     SUBROUTINE phyllochron_(fixPhyll, &
@@ -208,7 +207,7 @@ CONTAINS
             gai_ = MAX(pastMaxAI, gai)
             pastMaxAI = gai_
             IF(gai_ .GT. 0.0) THEN
-                phyllochron = phylPTQ1 * gai_ * kl / (1 - EXP(-kl * gai_)) / (ptq +  &
+                phyllochron = phylPTQ1 * (gai_ * kl / (1 - EXP(-kl * gai_))) / (ptq +  &
                         aPTQ)
             ELSE
                 phyllochron = phylPTQ1

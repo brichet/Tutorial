@@ -1,9 +1,11 @@
 MODULE Netradiation_mod
-    USE list_sub
     IMPLICIT NONE
 CONTAINS
     SUBROUTINE netradiation_(minTair, &
         maxTair, &
+        albedoCoefficient, &
+        stefanBoltzman, &
+        elevation, &
         solarRadiation, &
         vaporPressure, &
         extraSolarRadiation, &
@@ -19,9 +21,9 @@ CONTAINS
         REAL:: Nolr
         REAL, INTENT(IN) :: minTair
         REAL, INTENT(IN) :: maxTair
-        REAL, PARAMETER :: albedoCoefficient = 0.23
-        REAL, PARAMETER :: stefanBoltzman = 4.903E-09
-        REAL, PARAMETER :: elevation = 0
+        REAL, INTENT(IN) :: albedoCoefficient
+        REAL, INTENT(IN) :: stefanBoltzman
+        REAL, INTENT(IN) :: elevation
         REAL, INTENT(IN) :: solarRadiation
         REAL, INTENT(IN) :: vaporPressure
         REAL, INTENT(IN) :: extraSolarRadiation
@@ -31,7 +33,7 @@ CONTAINS
     !            - Reference: Modelling energy balance in the wheat crop model SiriusQuality2:
     !            Evapotranspiration and canopy and soil temperature calculations
     !            - Institution: INRA Montpellier
-    !            - Abstract: It is calculated at the surface of the canopy and is givenby the difference between incoming and outgoing radiation of both short 
+    !            - Abstract: It is calculated at the surface of the canopy and is givenby the difference between incoming and outgoing radiation of both short
     !                     and long wavelength radiation 
         !- inputs:
     !            - name: minTair
@@ -131,13 +133,13 @@ CONTAINS
     !                          - max : 5000
     !                          - unit : g m-2 d-1
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
-        Nsr = (1 - albedoCoefficient) * solarRadiation
-        clearSkySolarRadiation = (0.75 + 2 *  (10 ** -5) * elevation) *  &
+        Nsr = (1.0 - albedoCoefficient) * solarRadiation
+        clearSkySolarRadiation = (0.75 + (2 *  (10 ** -5) * elevation)) *  &
                 extraSolarRadiation
         averageT = ( ((maxTair + 273.16) ** 4) +  ((minTair + 273.16) ** 4))  &
-                / 2
-        surfaceEmissivity = 0.34 - 0.14 * SQRT(vaporPressure / 10)
-        cloudCoverFactor = 1.35 * solarRadiation / clearSkySolarRadiation -  &
+                / 2.0
+        surfaceEmissivity = 0.34 - (0.14 * SQRT(vaporPressure / 10.0))
+        cloudCoverFactor = 1.35 * (solarRadiation / clearSkySolarRadiation) -  &
                 0.35
         Nolr = stefanBoltzman * averageT * surfaceEmissivity *  &
                 cloudCoverFactor

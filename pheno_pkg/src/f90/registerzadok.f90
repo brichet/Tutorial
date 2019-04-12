@@ -225,9 +225,9 @@ CONTAINS
             call Add(calendarDates, currentdate)
             hasZadokStageChanged = 1
             currentZadokStage = 'MainShootPlus3Tiller'
-        ELSE IF ( finalLeafNumber .GT. 0.0 .AND. leafNumber .GE. slopeTSFLN *  &
-                finalLeafNumber - intTSFLN .AND. ALL(calendarMoments .NE.  &
-                'TerminalSpikelet')) THEN
+        ELSE IF ( finalLeafNumber .GT. 0.0 .AND. (leafNumber .GE. slopeTSFLN  &
+                * finalLeafNumber - intTSFLN .AND. ALL(calendarMoments .NE.  &
+                'TerminalSpikelet'))) THEN
             call Add(calendarMoments, 'TerminalSpikelet')
             call Add(calendarCumuls, cumulTT)
             call Add(calendarDates, currentdate)
@@ -265,8 +265,8 @@ CONTAINS
             call Add(calendarDates, currentdate)
             hasZadokStageChanged = 1
             currentZadokStage = 'FlagLeafJustVisible'
-        ELSE IF ( ALL(calendarMoments .NE. 'MidGrainFilling') .AND. phase  &
-                .EQ. 4.5 .AND. cumulTTFromZC_65 .GE. der) THEN
+        ELSE IF ( ALL(calendarMoments .NE. 'MidGrainFilling') .AND. (phase  &
+                .EQ. 4.5 .AND. cumulTTFromZC_65 .GE. der)) THEN
             call Add(calendarMoments, 'MidGrainFilling')
             call Add(calendarCumuls, cumulTT)
             call Add(calendarDates, currentdate)

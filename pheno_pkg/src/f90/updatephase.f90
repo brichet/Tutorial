@@ -1,5 +1,4 @@
 MODULE Updatephase_mod
-    USE list_sub
     IMPLICIT NONE
 CONTAINS
     SUBROUTINE updatephase_(cumulTT, &
@@ -342,7 +341,7 @@ CONTAINS
                     finalLeafNumber = minFinalNumber
                     hasLastPrimordiumAppeared = 1
                 ELSE
-                    appFLN = minFinalNumber + sLDL * (maxDL - dayLength)
+                    appFLN = minFinalNumber + (sLDL * (maxDL - dayLength))
                     IF(appFLN / 2.0 .LE. leafNumber) THEN
                         finalLeafNumber = appFLN
                         hasLastPrimordiumAppeared = 1
