@@ -1,12 +1,12 @@
-MODULE Ismomentregistredzc_39_mod
+MODULE Ismomentregistredzc_39mod
     USE list_sub
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE ismomentregistredzc_39_(calendarMoments, &
+    SUBROUTINE model_ismomentregistredzc_39(calendarMoments, &
         isMomentRegistredZC_39)
-        INTEGER, INTENT(OUT) :: isMomentRegistredZC_39
         CHARACTER(65), ALLOCATABLE , DIMENSION(:), INTENT(IN) ::  &
                 calendarMoments
+        INTEGER, INTENT(OUT) :: isMomentRegistredZC_39
         !- Description:
     !            - Model Name: IsMomentRegistredZC39 Model
     !            - Author: Pierre Martre
@@ -18,7 +18,7 @@ CONTAINS
         !- inputs:
     !            - name: calendarMoments
     !                          - description : List containing appearance of each stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRINGLIST
     !                          - default : ['Sowing']
     !                          - unit : 
@@ -26,6 +26,7 @@ CONTAINS
         !- outputs:
     !            - name: isMomentRegistredZC_39
     !                          - description :  if Flag leaf ligule has already appeared 
+    !                          - variablecategory : state
     !                          - datatype : INT
     !                          - min : 0
     !                          - max : 1
@@ -35,5 +36,6 @@ CONTAINS
         ELSE
             isMomentRegistredZC_39=0
         END IF
-    END SUBROUTINE ismomentregistredzc_39_
+    END SUBROUTINE model_ismomentregistredzc_39
+
 END MODULE

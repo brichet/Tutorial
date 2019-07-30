@@ -14,7 +14,6 @@ public class Penman
             this._psychrometricConstant= value;
         } 
     }
-
     private double _Alpha;
     public double Alpha
     {
@@ -27,7 +26,6 @@ public class Penman
             this._Alpha= value;
         } 
     }
-
     private double _lambdaV;
     public double lambdaV
     {
@@ -40,7 +38,6 @@ public class Penman
             this._lambdaV= value;
         } 
     }
-
     private double _rhoDensityAir;
     public double rhoDensityAir
     {
@@ -53,7 +50,6 @@ public class Penman
             this._rhoDensityAir= value;
         } 
     }
-
     private double _specificHeatCapacityAir;
     public double specificHeatCapacityAir
     {
@@ -66,12 +62,11 @@ public class Penman
             this._specificHeatCapacityAir= value;
         } 
     }
-
     public Penman()
     {
            
     }
-
+    
     public void  Calculate_penman(state s, rate r, auxiliary a)
     {
         //- Description:

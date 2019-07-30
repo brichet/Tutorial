@@ -14,12 +14,11 @@ public class Evapotranspiration
             this._isWindVpDefined= value;
         } 
     }
-
     public Evapotranspiration()
     {
            
     }
-
+    
     public void  Calculate_evapotranspiration(state s, rate r, auxiliary a)
     {
         //- Description:

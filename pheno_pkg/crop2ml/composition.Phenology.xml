@@ -37,7 +37,7 @@
       <InputLink target="Phyllochron.kl" source="kl" />
       <InputLink target="Phyllochron.aPTQ" source="aPTQ" />
       <InputLink target="Phyllochron.phylPTQ1" source="phylPTQ1" />
-      <InputLink target="Phyllochron.p" source="p" />
+      <InputLink target="Phyllochron.p" source="p" /> 
       <InputLink target="Phyllochron.choosePhyllUse" source="choosePhyllUse" />
       <InputLink target="IsMomentRegistredZC_39.calendarMoments" source="calendarMoments" />
       <InputLink target="PhylSowingDateCorrection.sowingDay" source="sowingDay" />
@@ -46,6 +46,7 @@
       <InputLink target="PhylSowingDateCorrection.sDws" source="sDws" />
       <InputLink target="PhylSowingDateCorrection.sDsa_nh" source="sDsa_nh" />
       <InputLink target="PhylSowingDateCorrection.rp" source="rp" />
+      <InputLink target="PhylSowingDateCorrection.latitude" source="latitude" />
       <InputLink target="CumulTTFrom.calendarMoments" source="calendarMoments" />
       <InputLink target="CumulTTFrom.calendarCumuls" source="calendarCumuls" />
       <InputLink target="CumulTTFrom.cumulTT" source="cumulTT" />
@@ -110,6 +111,7 @@
       <InputLink target="RegisterZadok.intTSFLN" source="intTSFLN" />
       <InputLink target="RegisterZadok.der" source="der" />
       <InputLink target="RegisterZadok.currentZadokStage" source="currentZadokStage" />
+      <InputLink target="RegisterZadok.hasZadokStageChanged" source="hasZadokStageChanged" />
 
       <InternalLink target="Phyllochron.fixPhyll" source="PhylSowingDateCorrection.fixPhyll" />
       <InternalLink target="UpdatePhase.vernaprog" source="VernalizationProgress.vernaprog" />
@@ -141,6 +143,7 @@
       <InternalLink target="RegisterZadok.cumulTTFromZC_65" source="CumulTTFrom.cumulTTFromZC_65" />
 
 
+      <OutputLink source="RegisterZadok.hasZadokStageChanged" target="hasZadokStageChanged" />
       <OutputLink source="RegisterZadok.currentZadokStage" target="currentZadokStage" />
       <OutputLink source="Phyllochron.phyllochron" target="phyllochron" />
       <OutputLink source="Phyllochron.pastMaxAI" target="pastMaxAI" />

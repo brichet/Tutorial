@@ -11,8 +11,8 @@
         <Abstract>Calculate CumulTT </Abstract>
     </Description>
     <Inputs>
-        <Input name="calendarMoments" description="List containing appearance of each stage" variablecategory="auxiliary"  datatype="STRINGLIST"  default= "['Sowing']" unit=""  inputtype = "variable"/>
-		<Input name="calendarCumuls" description="list containing for each stage occured its cumulated thermal times" variablecategory="auxiliary"  datatype="DOUBLELIST" default="[0.0]" unit="°C d"  inputtype = "variable"/>
+        <Input name="calendarMoments" description="List containing appearance of each stage" variablecategory="state"  datatype="STRINGLIST"  default= "['Sowing']" unit=""  inputtype = "variable"/>
+		<Input name="calendarCumuls" description="list containing for each stage occured its cumulated thermal times" variablecategory="state"  datatype="DOUBLELIST" default="[0.0]" unit="°C d"  inputtype = "variable"/>
         <Input name="cumulTT" description="cumul TT at current date" datatype="DOUBLE" variablecategory="auxiliary" min="-200" max="10000" default="8" unit="°C d" inputtype = "variable"/>
       
     </Inputs>

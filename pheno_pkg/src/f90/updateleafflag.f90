@@ -1,8 +1,8 @@
-MODULE Updateleafflag_mod
+MODULE Updateleafflagmod
     USE list_sub
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE updateleafflag_(cumulTT, &
+    SUBROUTINE model_updateleafflag(cumulTT, &
         leafNumber, &
         calendarMoments, &
         calendarDates, &
@@ -54,21 +54,21 @@ CONTAINS
     !                          - inputtype : variable
     !            - name: calendarMoments
     !                          - description : List containing apparition of each stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRINGLIST
     !                          - default : ['Sowing']
     !                          - unit : 
     !                          - inputtype : variable
     !            - name: calendarDates
     !                          - description : List containing  the dates of the wheat developmental phases
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DATELIST
     !                          - default : ['21/3/2007']
     !                          - unit : 
     !                          - inputtype : variable
     !            - name: calendarCumuls
     !                          - description : list containing for each stage occured its cumulated thermal times
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DOUBLELIST
     !                          - default : [0.0]
     !                          - unit : °C d
@@ -122,17 +122,17 @@ CONTAINS
     !                          - uri : some url
     !            - name: calendarMoments
     !                          - description :  List containing apparition of each stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRINGLIST
     !                          - unit : 
     !            - name: calendarDates
     !                          - description :  List containing  the dates of the wheat developmental phases
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DATELIST
     !                          - unit : 
     !            - name: calendarCumuls
     !                          - description :  list containing for each stage occured its cumulated thermal times
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DOUBLELIST
     !                          - unit : °C d
         IF(phase .GE. 1.0 .AND. phase .LT. 4.0) THEN
@@ -150,5 +150,6 @@ CONTAINS
                 hasFlagLeafLiguleAppeared = 0
             END IF
         END IF
-    END SUBROUTINE updateleafflag_
+    END SUBROUTINE model_updateleafflag
+
 END MODULE

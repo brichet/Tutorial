@@ -14,7 +14,6 @@ public class Ptsoil
             this._Alpha= value;
         } 
     }
-
     private double _tau;
     public double tau
     {
@@ -27,7 +26,6 @@ public class Ptsoil
             this._tau= value;
         } 
     }
-
     private double _tauAlpha;
     public double tauAlpha
     {
@@ -40,12 +38,11 @@ public class Ptsoil
             this._tauAlpha= value;
         } 
     }
-
     public Ptsoil()
     {
            
     }
-
+    
     public void  Calculate_ptsoil(state s, rate r, auxiliary a)
     {
         //- Description:

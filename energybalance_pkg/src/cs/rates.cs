@@ -13,13 +13,13 @@ public class rate
     {
            
     }
-
+    
     
     public rate(rate toCopy, bool copyAll) // copy constructor 
     {
     if (copyAll)
     {
-
+    
     _cropHeatFlux = toCopy._cropHeatFlux;
     _soilHeatFlux = toCopy._soilHeatFlux;
     _evapoTranspirationPriestlyTaylor = toCopy._evapoTranspirationPriestlyTaylor;
@@ -38,7 +38,6 @@ public class rate
             this._cropHeatFlux= value;
         } 
     }
-
     public double soilHeatFlux
     {
         get
@@ -50,7 +49,6 @@ public class rate
             this._soilHeatFlux= value;
         } 
     }
-
     public double evapoTranspirationPriestlyTaylor
     {
         get
@@ -62,7 +60,6 @@ public class rate
             this._evapoTranspirationPriestlyTaylor= value;
         } 
     }
-
     public double evapoTranspirationPenman
     {
         get
@@ -74,7 +71,6 @@ public class rate
             this._evapoTranspirationPenman= value;
         } 
     }
-
     public double evapoTranspiration
     {
         get
@@ -86,5 +82,4 @@ public class rate
             this._evapoTranspiration= value;
         } 
     }
-
 }

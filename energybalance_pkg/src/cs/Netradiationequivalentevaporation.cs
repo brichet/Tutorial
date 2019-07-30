@@ -14,12 +14,11 @@ public class Netradiationequivalentevaporation
             this._lambdaV= value;
         } 
     }
-
     public Netradiationequivalentevaporation()
     {
            
     }
-
+    
     public void  Calculate_netradiationequivalentevaporation(state s, rate r, auxiliary a)
     {
         //- Description:

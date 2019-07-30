@@ -14,12 +14,11 @@ public class Diffusionlimitedevaporation
             this._soilDiffusionConstant= value;
         } 
     }
-
     public Diffusionlimitedevaporation()
     {
            
     }
-
+    
     public void  Calculate_diffusionlimitedevaporation(state s, rate r, auxiliary a)
     {
         //- Description:

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-namespace EnergyBalance_{
 public class state
 {
     private double _conductance;
@@ -12,13 +11,13 @@ public class state
     {
            
     }
-
+    
     
     public state(state toCopy, bool copyAll) // copy constructor 
     {
     if (copyAll)
     {
-
+    
     _conductance = toCopy._conductance;
     _minCanopyTemperature = toCopy._minCanopyTemperature;
     _maxCanopyTemperature = toCopy._maxCanopyTemperature;
@@ -36,7 +35,6 @@ public class state
             this._conductance= value;
         } 
     }
-
     public double minCanopyTemperature
     {
         get
@@ -48,7 +46,6 @@ public class state
             this._minCanopyTemperature= value;
         } 
     }
-
     public double maxCanopyTemperature
     {
         get
@@ -60,7 +57,6 @@ public class state
             this._maxCanopyTemperature= value;
         } 
     }
-
     public double diffusionLimitedEvaporation
     {
         get
@@ -72,6 +68,4 @@ public class state
             this._diffusionLimitedEvaporation= value;
         } 
     }
-
-}
 }

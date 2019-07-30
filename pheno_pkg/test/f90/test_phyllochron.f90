@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_Phyllochron 
+    USE Phyllochronmod
     REAL:: fixPhyll
 
     REAL:: leafNumber
@@ -31,13 +32,25 @@ PROGRAM test_test_wheat1_Phyllochron
 
     REAL:: phyllochron
 
-    lincr = 8
+    lincr = 8.0
 
-    ldecr = 3
+    ldecr = 3.0
 
     pdecr = 0.4
 
     pincr = 1.25
+
+    ptq = 0.97
+
+    kl = 0.45
+
+    aPTQ = 0.842934
+
+    phylPTQ1 = 20.0
+
+    p = 120.0
+
+    choosePhyllUse = "Default"
 
     fixPhyll = 91.2
 
@@ -45,21 +58,9 @@ PROGRAM test_test_wheat1_Phyllochron
 
     leafNumber = 0
 
-    ptq = 0
-
     pastMaxAI = 0
 
-    kl = 0.45
-
-    aPTQ = 0.842934
-
-    phylPTQ1 = 20
-
-    p = 120
-
-    choosePhyllUse = Default
-
-    call phyllochron_(fixPhyll,leafNumber,lincr,ldecr,pdecr,pincr,ptq,gai,pastMaxAI,kl,aPTQ,phylPTQ1,p,choosePhyllUse,phyllochron)
+    call modelunit_phyllochron(fixPhyll,leafNumber,lincr,ldecr,pdecr,pincr,ptq,gai,pastMaxAI,kl,aPTQ,phylPTQ1,p,choosePhyllUse,phyllochron)
     print *,phyllochron,pastMaxAI
  END PROGRAM
 

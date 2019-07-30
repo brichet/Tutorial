@@ -1,8 +1,8 @@
-MODULE Registerzadok_mod
+MODULE Registerzadokmod
     USE list_sub
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE registerzadok_(cumulTT, &
+    SUBROUTINE model_registerzadok(cumulTT, &
         phase, &
         leafNumber, &
         calendarMoments, &
@@ -16,7 +16,6 @@ CONTAINS
         finalLeafNumber, &
         currentZadokStage, &
         hasZadokStageChanged)
-        INTEGER:: roundedFinalLeafNumber
         REAL, INTENT(IN) :: cumulTT
         REAL, INTENT(IN) :: phase
         REAL, INTENT(IN) :: leafNumber
@@ -33,6 +32,7 @@ CONTAINS
         REAL, INTENT(IN) :: finalLeafNumber
         CHARACTER(65), INTENT(INOUT) :: currentZadokStage
         INTEGER, INTENT(INOUT) :: hasZadokStageChanged
+        INTEGER:: roundedFinalLeafNumber
         !- Description:
     !            - Model Name: RegisterZadok Model
     !            - Author: Pierre MARTRE
@@ -75,21 +75,21 @@ CONTAINS
     !                          - inputtype : variable
     !            - name: calendarMoments
     !                          - description : List containing apparition of each stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRINGLIST
     !                          - default : ['Sowing']
     !                          - unit : 
     !                          - inputtype : variable
     !            - name: calendarDates
     !                          - description : List containing  the dates of the wheat developmental phases
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DATELIST
     !                          - default : ['21/3/2007']
     !                          - unit : 
     !                          - inputtype : variable
     !            - name: calendarCumuls
     !                          - description : list containing for each stage occured its cumulated thermal times
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DOUBLELIST
     !                          - default : [0.0]
     !                          - unit : °C d
@@ -156,6 +156,7 @@ CONTAINS
     !                          - inputtype : variable
     !            - name: currentZadokStage
     !                          - description : current zadok stage
+    !                          - variablecategory : state
     !                          - datatype : STRING
     !                          - min : 
     !                          - max : 
@@ -184,23 +185,23 @@ CONTAINS
     !                          - uri : some url
     !            - name: currentZadokStage
     !                          - description : current zadok stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRING
     !                          - unit :  
     !                          - uri : some url
     !            - name: calendarMoments
     !                          - description :  List containing apparition of each stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRINGLIST
     !                          - unit : 
     !            - name: calendarDates
     !                          - description :  List containing  the dates of the wheat developmental phases
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DATELIST
     !                          - unit : 
     !            - name: calendarCumuls
     !                          - description :  list containing for each stage occured its cumulated thermal times
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DOUBLELIST
     !                          - unit : °C d
         roundedFinalLeafNumber = INT(finalLeafNumber + 0.5)
@@ -275,5 +276,6 @@ CONTAINS
         ELSE
             hasZadokStageChanged = 0
         END IF
-    END SUBROUTINE registerzadok_
+    END SUBROUTINE model_registerzadok
+
 END MODULE

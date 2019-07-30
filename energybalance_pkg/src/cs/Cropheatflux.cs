@@ -7,7 +7,7 @@ public class Cropheatflux
     {
            
     }
-
+    
     public void  Calculate_cropheatflux(state s, rate r, auxiliary a)
     {
         //- Description:

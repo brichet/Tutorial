@@ -14,7 +14,6 @@ public class Conductance
             this._vonKarman= value;
         } 
     }
-
     private double _heightWeatherMeasurements;
     public double heightWeatherMeasurements
     {
@@ -27,7 +26,6 @@ public class Conductance
             this._heightWeatherMeasurements= value;
         } 
     }
-
     private double _zm;
     public double zm
     {
@@ -40,7 +38,6 @@ public class Conductance
             this._zm= value;
         } 
     }
-
     private double _zh;
     public double zh
     {
@@ -53,7 +50,6 @@ public class Conductance
             this._zh= value;
         } 
     }
-
     private double _d;
     public double d
     {
@@ -66,12 +62,11 @@ public class Conductance
             this._d= value;
         } 
     }
-
     public Conductance()
     {
            
     }
-
+    
     public void  Calculate_conductance(state s, rate r, auxiliary a)
     {
         //- Description:

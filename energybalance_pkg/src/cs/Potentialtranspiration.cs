@@ -14,12 +14,11 @@ public class Potentialtranspiration
             this._tau= value;
         } 
     }
-
     public Potentialtranspiration()
     {
            
     }
-
+    
     public void  Calculate_potentialtranspiration(state s, rate r, auxiliary a)
     {
         //- Description:

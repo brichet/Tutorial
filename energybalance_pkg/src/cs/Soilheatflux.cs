@@ -14,12 +14,11 @@ public class Soilheatflux
             this._tau= value;
         } 
     }
-
     public Soilheatflux()
     {
            
     }
-
+    
     public void  Calculate_soilheatflux(state s, rate r, auxiliary a)
     {
         //- Description:

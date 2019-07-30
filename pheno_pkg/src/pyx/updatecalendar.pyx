@@ -1,12 +1,12 @@
 import numpy as np 
 from math import *
 
-def updatecalendar_(float cumulTT=741.510096671757,
-                    list calendarMoments=['Sowing'],
-                    list calendarDates=['21/3/2007'],
-                    list calendarCumuls=[0.0],
-                    str currentdate='27/3/2007',
-                    float phase=1.0):
+def model_updatecalendar(float cumulTT=741.510096671757,
+                         list calendarMoments=['Sowing'],
+                         list calendarDates=['21/3/2007'],
+                         list calendarCumuls=[0.0],
+                         str currentdate='27/3/2007',
+                         float phase=1.0):
     """
 
     Calendar Model

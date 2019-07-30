@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-namespace EnergyBalance_{
+
 public class auxiliary
 {
     private double _minTair;
@@ -23,13 +23,13 @@ public class auxiliary
     {
            
     }
-
+    
     
     public auxiliary(auxiliary toCopy, bool copyAll) // copy constructor 
     {
     if (copyAll)
     {
-
+    
     _minTair = toCopy._minTair;
     _maxTair = toCopy._maxTair;
     _plantHeight = toCopy._plantHeight;
@@ -58,7 +58,6 @@ public class auxiliary
             this._minTair= value;
         } 
     }
-
     public double maxTair
     {
         get
@@ -70,7 +69,6 @@ public class auxiliary
             this._maxTair= value;
         } 
     }
-
     public double plantHeight
     {
         get
@@ -82,7 +80,6 @@ public class auxiliary
             this._plantHeight= value;
         } 
     }
-
     public double wind
     {
         get
@@ -94,7 +91,6 @@ public class auxiliary
             this._wind= value;
         } 
     }
-
     public double netRadiationEquivalentEvaporation
     {
         get
@@ -106,7 +102,6 @@ public class auxiliary
             this._netRadiationEquivalentEvaporation= value;
         } 
     }
-
     public double deficitOnTopLayers
     {
         get
@@ -118,7 +113,6 @@ public class auxiliary
             this._deficitOnTopLayers= value;
         } 
     }
-
     public double solarRadiation
     {
         get
@@ -130,7 +124,6 @@ public class auxiliary
             this._solarRadiation= value;
         } 
     }
-
     public double vaporPressure
     {
         get
@@ -142,7 +135,6 @@ public class auxiliary
             this._vaporPressure= value;
         } 
     }
-
     public double extraSolarRadiation
     {
         get
@@ -154,7 +146,6 @@ public class auxiliary
             this._extraSolarRadiation= value;
         } 
     }
-
     public double netRadiation
     {
         get
@@ -166,7 +157,6 @@ public class auxiliary
             this._netRadiation= value;
         } 
     }
-
     public double netOutGoingLongWaveRadiation
     {
         get
@@ -178,7 +168,6 @@ public class auxiliary
             this._netOutGoingLongWaveRadiation= value;
         } 
     }
-
     public double hslope
     {
         get
@@ -190,7 +179,6 @@ public class auxiliary
             this._hslope= value;
         } 
     }
-
     public double VPDair
     {
         get
@@ -202,7 +190,6 @@ public class auxiliary
             this._VPDair= value;
         } 
     }
-
     public double energyLimitedEvaporation
     {
         get
@@ -214,7 +201,6 @@ public class auxiliary
             this._energyLimitedEvaporation= value;
         } 
     }
-
     public double soilEvaporation
     {
         get
@@ -226,6 +212,4 @@ public class auxiliary
             this._soilEvaporation= value;
         } 
     }
-
-}
 }

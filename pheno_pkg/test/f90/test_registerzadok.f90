@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_RegisterZadok 
+    USE Registerzadokmod
     REAL:: cumulTT
 
     REAL:: phase
@@ -33,6 +34,8 @@ PROGRAM test_test_wheat1_RegisterZadok
 
     intTSFLN = 2.6
 
+    der = 300.0
+
     calendarMoments = ["Sowing","Emergence","EndVernalisation","MainShootPlus1Tiller"]
 
     calendarDates = ["21/3/2007","27/3/2007","30/3/2007","5/4/2007"]
@@ -49,15 +52,13 @@ PROGRAM test_test_wheat1_RegisterZadok
 
     currentdate = 9/4/2007
 
-    der = 300.0
-
     finalLeafNumber = 8.797582013199484
 
     currentZadokStage = MainShootPlus1Tiller
 
     hasZadokStageChanged = 0
 
-    call registerzadok_(cumulTT,phase,leafNumber,calendarMoments,calendarDates,calendarCumuls,cumulTTFromZC_65,currentdate,der,slopeTSFLN,intTSFLN,finalLeafNumber,currentZadokStage,hasZadokStageChanged)
+    call modelunit_registerzadok(cumulTT,phase,leafNumber,calendarMoments,calendarDates,calendarCumuls,cumulTTFromZC_65,currentdate,der,slopeTSFLN,intTSFLN,finalLeafNumber,currentZadokStage,hasZadokStageChanged)
     print *,hasZadokStageChanged,currentZadokStage,calendarMoments,calendarDates,calendarCumuls
  END PROGRAM
 

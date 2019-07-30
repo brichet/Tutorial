@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-namespace EnergyBalance_{
 public class Netradiation
 {
     private double _albedoCoefficient;
@@ -15,7 +14,6 @@ public class Netradiation
             this._albedoCoefficient= value;
         } 
     }
-
     private double _stefanBoltzman;
     public double stefanBoltzman
     {
@@ -28,7 +26,6 @@ public class Netradiation
             this._stefanBoltzman= value;
         } 
     }
-
     private double _elevation;
     public double elevation
     {
@@ -41,12 +38,11 @@ public class Netradiation
             this._elevation= value;
         } 
     }
-
     public Netradiation()
     {
            
     }
-
+    
     public void  Calculate_netradiation(state s, rate r, auxiliary a)
     {
         //- Description:
@@ -169,7 +165,7 @@ public class Netradiation
         double cloudCoverFactor;
         double Nolr;
         Nsr = (1.0d - albedoCoefficient) * solarRadiation;
-        clearSkySolarRadiation = (0.75d + (2 * Math.Pow(10, -5) * elevation)) * extraSolarRadiation;
+        clearSkySolarRadiation = (0.75d + (2 * Math.Pow(10.0d, -5) * elevation)) * extraSolarRadiation;
         averageT = (Math.Pow(maxTair + 273.16d, 4) + Math.Pow(minTair + 273.16d, 4)) / 2.0d;
         surfaceEmissivity = 0.34d - (0.14d * Math.Sqrt(vaporPressure / 10.0d));
         cloudCoverFactor = 1.35d * (solarRadiation / clearSkySolarRadiation) - 0.35d;
@@ -179,5 +175,4 @@ public class Netradiation
         a.netRadiation= netRadiation;
         a.netOutGoingLongWaveRadiation= netOutGoingLongWaveRadiation;
     }
-}
 }

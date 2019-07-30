@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_CumulTTFrom 
+    USE Cumulttfrommod
     CHARACTER, ALLOCATABLE, DIMENSION(:):: calendarMoments
 
     REAL, ALLOCATABLE, DIMENSION(:):: calendarCumuls
@@ -19,7 +20,7 @@ PROGRAM test_test_wheat1_CumulTTFrom
 
     cumulTT = 972.970888983105
 
-    call cumulttfrom_(calendarMoments,calendarCumuls,cumulTT,cumulTTFromZC_65,cumulTTFromZC_39,cumulTTFromZC_91)
+    call modelunit_cumulttfrom(calendarMoments,calendarCumuls,cumulTT,cumulTTFromZC_65,cumulTTFromZC_39,cumulTTFromZC_91)
     print *,cumulTTFromZC_65,cumulTTFromZC_39,cumulTTFromZC_91
  END PROGRAM
 

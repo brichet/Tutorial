@@ -1,9 +1,9 @@
 import numpy as np 
 from math import *
 
-def cumulttfrom_(list calendarMoments=['Sowing'],
-                 list calendarCumuls=[0.0],
-                 float cumulTT=8.0):
+def model_cumulttfrom(list calendarMoments=['Sowing'],
+                      list calendarCumuls=[0.0],
+                      float cumulTT=8.0):
     """
 
     CumulTTFrom Model
@@ -18,6 +18,7 @@ def cumulttfrom_(list calendarMoments=['Sowing'],
     cdef float cumulTTFromZC_65
     cdef float cumulTTFromZC_39
     cdef float cumulTTFromZC_91
+    # initialisation 
     cumulTTFromZC_65 = 0.0
     cumulTTFromZC_39 = 0.0
     cumulTTFromZC_91 = 0.0     

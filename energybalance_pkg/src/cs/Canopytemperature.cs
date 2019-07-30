@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-namespace EnergyBalance_{
 public class Canopytemperature
 {
     private double _lambdaV;
@@ -15,7 +14,6 @@ public class Canopytemperature
             this._lambdaV= value;
         } 
     }
-
     private double _rhoDensityAir;
     public double rhoDensityAir
     {
@@ -28,7 +26,6 @@ public class Canopytemperature
             this._rhoDensityAir= value;
         } 
     }
-
     private double _specificHeatCapacityAir;
     public double specificHeatCapacityAir
     {
@@ -41,12 +38,11 @@ public class Canopytemperature
             this._specificHeatCapacityAir= value;
         } 
     }
-
     public Canopytemperature()
     {
            
     }
-
+    
     public void  Calculate_canopytemperature(state s, rate r, auxiliary a)
     {
         //- Description:
@@ -151,5 +147,4 @@ public class Canopytemperature
         s.minCanopyTemperature= minCanopyTemperature;
         s.maxCanopyTemperature= maxCanopyTemperature;
     }
-}
 }

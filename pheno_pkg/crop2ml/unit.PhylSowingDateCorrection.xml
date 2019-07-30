@@ -21,7 +21,7 @@
      
     </Inputs>
     <Outputs>
-        <Output name="fixPhyll" description=" Phyllochron Varietal parameter " datatype="DOUBLE" min="0" max="1000"  unit="°C d leaf-1" />
+        <Output name="fixPhyll" description=" Phyllochron Varietal parameter " variablecategory="auxiliary" datatype="DOUBLE" min="0" max="1000"  unit="°C d leaf-1" />
     	
     </Outputs>
 

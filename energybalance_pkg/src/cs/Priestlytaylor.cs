@@ -14,7 +14,6 @@ public class Priestlytaylor
             this._psychrometricConstant= value;
         } 
     }
-
     private double _Alpha;
     public double Alpha
     {
@@ -27,12 +26,11 @@ public class Priestlytaylor
             this._Alpha= value;
         } 
     }
-
     public Priestlytaylor()
     {
            
     }
-
+    
     public void  Calculate_priestlytaylor(state s, rate r, auxiliary a)
     {
         //- Description:

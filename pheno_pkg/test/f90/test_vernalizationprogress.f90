@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_VernalizationProgress 
+    USE Vernalizationprogressmod
     REAL:: dayLength
 
     REAL:: deltaTT
@@ -43,6 +44,24 @@ PROGRAM test_test_wheat1_VernalizationProgress
 
     isVernalizable = 1
 
+    minTvern = 0.0
+
+    intTvern = 11.0
+
+    vAI = 0.015
+
+    vBEE = 0.01
+
+    minDL = 8.0
+
+    maxDL = 15.0
+
+    maxTvern = 23.0
+
+    pNini = 4.0
+
+    aMXLFNO = 24.0
+
     cumulTT =  112.330110409888
 
     dayLength = 12.3037621834005
@@ -57,31 +76,13 @@ PROGRAM test_test_wheat1_VernalizationProgress
 
     calendarCumuls = [0.0]
 
-    minTvern = 0.0
-
-    intTvern =  11.0
-
-    vAI =  0.015
-
-    vBEE = 0.01
-
-    minDL = 8.0
-
-    maxDL = 15.0
-
-    maxTvern =  23.0
-
-    pNini = 4.0
-
-    aMXLFNO = 24.0
-
     vernaprog =  0.5517254187376879
 
     currentdate = 27/3/2007
 
     minFinalNumber = 5.5
 
-    call vernalizationprogress_(dayLength,deltaTT,cumulTT,leafNumber,calendarMoments,calendarDates,calendarCumuls,minTvern,intTvern,vAI,vBEE,minDL,maxDL,maxTvern,pNini,aMXLFNO,vernaprog,currentdate,isVernalizable,minFinalNumber)
+    call modelunit_vernalizationprogress(dayLength,deltaTT,cumulTT,leafNumber,calendarMoments,calendarDates,calendarCumuls,minTvern,intTvern,vAI,vBEE,minDL,maxDL,maxTvern,pNini,aMXLFNO,vernaprog,currentdate,isVernalizable,minFinalNumber)
     print *,vernaprog,minFinalNumber,calendarMoments,calendarDates,calendarCumuls
  END PROGRAM
 

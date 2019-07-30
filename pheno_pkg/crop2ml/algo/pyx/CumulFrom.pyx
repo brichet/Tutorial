@@ -1,4 +1,4 @@
-   
+# initialisation 
 cumulTTFromZC_65 = 0.0
 cumulTTFromZC_39 = 0.0
 cumulTTFromZC_91 = 0.0     

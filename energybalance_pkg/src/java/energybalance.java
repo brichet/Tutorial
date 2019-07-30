@@ -20,36 +20,36 @@ public class Energybalance
     Cropheatflux _Cropheatflux = new Cropheatflux();
     Canopytemperature _Canopytemperature = new Canopytemperature();
 
-    public  getalbedoCoefficient()
+    public double getalbedoCoefficient()
     {
-        return _NetRadiation.albedoCoefficient;
+        return _Netradiation.getalbedoCoefficient();
     }
     public void setalbedoCoefficient(double albedoCoefficient)
     {
         _Netradiation.setalbedoCoefficient(albedoCoefficient);
     } 
 
-    public  getstefanBoltzman()
+    public double getstefanBoltzman()
     {
-        return _NetRadiation.stefanBoltzman;
+        return _Netradiation.getstefanBoltzman();
     }
     public void setstefanBoltzman(double stefanBoltzman)
     {
         _Netradiation.setstefanBoltzman(stefanBoltzman);
     } 
 
-    public  getelevation()
+    public double getelevation()
     {
-        return _NetRadiation.elevation;
+        return _Netradiation.getelevation();
     }
     public void setelevation(double elevation)
     {
         _Netradiation.setelevation(elevation);
     } 
 
-    public  getlambdaV()
+    public double getlambdaV()
     {
-        return _NetRadiationEquivalentEvaporation.lambdaV;
+        return _Netradiationequivalentevaporation.getlambdaV();
     }
     public void setlambdaV(double lambdaV)
     {
@@ -58,9 +58,9 @@ public class Energybalance
         _Canopytemperature.setlambdaV(lambdaV);
     } 
 
-    public  getpsychrometricConstant()
+    public double getpsychrometricConstant()
     {
-        return _PriestlyTaylor.psychrometricConstant;
+        return _Priestlytaylor.getpsychrometricConstant();
     }
     public void setpsychrometricConstant(double psychrometricConstant)
     {
@@ -68,9 +68,9 @@ public class Energybalance
         _Penman.setpsychrometricConstant(psychrometricConstant);
     } 
 
-    public  getAlpha()
+    public double getAlpha()
     {
-        return _PriestlyTaylor.Alpha;
+        return _Priestlytaylor.getAlpha();
     }
     public void setAlpha(double Alpha)
     {
@@ -79,63 +79,63 @@ public class Energybalance
         _Ptsoil.setAlpha(Alpha);
     } 
 
-    public  getvonKarman()
+    public double getvonKarman()
     {
-        return _Conductance.vonKarman;
+        return _Conductance.getvonKarman();
     }
     public void setvonKarman(double vonKarman)
     {
         _Conductance.setvonKarman(vonKarman);
     } 
 
-    public  getheightWeatherMeasurements()
+    public double getheightWeatherMeasurements()
     {
-        return _Conductance.heightWeatherMeasurements;
+        return _Conductance.getheightWeatherMeasurements();
     }
     public void setheightWeatherMeasurements(double heightWeatherMeasurements)
     {
         _Conductance.setheightWeatherMeasurements(heightWeatherMeasurements);
     } 
 
-    public  getzm()
+    public double getzm()
     {
-        return _Conductance.zm;
+        return _Conductance.getzm();
     }
     public void setzm(double zm)
     {
         _Conductance.setzm(zm);
     } 
 
-    public  getd()
+    public double getd()
     {
-        return _Conductance.d;
+        return _Conductance.getd();
     }
     public void setd(double d)
     {
         _Conductance.setd(d);
     } 
 
-    public  getzh()
+    public double getzh()
     {
-        return _Conductance.zh;
+        return _Conductance.getzh();
     }
     public void setzh(double zh)
     {
         _Conductance.setzh(zh);
     } 
 
-    public  getsoilDiffusionConstant()
+    public double getsoilDiffusionConstant()
     {
-        return _DiffusionLimitedEvaporation.soilDiffusionConstant;
+        return _Diffusionlimitedevaporation.getsoilDiffusionConstant();
     }
     public void setsoilDiffusionConstant(double soilDiffusionConstant)
     {
         _Diffusionlimitedevaporation.setsoilDiffusionConstant(soilDiffusionConstant);
     } 
 
-    public  getrhoDensityAir()
+    public double getrhoDensityAir()
     {
-        return _Penman.rhoDensityAir;
+        return _Penman.getrhoDensityAir();
     }
     public void setrhoDensityAir(double rhoDensityAir)
     {
@@ -143,9 +143,9 @@ public class Energybalance
         _Canopytemperature.setrhoDensityAir(rhoDensityAir);
     } 
 
-    public  getspecificHeatCapacityAir()
+    public double getspecificHeatCapacityAir()
     {
-        return _Penman.specificHeatCapacityAir;
+        return _Penman.getspecificHeatCapacityAir();
     }
     public void setspecificHeatCapacityAir(double specificHeatCapacityAir)
     {
@@ -153,9 +153,9 @@ public class Energybalance
         _Canopytemperature.setspecificHeatCapacityAir(specificHeatCapacityAir);
     } 
 
-    public  gettau()
+    public double gettau()
     {
-        return _PtSoil.tau;
+        return _Ptsoil.gettau();
     }
     public void settau(double tau)
     {
@@ -164,18 +164,18 @@ public class Energybalance
         _Potentialtranspiration.settau(tau);
     } 
 
-    public  gettauAlpha()
+    public double gettauAlpha()
     {
-        return _PtSoil.tauAlpha;
+        return _Ptsoil.gettauAlpha();
     }
     public void settauAlpha(double tauAlpha)
     {
         _Ptsoil.settauAlpha(tauAlpha);
     } 
 
-    public  getisWindVpDefined()
+    public int getisWindVpDefined()
     {
-        return _EvapoTranspiration.isWindVpDefined;
+        return _Evapotranspiration.getisWindVpDefined();
     }
     public void setisWindVpDefined(int isWindVpDefined)
     {
@@ -197,26 +197,42 @@ public class Energybalance
         _Cropheatflux.Calculate_cropheatflux(s, r, a);
         _Canopytemperature.Calculate_canopytemperature(s, r, a);
     }
-    
+    private double albedoCoefficient;
+    private double stefanBoltzman;
+    private double elevation;
+    private double lambdaV;
+    private double psychrometricConstant;
+    private double Alpha;
+    private double vonKarman;
+    private double heightWeatherMeasurements;
+    private double zm;
+    private double d;
+    private double zh;
+    private double soilDiffusionConstant;
+    private double rhoDensityAir;
+    private double specificHeatCapacityAir;
+    private double tau;
+    private double tauAlpha;
+    private int isWindVpDefined;
     public Energybalance(Energybalance toCopy) // copy constructor 
     {
-        this.albedoCoefficient = toCopy.albedoCoefficient;
-        this.stefanBoltzman = toCopy.stefanBoltzman;
-        this.elevation = toCopy.elevation;
-        this.lambdaV = toCopy.lambdaV;
-        this.psychrometricConstant = toCopy.psychrometricConstant;
-        this.Alpha = toCopy.Alpha;
-        this.vonKarman = toCopy.vonKarman;
-        this.heightWeatherMeasurements = toCopy.heightWeatherMeasurements;
-        this.zm = toCopy.zm;
-        this.d = toCopy.d;
-        this.zh = toCopy.zh;
-        this.soilDiffusionConstant = toCopy.soilDiffusionConstant;
-        this.rhoDensityAir = toCopy.rhoDensityAir;
-        this.specificHeatCapacityAir = toCopy.specificHeatCapacityAir;
-        this.tau = toCopy.tau;
-        this.tauAlpha = toCopy.tauAlpha;
-        this.isWindVpDefined = toCopy.isWindVpDefined;
+        this.albedoCoefficient = toCopy.getalbedoCoefficient();
+        this.stefanBoltzman = toCopy.getstefanBoltzman();
+        this.elevation = toCopy.getelevation();
+        this.lambdaV = toCopy.getlambdaV();
+        this.psychrometricConstant = toCopy.getpsychrometricConstant();
+        this.Alpha = toCopy.getAlpha();
+        this.vonKarman = toCopy.getvonKarman();
+        this.heightWeatherMeasurements = toCopy.getheightWeatherMeasurements();
+        this.zm = toCopy.getzm();
+        this.d = toCopy.getd();
+        this.zh = toCopy.getzh();
+        this.soilDiffusionConstant = toCopy.getsoilDiffusionConstant();
+        this.rhoDensityAir = toCopy.getrhoDensityAir();
+        this.specificHeatCapacityAir = toCopy.getspecificHeatCapacityAir();
+        this.tau = toCopy.gettau();
+        this.tauAlpha = toCopy.gettauAlpha();
+        this.isWindVpDefined = toCopy.getisWindVpDefined();
 
     }
 }

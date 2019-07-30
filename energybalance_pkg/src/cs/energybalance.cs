@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-namespace EnergyBalance_{
 public class Energybalance
 {
     
@@ -8,7 +7,7 @@ public class Energybalance
     {
            
     }
-
+    
 
     Netradiation _Netradiation = new Netradiation();
     Netradiationequivalentevaporation _Netradiationequivalentevaporation = new Netradiationequivalentevaporation();
@@ -28,43 +27,43 @@ public class Energybalance
     {
         get
         {
-            return _NetRadiation.albedoCoefficient;
+            return _Netradiation.albedoCoefficient;
         }
         set
         {
             _Netradiation.albedoCoefficient = value;
         } 
     }
-
+    
     public double stefanBoltzman
     {
         get
         {
-            return _NetRadiation.stefanBoltzman;
+            return _Netradiation.stefanBoltzman;
         }
         set
         {
             _Netradiation.stefanBoltzman = value;
         } 
     }
-
+    
     public double elevation
     {
         get
         {
-            return _NetRadiation.elevation;
+            return _Netradiation.elevation;
         }
         set
         {
             _Netradiation.elevation = value;
         } 
     }
-
+    
     public double lambdaV
     {
         get
         {
-            return _NetRadiationEquivalentEvaporation.lambdaV;
+            return _Netradiationequivalentevaporation.lambdaV;
         }
         set
         {
@@ -73,12 +72,12 @@ public class Energybalance
             _Canopytemperature.lambdaV = value;
         } 
     }
-
+    
     public double psychrometricConstant
     {
         get
         {
-            return _PriestlyTaylor.psychrometricConstant;
+            return _Priestlytaylor.psychrometricConstant;
         }
         set
         {
@@ -86,12 +85,12 @@ public class Energybalance
             _Penman.psychrometricConstant = value;
         } 
     }
-
+    
     public double Alpha
     {
         get
         {
-            return _PriestlyTaylor.Alpha;
+            return _Priestlytaylor.Alpha;
         }
         set
         {
@@ -100,7 +99,7 @@ public class Energybalance
             _Ptsoil.Alpha = value;
         } 
     }
-
+    
     public double vonKarman
     {
         get
@@ -112,7 +111,7 @@ public class Energybalance
             _Conductance.vonKarman = value;
         } 
     }
-
+    
     public double heightWeatherMeasurements
     {
         get
@@ -124,7 +123,7 @@ public class Energybalance
             _Conductance.heightWeatherMeasurements = value;
         } 
     }
-
+    
     public double zm
     {
         get
@@ -136,7 +135,7 @@ public class Energybalance
             _Conductance.zm = value;
         } 
     }
-
+    
     public double d
     {
         get
@@ -148,7 +147,7 @@ public class Energybalance
             _Conductance.d = value;
         } 
     }
-
+    
     public double zh
     {
         get
@@ -160,19 +159,19 @@ public class Energybalance
             _Conductance.zh = value;
         } 
     }
-
+    
     public double soilDiffusionConstant
     {
         get
         {
-            return _DiffusionLimitedEvaporation.soilDiffusionConstant;
+            return _Diffusionlimitedevaporation.soilDiffusionConstant;
         }
         set
         {
             _Diffusionlimitedevaporation.soilDiffusionConstant = value;
         } 
     }
-
+    
     public double rhoDensityAir
     {
         get
@@ -185,7 +184,7 @@ public class Energybalance
             _Canopytemperature.rhoDensityAir = value;
         } 
     }
-
+    
     public double specificHeatCapacityAir
     {
         get
@@ -198,12 +197,12 @@ public class Energybalance
             _Canopytemperature.specificHeatCapacityAir = value;
         } 
     }
-
+    
     public double tau
     {
         get
         {
-            return _PtSoil.tau;
+            return _Ptsoil.tau;
         }
         set
         {
@@ -212,31 +211,31 @@ public class Energybalance
             _Potentialtranspiration.tau = value;
         } 
     }
-
+    
     public double tauAlpha
     {
         get
         {
-            return _PtSoil.tauAlpha;
+            return _Ptsoil.tauAlpha;
         }
         set
         {
             _Ptsoil.tauAlpha = value;
         } 
     }
-
+    
     public int isWindVpDefined
     {
         get
         {
-            return _EvapoTranspiration.isWindVpDefined;
+            return _Evapotranspiration.isWindVpDefined;
         }
         set
         {
             _Evapotranspiration.isWindVpDefined = value;
         } 
     }
-
+    
     public void  Calculate_energybalance(state s, rate r, auxiliary a)
     {
         _Diffusionlimitedevaporation.Calculate_diffusionlimitedevaporation(s, r, a);
@@ -276,5 +275,4 @@ public class Energybalance
         isWindVpDefined = toCopy.isWindVpDefined;
 
     }
-}
 }

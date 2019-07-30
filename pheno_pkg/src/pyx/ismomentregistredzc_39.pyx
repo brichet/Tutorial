@@ -1,7 +1,7 @@
 import numpy as np 
 from math import *
 
-def ismomentregistredzc_39_(list calendarMoments=['Sowing']):
+def model_ismomentregistredzc_39(list calendarMoments=['Sowing']):
     """
 
     IsMomentRegistredZC39 Model
