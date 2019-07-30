@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_DiffusionLimitedEvaporation 
+    USE Diffusionlimitedevaporationmod
     REAL:: deficitOnTopLayers
 
     REAL:: soilDiffusionConstant
@@ -11,7 +12,7 @@ PROGRAM test_test1_DiffusionLimitedEvaporation
 
     deficitOnTopLayers = 5341
 
-    call diffusionlimitedevaporation_(deficitOnTopLayers,soilDiffusionConstant,diffusionLimitedEvaporation)
+    call modelunit_diffusionlimitedevaporation(deficitOnTopLayers,soilDiffusionConstant,diffusionLimitedEvaporation)
     print *,diffusionLimitedEvaporation
  END PROGRAM
 

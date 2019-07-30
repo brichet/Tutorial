@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_PriestlyTaylor 
+    USE Priestlytaylormod
     REAL:: netRadiationEquivalentEvaporation
 
     REAL:: hslope
@@ -19,7 +20,7 @@ PROGRAM test_test1_PriestlyTaylor
 
     psychrometricConstant = 0.66
 
-    call priestlytaylor_(netRadiationEquivalentEvaporation,hslope,psychrometricConstant,Alpha,evapoTranspirationPriestlyTaylor)
+    call modelunit_priestlytaylor(netRadiationEquivalentEvaporation,hslope,psychrometricConstant,Alpha,evapoTranspirationPriestlyTaylor)
     print *,evapoTranspirationPriestlyTaylor
  END PROGRAM
 

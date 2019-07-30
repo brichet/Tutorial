@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_NetRadiation 
+    USE Netradiationmod
     REAL:: minTair
 
     REAL:: maxTair
@@ -37,7 +38,7 @@ PROGRAM test_test1_NetRadiation
 
     extraSolarRadiation = 11.7
 
-    call netradiation_(minTair,maxTair,albedoCoefficient,stefanBoltzman,elevation,solarRadiation,vaporPressure,extraSolarRadiation,netRadiation,netOutGoingLongWaveRadiation)
+    call modelunit_netradiation(minTair,maxTair,albedoCoefficient,stefanBoltzman,elevation,solarRadiation,vaporPressure,extraSolarRadiation,netRadiation,netOutGoingLongWaveRadiation)
     print *,netRadiation,netOutGoingLongWaveRadiation
  END PROGRAM
 

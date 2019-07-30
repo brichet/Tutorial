@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_Conductance 
+    USE Conductancemod
     REAL:: vonKarman
 
     REAL:: heightWeatherMeasurements
@@ -31,7 +32,7 @@ PROGRAM test_test1_Conductance
 
     heightWeatherMeasurements = 2
 
-    call conductance_(vonKarman,heightWeatherMeasurements,zm,zh,d,plantHeight,wind,conductance)
+    call modelunit_conductance(vonKarman,heightWeatherMeasurements,zm,zh,d,plantHeight,wind,conductance)
     print *,conductance
  END PROGRAM
 

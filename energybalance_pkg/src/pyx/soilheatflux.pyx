@@ -1,9 +1,9 @@
 import numpy as np 
 from math import *
 
-def soilheatflux_(float netRadiationEquivalentEvaporation=638.142,
-                  float tau=0.9983,
-                  float soilEvaporation=448.24):
+def model_soilheatflux(float netRadiationEquivalentEvaporation=638.142,
+                       float tau=0.9983,
+                       float soilEvaporation=448.24):
     """
 
     SoilHeatFlux Model

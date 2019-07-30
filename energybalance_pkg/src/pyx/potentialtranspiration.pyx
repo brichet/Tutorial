@@ -1,8 +1,8 @@
 import numpy as np 
 from math import *
 
-def potentialtranspiration_(float evapoTranspiration=830.958,
-                            float tau=0.9983):
+def model_potentialtranspiration(float evapoTranspiration=830.958,
+                                 float tau=0.9983):
     """
 
     PotentialTranspiration Model

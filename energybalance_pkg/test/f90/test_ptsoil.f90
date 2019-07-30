@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_PtSoil 
+    USE Ptsoilmod
     REAL:: evapoTranspirationPriestlyTaylor
 
     REAL:: Alpha
@@ -19,7 +20,7 @@ PROGRAM test_test1_PtSoil
 
     tauAlpha = 0.3
 
-    call ptsoil_(evapoTranspirationPriestlyTaylor,Alpha,tau,tauAlpha,energyLimitedEvaporation)
+    call modelunit_ptsoil(evapoTranspirationPriestlyTaylor,Alpha,tau,tauAlpha,energyLimitedEvaporation)
     print *,energyLimitedEvaporation
  END PROGRAM
 

@@ -1,12 +1,12 @@
-MODULE Soilevaporation_mod
+MODULE Soilevaporationmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE soilevaporation_(diffusionLimitedEvaporation, &
+    SUBROUTINE model_soilevaporation(diffusionLimitedEvaporation, &
         energyLimitedEvaporation, &
         soilEvaporation)
-        REAL, INTENT(OUT) :: soilEvaporation
         REAL, INTENT(IN) :: diffusionLimitedEvaporation
         REAL, INTENT(IN) :: energyLimitedEvaporation
+        REAL, INTENT(OUT) :: soilEvaporation
         !- Description:
     !            - Model Name: SoilEvaporation Model
     !            - Author: Pierre Martre
@@ -42,7 +42,7 @@ CONTAINS
         !- outputs:
     !            - name: soilEvaporation
     !                          - description : soil Evaporation
-    !                          - variablecategory : state
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 5000
@@ -50,5 +50,6 @@ CONTAINS
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
         soilEvaporation = MIN(diffusionLimitedEvaporation,  &
                 energyLimitedEvaporation)
-    END SUBROUTINE soilevaporation_
+    END SUBROUTINE model_soilevaporation
+
 END MODULE

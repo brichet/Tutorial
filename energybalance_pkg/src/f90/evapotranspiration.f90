@@ -1,14 +1,14 @@
-MODULE Evapotranspiration_mod
+MODULE Evapotranspirationmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE evapotranspiration_(isWindVpDefined, &
+    SUBROUTINE model_evapotranspiration(isWindVpDefined, &
         evapoTranspirationPriestlyTaylor, &
         evapoTranspirationPenman, &
         evapoTranspiration)
-        REAL, INTENT(OUT) :: evapoTranspiration
         INTEGER, INTENT(IN) :: isWindVpDefined
         REAL, INTENT(IN) :: evapoTranspirationPriestlyTaylor
         REAL, INTENT(IN) :: evapoTranspirationPenman
+        REAL, INTENT(OUT) :: evapoTranspiration
         !- Description:
     !            - Model Name: Evapotranspiration Model
     !            - Author: Pierre Martre
@@ -64,5 +64,6 @@ CONTAINS
         ELSE
             evapoTranspiration = evapoTranspirationPriestlyTaylor
         END IF
-    END SUBROUTINE evapotranspiration_
+    END SUBROUTINE model_evapotranspiration
+
 END MODULE

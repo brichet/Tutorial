@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_CropHeatFlux 
+    USE Cropheatfluxmod
     REAL:: netRadiationEquivalentEvaporation
 
     REAL:: soilHeatFlux
@@ -15,7 +16,7 @@ PROGRAM test_test1_CropHeatFlux
 
     potentialTranspiration =  1.413
 
-    call cropheatflux_(netRadiationEquivalentEvaporation,soilHeatFlux,potentialTranspiration,cropHeatFlux)
+    call modelunit_cropheatflux(netRadiationEquivalentEvaporation,soilHeatFlux,potentialTranspiration,cropHeatFlux)
     print *,cropHeatFlux
  END PROGRAM
 

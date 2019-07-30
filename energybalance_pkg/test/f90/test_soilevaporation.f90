@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_SoilEvaporation 
+    USE Soilevaporationmod
     REAL:: diffusionLimitedEvaporation
 
     REAL:: energyLimitedEvaporation
@@ -11,7 +12,7 @@ PROGRAM test_test1_SoilEvaporation
 
     energyLimitedEvaporation = 448.240
 
-    call soilevaporation_(diffusionLimitedEvaporation,energyLimitedEvaporation,soilEvaporation)
+    call modelunit_soilevaporation(diffusionLimitedEvaporation,energyLimitedEvaporation,soilEvaporation)
     print *,soilEvaporation
  END PROGRAM
 

@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_NetRadiationEquivalentEvaporation 
+    USE Netradiationequivalentevaporationmod
     REAL:: lambdaV
 
     REAL:: netRadiation
@@ -11,7 +12,7 @@ PROGRAM test_test1_NetRadiationEquivalentEvaporation
 
     lambdaV = 2.454
 
-    call netradiationequivalentevaporation_(lambdaV,netRadiation,netRadiationEquivalentEvaporation)
+    call modelunit_netradiationequivalentevaporation(lambdaV,netRadiation,netRadiationEquivalentEvaporation)
     print *,netRadiationEquivalentEvaporation
  END PROGRAM
 

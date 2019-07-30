@@ -1,17 +1,17 @@
-MODULE Ptsoil_mod
+MODULE Ptsoilmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE ptsoil_(evapoTranspirationPriestlyTaylor, &
+    SUBROUTINE model_ptsoil(evapoTranspirationPriestlyTaylor, &
         Alpha, &
         tau, &
         tauAlpha, &
         energyLimitedEvaporation)
-        REAL, INTENT(OUT) :: energyLimitedEvaporation
-        REAL:: AlphaE
         REAL, INTENT(IN) :: evapoTranspirationPriestlyTaylor
         REAL, INTENT(IN) :: Alpha
         REAL, INTENT(IN) :: tau
         REAL, INTENT(IN) :: tauAlpha
+        REAL, INTENT(OUT) :: energyLimitedEvaporation
+        REAL:: AlphaE
         !- Description:
     !            - Model Name: PtSoil EnergyLimitedEvaporation Model
     !            - Author: Pierre Martre
@@ -63,7 +63,7 @@ CONTAINS
         !- outputs:
     !            - name: energyLimitedEvaporation
     !                          - description : energy Limited Evaporation 
-    !                          - variablecategory : state
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 5000
@@ -76,5 +76,6 @@ CONTAINS
         END IF
         energyLimitedEvaporation = evapoTranspirationPriestlyTaylor / Alpha *  &
                 AlphaE * tau
-    END SUBROUTINE ptsoil_
+    END SUBROUTINE model_ptsoil
+
 END MODULE

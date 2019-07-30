@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_PotentialTranspiration 
+    USE Potentialtranspirationmod
     REAL:: evapoTranspiration
 
     REAL:: tau
@@ -11,7 +12,7 @@ PROGRAM test_test1_PotentialTranspiration
 
     evapoTranspiration = 830.958
 
-    call potentialtranspiration_(evapoTranspiration,tau,potentialTranspiration)
+    call modelunit_potentialtranspiration(evapoTranspiration,tau,potentialTranspiration)
     print *,potentialTranspiration
  END PROGRAM
 

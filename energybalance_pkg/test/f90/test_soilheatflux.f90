@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_SoilHeatFlux 
+    USE Soilheatfluxmod
     REAL:: netRadiationEquivalentEvaporation
 
     REAL:: tau
@@ -15,7 +16,7 @@ PROGRAM test_test1_SoilHeatFlux
 
     soilEvaporation = 448.240
 
-    call soilheatflux_(netRadiationEquivalentEvaporation,tau,soilEvaporation,soilHeatFlux)
+    call modelunit_soilheatflux(netRadiationEquivalentEvaporation,tau,soilEvaporation,soilHeatFlux)
     print *,soilHeatFlux
  END PROGRAM
 

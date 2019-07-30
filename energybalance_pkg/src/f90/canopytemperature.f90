@@ -1,7 +1,7 @@
-MODULE Canopytemperature_mod
+MODULE Canopytemperaturemod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE canopytemperature_(minTair, &
+    SUBROUTINE model_canopytemperature(minTair, &
         maxTair, &
         cropHeatFlux, &
         conductance, &
@@ -10,8 +10,6 @@ CONTAINS
         specificHeatCapacityAir, &
         minCanopyTemperature, &
         maxCanopyTemperature)
-        REAL, INTENT(OUT) :: minCanopyTemperature
-        REAL, INTENT(OUT) :: maxCanopyTemperature
         REAL, INTENT(IN) :: minTair
         REAL, INTENT(IN) :: maxTair
         REAL, INTENT(IN) :: cropHeatFlux
@@ -19,6 +17,8 @@ CONTAINS
         REAL, INTENT(IN) :: lambdaV
         REAL, INTENT(IN) :: rhoDensityAir
         REAL, INTENT(IN) :: specificHeatCapacityAir
+        REAL, INTENT(OUT) :: minCanopyTemperature
+        REAL, INTENT(OUT) :: maxCanopyTemperature
         !- Description:
     !            - Model Name: CanopyTemperature Model
     !            - Author: Pierre Martre
@@ -97,6 +97,7 @@ CONTAINS
     !            - name: minCanopyTemperature
     !                          - description : minimal Canopy Temperature  
     !                          - datatype : DOUBLE
+    !                          - variablecategory : state
     !                          - min : -30
     !                          - max : 45
     !                          - unit : °C
@@ -104,6 +105,7 @@ CONTAINS
     !            - name: maxCanopyTemperature
     !                          - description : maximal Canopy Temperature 
     !                          - datatype : DOUBLE
+    !                          - variablecategory : state
     !                          - min : -30
     !                          - max : 45
     !                          - unit : °C
@@ -112,5 +114,6 @@ CONTAINS
                 specificHeatCapacityAir * conductance / lambdaV * 1000.0))
         maxCanopyTemperature = maxTair + (cropHeatFlux / (rhoDensityAir *  &
                 specificHeatCapacityAir * conductance / lambdaV * 1000.0))
-    END SUBROUTINE canopytemperature_
+    END SUBROUTINE model_canopytemperature
+
 END MODULE

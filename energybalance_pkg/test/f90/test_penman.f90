@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_Penman 
+    USE Penmanmod
     REAL:: evapoTranspirationPriestlyTaylor
 
     REAL:: hslope
@@ -39,7 +40,7 @@ PROGRAM test_test1_Penman
 
     conductance = 598.685
 
-    call penman_(evapoTranspirationPriestlyTaylor,hslope,VPDair,psychrometricConstant,Alpha,lambdaV,rhoDensityAir,specificHeatCapacityAir,conductance,evapoTranspirationPenman)
+    call modelunit_penman(evapoTranspirationPriestlyTaylor,hslope,VPDair,psychrometricConstant,Alpha,lambdaV,rhoDensityAir,specificHeatCapacityAir,conductance,evapoTranspirationPenman)
     print *,evapoTranspirationPenman
  END PROGRAM
 

@@ -1,7 +1,7 @@
-MODULE Conductance_mod
+MODULE Conductancemod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE conductance_(vonKarman, &
+    SUBROUTINE model_conductance(vonKarman, &
         heightWeatherMeasurements, &
         zm, &
         zh, &
@@ -9,8 +9,6 @@ CONTAINS
         plantHeight, &
         wind, &
         conductance)
-        REAL, INTENT(OUT) :: conductance
-        REAL:: h
         REAL, INTENT(IN) :: vonKarman
         REAL, INTENT(IN) :: heightWeatherMeasurements
         REAL, INTENT(IN) :: zm
@@ -18,6 +16,8 @@ CONTAINS
         REAL, INTENT(IN) :: d
         REAL, INTENT(IN) :: plantHeight
         REAL, INTENT(IN) :: wind
+        REAL, INTENT(OUT) :: conductance
+        REAL:: h
         !- Description:
     !            - Model Name: Conductance Model
     !            - Author: Pierre Martre
@@ -87,7 +87,7 @@ CONTAINS
     !                          - unit : mm
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     !                          - inputtype : variable
-    !                          - variablecategory : state
+    !                          - variablecategory : auxiliary
     !            - name: wind
     !                          - description : wind
     !                          - variablecategory : auxiliary
@@ -101,6 +101,7 @@ CONTAINS
         !- outputs:
     !            - name: conductance
     !                          - description : the boundary layer conductance
+    !                          - variablecategory : state
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
@@ -110,5 +111,6 @@ CONTAINS
         conductance = wind *  (vonKarman ** 2) /  &
                 (LOG((heightWeatherMeasurements - (d * h)) / (zm * h)) *  &
                 LOG((heightWeatherMeasurements - (d * h)) / (zh * h)))
-    END SUBROUTINE conductance_
+    END SUBROUTINE model_conductance
+
 END MODULE

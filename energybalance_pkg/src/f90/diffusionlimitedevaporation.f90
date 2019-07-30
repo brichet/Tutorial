@@ -1,12 +1,12 @@
-MODULE Diffusionlimitedevaporation_mod
+MODULE Diffusionlimitedevaporationmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE diffusionlimitedevaporation_(deficitOnTopLayers, &
+    SUBROUTINE model_diffusionlimitedevaporation(deficitOnTopLayers, &
         soilDiffusionConstant, &
         diffusionLimitedEvaporation)
-        REAL, INTENT(OUT) :: diffusionLimitedEvaporation
         REAL, INTENT(IN) :: deficitOnTopLayers
         REAL, INTENT(IN) :: soilDiffusionConstant
+        REAL, INTENT(OUT) :: diffusionLimitedEvaporation
         !- Description:
     !            - Model Name: DiffusionLimitedEvaporation Model
     !            - Author: Pierre Martre
@@ -54,5 +54,6 @@ CONTAINS
                 diffusionLimitedEvaporation = 0.0
             END IF
         END IF
-    END SUBROUTINE diffusionlimitedevaporation_
+    END SUBROUTINE model_diffusionlimitedevaporation
+
 END MODULE

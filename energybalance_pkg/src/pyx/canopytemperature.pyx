@@ -1,13 +1,13 @@
 import numpy as np 
 from math import *
 
-def canopytemperature_(float minTair=0.7,
-                       float maxTair=7.2,
-                       float cropHeatFlux=447.912,
-                       float conductance=598.685,
-                       float lambdaV=2.454,
-                       float rhoDensityAir=1.225,
-                       float specificHeatCapacityAir=0.00101):
+def model_canopytemperature(float minTair=0.7,
+                            float maxTair=7.2,
+                            float cropHeatFlux=447.912,
+                            float conductance=598.685,
+                            float lambdaV=2.454,
+                            float rhoDensityAir=1.225,
+                            float specificHeatCapacityAir=0.00101):
     """
 
     CanopyTemperature Model

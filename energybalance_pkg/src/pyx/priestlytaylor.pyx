@@ -1,10 +1,10 @@
 import numpy as np 
 from math import *
 
-def priestlytaylor_(float netRadiationEquivalentEvaporation=638.142,
-                    float hslope=0.584,
-                    float psychrometricConstant=0.66,
-                    float Alpha=1.5):
+def model_priestlytaylor(float netRadiationEquivalentEvaporation=638.142,
+                         float hslope=0.584,
+                         float psychrometricConstant=0.66,
+                         float Alpha=1.5):
     """
 
     evapoTranspirationPriestlyTaylor  Model

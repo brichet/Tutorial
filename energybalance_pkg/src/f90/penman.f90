@@ -1,7 +1,7 @@
-MODULE Penman_mod
+MODULE Penmanmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE penman_(evapoTranspirationPriestlyTaylor, &
+    SUBROUTINE model_penman(evapoTranspirationPriestlyTaylor, &
         hslope, &
         VPDair, &
         psychrometricConstant, &
@@ -11,7 +11,6 @@ CONTAINS
         specificHeatCapacityAir, &
         conductance, &
         evapoTranspirationPenman)
-        REAL, INTENT(OUT) :: evapoTranspirationPenman
         REAL, INTENT(IN) :: evapoTranspirationPriestlyTaylor
         REAL, INTENT(IN) :: hslope
         REAL, INTENT(IN) :: VPDair
@@ -21,6 +20,7 @@ CONTAINS
         REAL, INTENT(IN) :: rhoDensityAir
         REAL, INTENT(IN) :: specificHeatCapacityAir
         REAL, INTENT(IN) :: conductance
+        REAL, INTENT(OUT) :: evapoTranspirationPenman
         !- Description:
     !            - Model Name: Penman Model
     !            - Author: Pierre Martre
@@ -130,5 +130,6 @@ CONTAINS
         evapoTranspirationPenman = evapoTranspirationPriestlyTaylor / Alpha +  &
                 (1000.0 * (rhoDensityAir * specificHeatCapacityAir * VPDair *  &
                 conductance / (lambdaV * (hslope + psychrometricConstant))))
-    END SUBROUTINE penman_
+    END SUBROUTINE model_penman
+
 END MODULE

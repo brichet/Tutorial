@@ -1,14 +1,14 @@
-MODULE Cropheatflux_mod
+MODULE Cropheatfluxmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE cropheatflux_(netRadiationEquivalentEvaporation, &
+    SUBROUTINE model_cropheatflux(netRadiationEquivalentEvaporation, &
         soilHeatFlux, &
         potentialTranspiration, &
         cropHeatFlux)
-        REAL, INTENT(OUT) :: cropHeatFlux
         REAL, INTENT(IN) :: netRadiationEquivalentEvaporation
         REAL, INTENT(IN) :: soilHeatFlux
         REAL, INTENT(IN) :: potentialTranspiration
+        REAL, INTENT(OUT) :: cropHeatFlux
         !- Description:
     !            - Model Name: CropHeatFlux Model
     !            - Author: Pierre Martre
@@ -18,7 +18,7 @@ CONTAINS
     !            - Abstract: It is calculated from net Radiation, soil heat flux and potential transpiration 
         !- inputs:
     !            - name: netRadiationEquivalentEvaporation
-    !                          - variablecategory : state
+    !                          - variablecategory : auxiliary
     !                          - description : net Radiation Equivalent Evaporation
     !                          - datatype : DOUBLE
     !                          - default : 638.142
@@ -57,5 +57,6 @@ CONTAINS
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
         cropHeatFlux = netRadiationEquivalentEvaporation - soilHeatFlux -  &
                 potentialTranspiration
-    END SUBROUTINE cropheatflux_
+    END SUBROUTINE model_cropheatflux
+
 END MODULE
