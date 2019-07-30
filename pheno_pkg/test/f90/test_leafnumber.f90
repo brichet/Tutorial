@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_LeafNumber 
+    USE Leafnumbermod
     REAL:: deltaTT
 
     REAL:: phyllochron
@@ -21,7 +22,7 @@ PROGRAM test_test_wheat1_LeafNumber
 
     hasFlagLeafLiguleAppeared = 0
 
-    call leafnumber_(deltaTT,phyllochron,hasFlagLeafLiguleAppeared,leafNumber,phase)
+    call modelunit_leafnumber(deltaTT,phyllochron,hasFlagLeafLiguleAppeared,leafNumber,phase)
     print *,leafNumber
  END PROGRAM
 

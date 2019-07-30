@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_UpdateCalendar 
+    USE Updatecalendarmod
     REAL:: cumulTT
 
     CHARACTER, ALLOCATABLE, DIMENSION(:):: calendarMoments
@@ -25,7 +26,7 @@ PROGRAM test_test_wheat1_UpdateCalendar
 
     currentdate = 27/3/2007
 
-    call updatecalendar_(cumulTT,calendarMoments,calendarDates,calendarCumuls,currentdate,phase)
+    call modelunit_updatecalendar(cumulTT,calendarMoments,calendarDates,calendarCumuls,currentdate,phase)
     print *,calendarMoments,calendarDates,calendarCumuls
  END PROGRAM
 

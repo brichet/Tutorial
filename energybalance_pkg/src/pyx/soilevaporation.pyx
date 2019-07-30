@@ -1,8 +1,8 @@
 import numpy as np 
 from math import *
 
-def soilevaporation_(float diffusionLimitedEvaporation=6605.505,
-                     float energyLimitedEvaporation=448.24):
+def model_soilevaporation(float diffusionLimitedEvaporation=6605.505,
+                          float energyLimitedEvaporation=448.24):
     """
 
     SoilEvaporation Model

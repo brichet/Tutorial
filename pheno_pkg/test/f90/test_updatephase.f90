@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_UpdatePhase 
+    USE Updatephasemod
     REAL:: cumulTT
 
     REAL:: leafNumber
@@ -57,6 +58,24 @@ PROGRAM test_test_wheat1_UpdatePhase
 
     choosePhyllUse = "Default"
 
+    isVernalizable = 1
+
+    dse = 105.0
+
+    dcd = 100.0
+
+    degfm = 0.0
+
+    maxDL = 15.0
+
+    sLDL = 0.85
+
+    ignoreGrainMaturation = 1
+
+    pHEADANTH = 1.0
+
+    p = 120
+
     phase = 1
 
     hasLastPrimordiumAppeared = 0
@@ -81,27 +100,9 @@ PROGRAM test_test_wheat1_UpdatePhase
 
     fixPhyll = 91.2
 
-    isVernalizable = 1
-
-    dse = 105
-
     pFLLAnth = 2.22
 
-    dcd = 100
-
     dgf = 450
-
-    degfm = 0
-
-    maxDL = 15
-
-    sLDL = 0.85
-
-    ignoreGrainMaturation = FALSE
-
-    pHEADANTH = 1
-
-    p = 120
 
     cumulTTFromZC_91 = 0
 
@@ -109,7 +110,7 @@ PROGRAM test_test_wheat1_UpdatePhase
 
     finalLeafNumber = 0
 
-    call updatephase_(cumulTT,leafNumber,cumulTTFromZC_39,isMomentRegistredZC_39,gai,grainCumulTT,dayLength,vernaprog,minFinalNumber,fixPhyll,isVernalizable,dse,pFLLAnth,dcd,dgf,degfm,maxDL,sLDL,ignoreGrainMaturation,pHEADANTH,choosePhyllUse,p,phase,cumulTTFromZC_91,phyllochron,hasLastPrimordiumAppeared,finalLeafNumber)
+    call modelunit_updatephase(cumulTT,leafNumber,cumulTTFromZC_39,isMomentRegistredZC_39,gai,grainCumulTT,dayLength,vernaprog,minFinalNumber,fixPhyll,isVernalizable,dse,pFLLAnth,dcd,dgf,degfm,maxDL,sLDL,ignoreGrainMaturation,pHEADANTH,choosePhyllUse,p,phase,cumulTTFromZC_91,phyllochron,hasLastPrimordiumAppeared,finalLeafNumber)
     print *,finalLeafNumber,phase,hasLastPrimordiumAppeared
  END PROGRAM
 

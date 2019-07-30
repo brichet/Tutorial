@@ -1,16 +1,16 @@
-MODULE Priestlytaylor_mod
+MODULE Priestlytaylormod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE priestlytaylor_(netRadiationEquivalentEvaporation, &
+    SUBROUTINE model_priestlytaylor(netRadiationEquivalentEvaporation, &
         hslope, &
         psychrometricConstant, &
         Alpha, &
         evapoTranspirationPriestlyTaylor)
-        REAL, INTENT(OUT) :: evapoTranspirationPriestlyTaylor
         REAL, INTENT(IN) :: netRadiationEquivalentEvaporation
         REAL, INTENT(IN) :: hslope
         REAL, INTENT(IN) :: psychrometricConstant
         REAL, INTENT(IN) :: Alpha
+        REAL, INTENT(OUT) :: evapoTranspirationPriestlyTaylor
         !- Description:
     !            - Model Name: evapoTranspirationPriestlyTaylor  Model
     !            - Author: Pierre Martre
@@ -62,6 +62,7 @@ CONTAINS
         !- outputs:
     !            - name: evapoTranspirationPriestlyTaylor
     !                          - description : evapoTranspiration of Priestly Taylor 
+    !                          - variablecategory : rate
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
@@ -70,5 +71,6 @@ CONTAINS
         evapoTranspirationPriestlyTaylor = MAX(Alpha * hslope *  &
                 netRadiationEquivalentEvaporation / (hslope + psychrometricConstant),  &
                 0.0)
-    END SUBROUTINE priestlytaylor_
+    END SUBROUTINE model_priestlytaylor
+
 END MODULE

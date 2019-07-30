@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_UpdateLeafFlag 
+    USE Updateleafflagmod
     REAL:: cumulTT
 
     REAL:: leafNumber
@@ -37,7 +38,7 @@ PROGRAM test_test_wheat1_UpdateLeafFlag
 
     finalLeafNumber = 8.797582013199484
 
-    call updateleafflag_(cumulTT,leafNumber,calendarMoments,calendarDates,calendarCumuls,currentdate,finalLeafNumber,hasFlagLeafLiguleAppeared,phase)
+    call modelunit_updateleafflag(cumulTT,leafNumber,calendarMoments,calendarDates,calendarCumuls,currentdate,finalLeafNumber,hasFlagLeafLiguleAppeared,phase)
     print *,hasFlagLeafLiguleAppeared,calendarMoments,calendarDates,calendarCumuls
  END PROGRAM
 

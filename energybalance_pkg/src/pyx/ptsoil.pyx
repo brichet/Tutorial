@@ -1,10 +1,10 @@
 import numpy as np 
 from math import *
 
-def ptsoil_(float evapoTranspirationPriestlyTaylor=120.0,
-            float Alpha=1.5,
-            float tau=0.9983,
-            float tauAlpha=0.3):
+def model_ptsoil(float evapoTranspirationPriestlyTaylor=120.0,
+                 float Alpha=1.5,
+                 float tau=0.9983,
+                 float tauAlpha=0.3):
     """
 
     PtSoil EnergyLimitedEvaporation Model

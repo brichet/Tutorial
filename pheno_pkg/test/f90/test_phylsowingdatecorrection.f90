@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_PhylSowingDateCorrection 
+    USE Phylsowingdatecorrectionmod
     INTEGER:: sowingDay
 
     REAL:: latitude
@@ -31,7 +32,7 @@ PROGRAM test_test_wheat1_PhylSowingDateCorrection
 
     p = 120
 
-    call phylsowingdatecorrection_(sowingDay,latitude,sDsa_sh,rp,sDws,sDsa_nh,p,fixPhyll)
+    call modelunit_phylsowingdatecorrection(sowingDay,latitude,sDsa_sh,rp,sDws,sDsa_nh,p,fixPhyll)
     print *,fixPhyll
  END PROGRAM
 

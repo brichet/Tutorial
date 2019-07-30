@@ -1,11 +1,11 @@
 import numpy as np 
 from math import *
 
-def leafnumber_(float deltaTT=23.5895677277199,
-                float phyllochron=0.0,
-                int hasFlagLeafLiguleAppeared=0,
-                float leafNumber=0.0,
-                float phase=1.0):
+def model_leafnumber(float deltaTT=23.5895677277199,
+                     float phyllochron=0.0,
+                     int hasFlagLeafLiguleAppeared=0,
+                     float leafNumber=0.0,
+                     float phase=1.0):
     """
 
     CalculateLeafNumber Model

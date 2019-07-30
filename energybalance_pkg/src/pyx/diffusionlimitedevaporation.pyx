@@ -1,8 +1,8 @@
 import numpy as np 
 from math import *
 
-def diffusionlimitedevaporation_(float deficitOnTopLayers=5341.0,
-                                 float soilDiffusionConstant=4.2):
+def model_diffusionlimitedevaporation(float deficitOnTopLayers=5341.0,
+                                      float soilDiffusionConstant=4.2):
     """
 
     DiffusionLimitedEvaporation Model

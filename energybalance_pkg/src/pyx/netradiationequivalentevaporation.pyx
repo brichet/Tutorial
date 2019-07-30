@@ -1,8 +1,8 @@
 import numpy as np 
 from math import *
 
-def netradiationequivalentevaporation_(float lambdaV=2.454,
-                                       float netRadiation=1.566):
+def model_netradiationequivalentevaporation(float lambdaV=2.454,
+                                            float netRadiation=1.566):
     """
 
     NetRadiationEquivalentEvaporation Model

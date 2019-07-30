@@ -1,14 +1,14 @@
-MODULE Soilheatflux_mod
+MODULE Soilheatfluxmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE soilheatflux_(netRadiationEquivalentEvaporation, &
+    SUBROUTINE model_soilheatflux(netRadiationEquivalentEvaporation, &
         tau, &
         soilEvaporation, &
         soilHeatFlux)
-        REAL, INTENT(OUT) :: soilHeatFlux
         REAL, INTENT(IN) :: netRadiationEquivalentEvaporation
         REAL, INTENT(IN) :: tau
         REAL, INTENT(IN) :: soilEvaporation
+        REAL, INTENT(OUT) :: soilHeatFlux
         !- Description:
     !            - Model Name: SoilHeatFlux Model
     !            - Author: Pierre Martre
@@ -50,7 +50,7 @@ CONTAINS
         !- outputs:
     !            - name: soilHeatFlux
     !                          - description : soil Heat Flux 
-    !                          - variablecategory : state
+    !                          - variablecategory : rate
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
@@ -58,5 +58,6 @@ CONTAINS
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
         soilHeatFlux = tau * netRadiationEquivalentEvaporation -  &
                 soilEvaporation
-    END SUBROUTINE soilheatflux_
+    END SUBROUTINE model_soilheatflux
+
 END MODULE

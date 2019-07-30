@@ -1,14 +1,13 @@
 import numpy as np 
 from math import *
 
-from fibonacci import fibonacci_ 
-def shootnumber_(float canopyShootNumber=288.0,
-                 float leafNumber=0.0,
-                 int sowingDensity=288,
-                 float targetFertileShoot=600.0,
-                 list tilleringProfile=[288.0],
-                 list leafTillerNumberArray=[1],
-                 int tillerNumber=1):
+def model_shootnumber(float canopyShootNumber=288.0,
+                      float leafNumber=0.0,
+                      float sowingDensity=288.0,
+                      float targetFertileShoot=600.0,
+                      list tilleringProfile=[288.0],
+                      list leafTillerNumberArray=[1],
+                      int tillerNumber=1):
     """
 
     CalculateShootNumber Model
@@ -25,8 +24,8 @@ def shootnumber_(float canopyShootNumber=288.0,
     cdef int emergedLeaves, shoots, i
     oldCanopyShootNumber = canopyShootNumber
     emergedLeaves = int(max(1.0, ceil(leafNumber - 1.0)))
-    shoots = fibonacci_(emergedLeaves)
-    canopyShootNumber = min(float(shoots * sowingDensity), targetFertileShoot)
+    shoots = fibonacci(emergedLeaves)
+    canopyShootNumber = min(shoots * sowingDensity, targetFertileShoot)
     averageShootNumberPerPlant = canopyShootNumber / sowingDensity
     if (canopyShootNumber != oldCanopyShootNumber):
         tilleringProfile.append(canopyShootNumber - oldCanopyShootNumber)
@@ -34,3 +33,12 @@ def shootnumber_(float canopyShootNumber=288.0,
     for i in range(len(leafTillerNumberArray),int(ceil(leafNumber)),1):
         leafTillerNumberArray.append(tillerNumber)
     return  averageShootNumberPerPlant, canopyShootNumber, leafTillerNumberArray, tilleringProfile, tillerNumber
+def fibonacci(int n):
+    cdef int result = 0
+    cdef int b = 1
+    cdef int i, temp
+    for i in range(0 , n , 1):
+        temp = result
+        result = b
+        b = temp + b
+    return result

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE Model PUBLIC " " "https://raw.githubusercontent.com/AgriculturalModelExchangeInitiative/crop2ml/master/ModelUnit.dtd">
+<!DOCTYPE ModelUnit PUBLIC " " "https://raw.githubusercontent.com/AgriculturalModelExchangeInitiative/crop2ml/master/ModelUnit.dtd">
 <ModelUnit modelid="SQ.EnergyBalance.PriestlyTaylor" name="PriestlyTaylor" timestep="1" version="1.0">
     <Description>
         <Title>evapoTranspirationPriestlyTaylor  Model</Title>
@@ -17,7 +17,7 @@
    </Inputs>
 
     <Outputs>
-         <Output name="evapoTranspirationPriestlyTaylor" description="evapoTranspiration of Priestly Taylor " datatype="DOUBLE" min="0" max="10000"  unit="g m-2 d-1" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547"/>
+         <Output name="evapoTranspirationPriestlyTaylor" description="evapoTranspiration of Priestly Taylor " variablecategory="rate" datatype="DOUBLE" min="0" max="10000"  unit="g m-2 d-1" uri="http://www1.clermont.inra.fr/siriusquality/?page_id=547"/>
 
     </Outputs>
 

@@ -1,4 +1,5 @@
 cdef float gai_
+phyllochron=0.0
 if choosePhyllUse =="Default":
     if (leafNumber < ldecr):
         phyllochron = fixPhyll * pdecr

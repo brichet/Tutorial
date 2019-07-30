@@ -1,11 +1,12 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test_wheat1_ShootNumber 
+    USE Shootnumbermod
     REAL:: canopyShootNumber
 
     REAL:: leafNumber
 
-    INTEGER:: sowingDensity
+    REAL:: sowingDensity
 
     REAL:: targetFertileShoot
 
@@ -19,7 +20,7 @@ PROGRAM test_test_wheat1_ShootNumber
 
     targetFertileShoot = 600.0
 
-    sowingDensity = 288
+    sowingDensity = 288.0
 
     canopyShootNumber = 288.0
 
@@ -31,7 +32,7 @@ PROGRAM test_test_wheat1_ShootNumber
 
     tillerNumber = 1
 
-    call shootnumber_(canopyShootNumber,leafNumber,sowingDensity,targetFertileShoot,tilleringProfile,leafTillerNumberArray,tillerNumber,averageShootNumberPerPlant)
+    call modelunit_shootnumber(canopyShootNumber,leafNumber,sowingDensity,targetFertileShoot,tilleringProfile,leafTillerNumberArray,tillerNumber,averageShootNumberPerPlant)
     print *,averageShootNumberPerPlant,canopyShootNumber,leafTillerNumberArray,tilleringProfile,tillerNumber
  END PROGRAM
 

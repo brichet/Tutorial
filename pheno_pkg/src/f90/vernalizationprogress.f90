@@ -1,8 +1,8 @@
-MODULE Vernalizationprogress_mod
+MODULE Vernalizationprogressmod
     USE list_sub
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE vernalizationprogress_(dayLength, &
+    SUBROUTINE model_vernalizationprogress(dayLength, &
         deltaTT, &
         cumulTT, &
         leafNumber, &
@@ -22,12 +22,6 @@ CONTAINS
         currentdate, &
         isVernalizable, &
         minFinalNumber)
-        REAL:: maxVernaProg
-        REAL:: dLverna
-        REAL:: primordno
-        REAL:: minLeafNumber
-        REAL:: potlfno
-        REAL:: tt
         REAL, INTENT(IN) :: dayLength
         REAL, INTENT(IN) :: deltaTT
         REAL, INTENT(IN) :: cumulTT
@@ -50,6 +44,12 @@ CONTAINS
         CHARACTER(65), INTENT(IN) :: currentdate
         INTEGER, INTENT(IN) :: isVernalizable
         REAL, INTENT(INOUT) :: minFinalNumber
+        REAL:: maxVernaProg
+        REAL:: dLverna
+        REAL:: primordno
+        REAL:: minLeafNumber
+        REAL:: potlfno
+        REAL:: tt
         !- Description:
     !            - Model Name: VernalizationProgress Model
     !            - Author: Pierre MARTRE
@@ -67,6 +67,7 @@ CONTAINS
         !- inputs:
     !            - name: dayLength
     !                          - description : day length
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
@@ -75,6 +76,7 @@ CONTAINS
     !                          - inputtype : variable
     !            - name: deltaTT
     !                          - description : difference cumul TT between j and j-1 day 
+    !                          - variablecategory : auxiliary
     !                          - inputtype : variable
     !                          - datatype : DOUBLE
     !                          - min : -20
@@ -83,6 +85,7 @@ CONTAINS
     !                          - unit : °C d
     !            - name: cumulTT
     !                          - description : cumul thermal times at currentdate
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : -200
     !                          - max : 10000
@@ -100,21 +103,21 @@ CONTAINS
     !                          - inputtype : variable
     !            - name: calendarMoments
     !                          - description : List containing appearance of each stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRINGLIST
     !                          - default : ['Sowing']
     !                          - unit : 
     !                          - inputtype : variable
     !            - name: calendarDates
     !                          - description : List containing  the dates of the wheat developmental phases
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DATELIST
     !                          - default : ['21/3/2007']
     !                          - unit : 
     !                          - inputtype : variable
     !            - name: calendarCumuls
     !                          - description : list containing for each stage occured its cumulated thermal times
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DOUBLELIST
     !                          - default : [0.0]
     !                          - unit : 
@@ -215,6 +218,7 @@ CONTAINS
     !                          - datatype : DATE
     !                          - default : 27/3/2007
     !                          - inputtype : variable
+    !                          - unit : 
     !            - name: isVernalizable
     !                          - description : true if the plant is vernalizable
     !                          - parametercategory : species
@@ -236,29 +240,31 @@ CONTAINS
         !- outputs:
     !            - name: vernaprog
     !                          - description : progression on a 0  to 1 scale of the vernalization
+    !                          - variablecategory : state
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
     !                          - unit : 
     !            - name: minFinalNumber
     !                          - description : minimum final leaf number
+    !                          - variablecategory : state
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
     !                          - unit : leaf
     !            - name: calendarMoments
     !                          - description : List containing appearance of each stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRINGLIST
     !                          - unit : 
     !            - name: calendarDates
     !                          - description : List containing  the dates of the wheat developmental phases
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DATELIST
     !                          - unit : 
     !            - name: calendarCumuls
     !                          - description : list containing for each stage occured its cumulated thermal times
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DOUBLELIST
     !                          - unit : 
         IF(isVernalizable .EQ. 1 .AND. vernaprog .LT. 1.0) THEN
@@ -291,5 +297,6 @@ CONTAINS
                 END IF
             END IF
         END IF
-    END SUBROUTINE vernalizationprogress_
+    END SUBROUTINE model_vernalizationprogress
+
 END MODULE

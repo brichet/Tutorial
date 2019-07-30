@@ -1,17 +1,17 @@
-MODULE Leafnumber_mod
+MODULE Leafnumbermod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE leafnumber_(deltaTT, &
+    SUBROUTINE model_leafnumber(deltaTT, &
         phyllochron, &
         hasFlagLeafLiguleAppeared, &
         leafNumber, &
         phase)
-        REAL:: phyllochron_
         REAL, INTENT(IN) :: deltaTT
         REAL, INTENT(IN) :: phyllochron
         INTEGER, INTENT(IN) :: hasFlagLeafLiguleAppeared
         REAL, INTENT(INOUT) :: leafNumber
         REAL, INTENT(IN) :: phase
+        REAL:: phyllochron_
         !- Description:
     !            - Model Name: CalculateLeafNumber Model
     !            - Author: Pierre MARTRE
@@ -85,5 +85,6 @@ CONTAINS
                 leafNumber = leafNumber + MIN(deltaTT / phyllochron_, 0.999)
             END IF
         END IF
-    END SUBROUTINE leafnumber_
+    END SUBROUTINE model_leafnumber
+
 END MODULE

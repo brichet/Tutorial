@@ -17,8 +17,8 @@
         <Input name="ldecr" description="Leaf number up to which the phyllochron is decreased by Pdecr" parametercategory="species" inputtype="parameter" datatype="DOUBLE" min="0" max="30" default="10" unit="leaf" uri="some url"/>
         <Input name="pdecr" description="Factor decreasing the phyllochron for leaf number less than Ldecr" parametercategory="species" inputtype="parameter" datatype="DOUBLE" min="0" max="10" default="0.4" unit="" uri="some url"/>
         <Input name="pincr" description="Factor increasing the phyllochron for leaf number higher than Lincr" parametercategory="species" datatype="DOUBLE" default="1.5" min="0" max="10" unit="" uri="some url" inputtype="parameter"/>
-        <Input name="ptq" description="Photothermal quotient " parametercategory="species" inputtype ="variable" datatype="DOUBLE" min="0" max="10000" default="0" unit="MJ °C-1 d-1 m-2)" uri="some url"/>
-        <Input name="gai" description="Green Area Index" variablecategory="species" datatype="DOUBLE" min="0" max="10000" default="0" unit="m2 m-2" uri="some url" inputtype = "variable"/>
+        <Input name="ptq" description="Photothermal quotient " parametercategory="species" inputtype ="parameter" datatype="DOUBLE" min="0" max="10000" default="0" unit="MJ °C-1 d-1 m-2)" uri="some url"/>
+        <Input name="gai" description="Green Area Index" variablecategory="auxiliary" datatype="DOUBLE" min="0" max="10000" default="0" unit="m2 m-2" uri="some url" inputtype = "variable"/>
         <Input name="pastMaxAI" description="Past Maximum GAI" variablecategory="state" datatype="DOUBLE" min="0" max="10000" default="0" unit="m2 m-2" uri="some url" inputtype = "variable"/>
         <Input name="kl" description="Exctinction Coefficient" parametercategory="species" datatype="DOUBLE" min="0" max="50" default="0.45" unit="" uri="some url" inputtype = "parameter"/>
         <Input name="aPTQ" description="Slope to intercept ratio for Phyllochron  parametrization with PhotoThermal Quotient" parametercategory="species" inputtype="variable" datatype="DOUBLE" min="0" max="1000" default="0.842934" unit="" uri="some url"/>
@@ -29,7 +29,7 @@
     </Inputs>
     <Outputs>
         <Output name="phyllochron" description=" the rate of leaf appearance " variablecategory="state" datatype="DOUBLE" min="0" max="1000"  unit=" °C d leaf-1" />
-    	<Output name="pastMaxAI" description="Past maximum GAI" variablecategory="auxiliary" datatype="DOUBLE" min="0" max="10000"  unit="m2 m-2"/>
+    	<Output name="pastMaxAI" description="Past maximum GAI" variablecategory="state" datatype="DOUBLE" min="0" max="10000"  unit="m2 m-2"/>
     	    	
     </Outputs>
     
@@ -37,10 +37,16 @@
 
     <Parametersets>
         <Parameterset name="wheat" description="some values in there" >
-        	<Param name="lincr">8</Param>
-        	<Param name="ldecr">3</Param>
+        	<Param name="lincr">8.0</Param>
+        	<Param name="ldecr">3.0</Param>
         	<Param name="pdecr">0.4</Param>
-            <Param name="pincr">1.25</Param>            
+            <Param name="pincr">1.25</Param>
+            <Param name="ptq">0.97</Param>
+            <Param name="kl">0.45</Param> 
+            <Param name="aPTQ">0.842934</Param> 
+            <Param name="phylPTQ1">20.0</Param>
+            <Param name="p">120.0</Param> 
+            <Param name="choosePhyllUse">"Default"</Param>              
         </Parameterset>
      </Parametersets>
      <Testsets>

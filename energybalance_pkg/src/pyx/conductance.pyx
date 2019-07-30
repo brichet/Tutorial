@@ -1,13 +1,13 @@
 import numpy as np 
 from math import *
 
-def conductance_(float vonKarman=0.42,
-                 float heightWeatherMeasurements=2.0,
-                 float zm=0.13,
-                 float zh=0.013,
-                 float d=0.67,
-                 float plantHeight=0.0,
-                 float wind=124000.0):
+def model_conductance(float vonKarman=0.42,
+                      float heightWeatherMeasurements=2.0,
+                      float zm=0.13,
+                      float zh=0.013,
+                      float d=0.67,
+                      float plantHeight=0.0,
+                      float wind=124000.0):
     """
 
     Conductance Model

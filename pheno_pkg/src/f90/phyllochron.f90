@@ -1,7 +1,7 @@
-MODULE Phyllochron_mod
+MODULE Phyllochronmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE phyllochron_(fixPhyll, &
+    SUBROUTINE model_phyllochron(fixPhyll, &
         leafNumber, &
         lincr, &
         ldecr, &
@@ -16,8 +16,6 @@ CONTAINS
         p, &
         choosePhyllUse, &
         phyllochron)
-        REAL, INTENT(OUT) :: phyllochron
-        REAL:: gai_
         REAL, INTENT(IN) :: fixPhyll
         REAL, INTENT(IN) :: leafNumber
         REAL, INTENT(IN) :: lincr
@@ -32,6 +30,8 @@ CONTAINS
         REAL, INTENT(IN) :: phylPTQ1
         REAL, INTENT(IN) :: p
         CHARACTER(65), INTENT(IN) :: choosePhyllUse
+        REAL, INTENT(OUT) :: phyllochron
+        REAL:: gai_
         !- Description:
     !            - Model Name: Phyllochron Model
     !            - Author: Pierre Martre
@@ -104,7 +104,7 @@ CONTAINS
     !            - name: ptq
     !                          - description : Photothermal quotient 
     !                          - parametercategory : species
-    !                          - inputtype : variable
+    !                          - inputtype : parameter
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
@@ -113,7 +113,7 @@ CONTAINS
     !                          - uri : some url
     !            - name: gai
     !                          - description : Green Area Index
-    !                          - variablecategory : species
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
@@ -189,11 +189,12 @@ CONTAINS
     !                          - unit :  °C d leaf-1
     !            - name: pastMaxAI
     !                          - description : Past maximum GAI
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
     !                          - unit : m2 m-2
+        phyllochron = 0.0
         IF(choosePhyllUse .EQ. 'Default') THEN
             IF(leafNumber .LT. ldecr) THEN
                 phyllochron = fixPhyll * pdecr
@@ -207,8 +208,8 @@ CONTAINS
             gai_ = MAX(pastMaxAI, gai)
             pastMaxAI = gai_
             IF(gai_ .GT. 0.0) THEN
-                phyllochron = phylPTQ1 * (gai_ * kl / (1 - EXP(-kl * gai_))) / (ptq +  &
-                        aPTQ)
+                phyllochron = phylPTQ1 * (gai_ * kl / (1 - EXP((-kl) * gai_))) / (ptq  &
+                        + aPTQ)
             ELSE
                 phyllochron = phylPTQ1
             END IF
@@ -222,5 +223,6 @@ CONTAINS
                 phyllochron = p * pincr
             END IF
         END IF
-    END SUBROUTINE phyllochron_
+    END SUBROUTINE model_phyllochron
+
 END MODULE

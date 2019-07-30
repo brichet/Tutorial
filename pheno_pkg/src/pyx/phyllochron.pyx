@@ -1,20 +1,20 @@
 import numpy as np 
 from math import *
 
-def phyllochron_(float fixPhyll=5.0,
-                 float leafNumber=0.0,
-                 float lincr=8.0,
-                 float ldecr=10.0,
-                 float pdecr=0.4,
-                 float pincr=1.5,
-                 float ptq=0.0,
-                 float gai=0.0,
-                 float pastMaxAI=0.0,
-                 float kl=0.45,
-                 float aPTQ=0.842934,
-                 float phylPTQ1=20.0,
-                 float p=120.0,
-                 str choosePhyllUse='Default'):
+def model_phyllochron(float fixPhyll=5.0,
+                      float leafNumber=0.0,
+                      float lincr=8.0,
+                      float ldecr=10.0,
+                      float pdecr=0.4,
+                      float pincr=1.5,
+                      float ptq=0.0,
+                      float gai=0.0,
+                      float pastMaxAI=0.0,
+                      float kl=0.45,
+                      float aPTQ=0.842934,
+                      float phylPTQ1=20.0,
+                      float p=120.0,
+                      str choosePhyllUse='Default'):
     """
 
     Phyllochron Model
@@ -28,6 +28,7 @@ def phyllochron_(float fixPhyll=5.0,
     """
     cdef float phyllochron
     cdef float gai_
+    phyllochron=0.0
     if choosePhyllUse =="Default":
         if (leafNumber < ldecr):
             phyllochron = fixPhyll * pdecr

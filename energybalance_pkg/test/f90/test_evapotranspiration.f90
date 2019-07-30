@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_EvapoTranspiration 
+    USE Evapotranspirationmod
     INTEGER:: isWindVpDefined
 
     REAL:: evapoTranspirationPriestlyTaylor
@@ -15,7 +16,7 @@ PROGRAM test_test1_EvapoTranspiration
 
     evapoTranspirationPenman = 830.957
 
-    call evapotranspiration_(isWindVpDefined,evapoTranspirationPriestlyTaylor,evapoTranspirationPenman,evapoTranspiration)
+    call modelunit_evapotranspiration(isWindVpDefined,evapoTranspirationPriestlyTaylor,evapoTranspirationPenman,evapoTranspiration)
     print *,evapoTranspiration
  END PROGRAM
 

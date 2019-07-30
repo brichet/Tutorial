@@ -1,13 +1,13 @@
 import numpy as np 
 from math import *
 
-def phylsowingdatecorrection_(int sowingDay=1,
-                              float latitude=0.0,
-                              int sDsa_sh=1,
-                              float rp=0.0,
-                              int sDws=1,
-                              int sDsa_nh=1,
-                              float p=120.0):
+def model_phylsowingdatecorrection(int sowingDay=1,
+                                   float latitude=0.0,
+                                   int sDsa_sh=1,
+                                   float rp=0.0,
+                                   int sDws=1,
+                                   int sDsa_nh=1,
+                                   float p=120.0):
     """
 
     PhylSowingDateCorrection Model

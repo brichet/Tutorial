@@ -1,7 +1,7 @@
-MODULE Netradiation_mod
+MODULE Netradiationmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE netradiation_(minTair, &
+    SUBROUTINE model_netradiation(minTair, &
         maxTair, &
         albedoCoefficient, &
         stefanBoltzman, &
@@ -11,14 +11,6 @@ CONTAINS
         extraSolarRadiation, &
         netRadiation, &
         netOutGoingLongWaveRadiation)
-        REAL, INTENT(OUT) :: netRadiation
-        REAL, INTENT(OUT) :: netOutGoingLongWaveRadiation
-        REAL:: Nsr
-        REAL:: clearSkySolarRadiation
-        REAL:: averageT
-        REAL:: surfaceEmissivity
-        REAL:: cloudCoverFactor
-        REAL:: Nolr
         REAL, INTENT(IN) :: minTair
         REAL, INTENT(IN) :: maxTair
         REAL, INTENT(IN) :: albedoCoefficient
@@ -27,6 +19,14 @@ CONTAINS
         REAL, INTENT(IN) :: solarRadiation
         REAL, INTENT(IN) :: vaporPressure
         REAL, INTENT(IN) :: extraSolarRadiation
+        REAL, INTENT(OUT) :: netRadiation
+        REAL, INTENT(OUT) :: netOutGoingLongWaveRadiation
+        REAL:: Nsr
+        REAL:: clearSkySolarRadiation
+        REAL:: averageT
+        REAL:: surfaceEmissivity
+        REAL:: cloudCoverFactor
+        REAL:: Nolr
         !- Description:
     !            - Model Name: NetRadiation Model
     !            - Author: Pierre Martre
@@ -119,22 +119,22 @@ CONTAINS
         !- outputs:
     !            - name: netRadiation
     !                          - description :  net radiation 
-    !                          - variablecategory : state
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 5000
-    !                          - unit : g m-2 d-1
+    !                          - unit : MJ m-2 d-1
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     !            - name: netOutGoingLongWaveRadiation
     !                          - description : net OutGoing Long Wave Radiation 
-    !                          - variablecategory : state
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 5000
     !                          - unit : g m-2 d-1
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
         Nsr = (1.0 - albedoCoefficient) * solarRadiation
-        clearSkySolarRadiation = (0.75 + (2 *  (10 ** -5) * elevation)) *  &
+        clearSkySolarRadiation = (0.75 + (2 *  (10.0 ** (-5)) * elevation)) *  &
                 extraSolarRadiation
         averageT = ( ((maxTair + 273.16) ** 4) +  ((minTair + 273.16) ** 4))  &
                 / 2.0
@@ -145,5 +145,6 @@ CONTAINS
                 cloudCoverFactor
         netRadiation = Nsr - Nolr
         netOutGoingLongWaveRadiation = Nolr
-    END SUBROUTINE netradiation_
+    END SUBROUTINE model_netradiation
+
 END MODULE

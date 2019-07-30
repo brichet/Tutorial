@@ -1,7 +1,7 @@
-MODULE Updatephase_mod
+MODULE Updatephasemod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE updatephase_(cumulTT, &
+    SUBROUTINE model_updatephase(cumulTT, &
         leafNumber, &
         cumulTTFromZC_39, &
         isMomentRegistredZC_39, &
@@ -28,10 +28,6 @@ CONTAINS
         phyllochron, &
         hasLastPrimordiumAppeared, &
         finalLeafNumber)
-        REAL:: ttFromLastLeafToHeading
-        REAL:: appFLN
-        REAL:: localDegfm
-        REAL:: ttFromLastLeafToAnthesis
         REAL, INTENT(IN) :: cumulTT
         REAL, INTENT(IN) :: leafNumber
         REAL, INTENT(IN) :: cumulTTFromZC_39
@@ -59,6 +55,10 @@ CONTAINS
         REAL, INTENT(IN) :: phyllochron
         INTEGER, INTENT(INOUT) :: hasLastPrimordiumAppeared
         REAL, INTENT(INOUT) :: finalLeafNumber
+        REAL:: ttFromLastLeafToHeading
+        REAL:: appFLN
+        REAL:: localDegfm
+        REAL:: ttFromLastLeafToAnthesis
         !- Description:
     !            - Model Name: UpdatePhase Model
     !            - Author: Pierre MARTRE
@@ -98,7 +98,7 @@ CONTAINS
     !                          - inputtype : variable
     !            - name: isMomentRegistredZC_39
     !                          - description : true if ZC_39 is registered in the calendar
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : INT
     !                          - min : 0
     !                          - max : 1
@@ -152,7 +152,7 @@ CONTAINS
     !                          - inputtype : variable
     !            - name: fixPhyll
     !                          - description : Phyllochron with sowing date fix
-    !                          - variablecategory : state
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
@@ -395,5 +395,6 @@ CONTAINS
                 phase = 6.0
             END IF
         END IF
-    END SUBROUTINE updatephase_
+    END SUBROUTINE model_updatephase
+
 END MODULE

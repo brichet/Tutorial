@@ -1,9 +1,9 @@
 import numpy as np 
 from math import *
 
-def evapotranspiration_(int isWindVpDefined=1,
-                        float evapoTranspirationPriestlyTaylor=449.367,
-                        float evapoTranspirationPenman=830.958):
+def model_evapotranspiration(int isWindVpDefined=1,
+                             float evapoTranspirationPriestlyTaylor=449.367,
+                             float evapoTranspirationPenman=830.958):
     """
 
     Evapotranspiration Model

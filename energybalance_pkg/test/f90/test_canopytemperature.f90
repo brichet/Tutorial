@@ -1,6 +1,7 @@
-!Test generation'
+!Test generation
 
 PROGRAM test_test1_CanopyTemperature 
+    USE Canopytemperaturemod
     REAL:: minTair
 
     REAL:: maxTair
@@ -33,7 +34,7 @@ PROGRAM test_test1_CanopyTemperature
 
     specificHeatCapacityAir = 0.00101
 
-    call canopytemperature_(minTair,maxTair,cropHeatFlux,conductance,lambdaV,rhoDensityAir,specificHeatCapacityAir,minCanopyTemperature,maxCanopyTemperature)
+    call modelunit_canopytemperature(minTair,maxTair,cropHeatFlux,conductance,lambdaV,rhoDensityAir,specificHeatCapacityAir,minCanopyTemperature,maxCanopyTemperature)
     print *,minCanopyTemperature,maxCanopyTemperature
  END PROGRAM
 

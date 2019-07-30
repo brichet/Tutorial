@@ -1,12 +1,12 @@
-MODULE Potentialtranspiration_mod
+MODULE Potentialtranspirationmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE potentialtranspiration_(evapoTranspiration, &
+    SUBROUTINE model_potentialtranspiration(evapoTranspiration, &
         tau, &
         potentialTranspiration)
-        REAL, INTENT(OUT) :: potentialTranspiration
         REAL, INTENT(IN) :: evapoTranspiration
         REAL, INTENT(IN) :: tau
+        REAL, INTENT(OUT) :: potentialTranspiration
         !- Description:
     !            - Model Name: PotentialTranspiration Model
     !            - Author: Pierre Martre
@@ -46,5 +46,6 @@ CONTAINS
     !                          - unit : g m-2 d-1
     !                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
         potentialTranspiration = evapoTranspiration * (1.0 - tau)
-    END SUBROUTINE potentialtranspiration_
+    END SUBROUTINE model_potentialtranspiration
+
 END MODULE

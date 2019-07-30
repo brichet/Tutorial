@@ -1,20 +1,20 @@
-MODULE Cumulttfrom_mod
+MODULE Cumulttfrommod
     USE list_sub
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE cumulttfrom_(calendarMoments, &
+    SUBROUTINE model_cumulttfrom(calendarMoments, &
         calendarCumuls, &
         cumulTT, &
         cumulTTFromZC_65, &
         cumulTTFromZC_39, &
         cumulTTFromZC_91)
-        REAL, INTENT(OUT) :: cumulTTFromZC_65
-        REAL, INTENT(OUT) :: cumulTTFromZC_39
-        REAL, INTENT(OUT) :: cumulTTFromZC_91
         CHARACTER(65), ALLOCATABLE , DIMENSION(:), INTENT(IN) ::  &
                 calendarMoments
         REAL, ALLOCATABLE , DIMENSION(:), INTENT(IN) :: calendarCumuls
         REAL, INTENT(IN) :: cumulTT
+        REAL, INTENT(OUT) :: cumulTTFromZC_65
+        REAL, INTENT(OUT) :: cumulTTFromZC_39
+        REAL, INTENT(OUT) :: cumulTTFromZC_91
         !- Description:
     !            - Model Name: CumulTTFrom Model
     !            - Author: Pierre Martre
@@ -26,14 +26,14 @@ CONTAINS
         !- inputs:
     !            - name: calendarMoments
     !                          - description : List containing appearance of each stage
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : STRINGLIST
     !                          - default : ['Sowing']
     !                          - unit : 
     !                          - inputtype : variable
     !            - name: calendarCumuls
     !                          - description : list containing for each stage occured its cumulated thermal times
-    !                          - variablecategory : auxiliary
+    !                          - variablecategory : state
     !                          - datatype : DOUBLELIST
     !                          - default : [0.0]
     !                          - unit : °C d
@@ -84,5 +84,6 @@ CONTAINS
             cumulTTFromZC_91 = cumulTT - calendarCumuls(indice(calendarMoments,  &
                     'EndGrainFilling'))
         END IF
-    END SUBROUTINE cumulttfrom_
+    END SUBROUTINE model_cumulttfrom
+
 END MODULE

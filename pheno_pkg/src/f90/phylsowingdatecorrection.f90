@@ -1,7 +1,7 @@
-MODULE Phylsowingdatecorrection_mod
+MODULE Phylsowingdatecorrectionmod
     IMPLICIT NONE
 CONTAINS
-    SUBROUTINE phylsowingdatecorrection_(sowingDay, &
+    SUBROUTINE model_phylsowingdatecorrection(sowingDay, &
         latitude, &
         sDsa_sh, &
         rp, &
@@ -9,7 +9,6 @@ CONTAINS
         sDsa_nh, &
         p, &
         fixPhyll)
-        REAL, INTENT(OUT) :: fixPhyll
         INTEGER, INTENT(IN) :: sowingDay
         REAL, INTENT(IN) :: latitude
         INTEGER, INTENT(IN) :: sDsa_sh
@@ -17,6 +16,7 @@ CONTAINS
         INTEGER, INTENT(IN) :: sDws
         INTEGER, INTENT(IN) :: sDsa_nh
         REAL, INTENT(IN) :: p
+        REAL, INTENT(OUT) :: fixPhyll
         !- Description:
     !            - Model Name: PhylSowingDateCorrection Model
     !            - Author: Loic Manceau
@@ -99,6 +99,7 @@ CONTAINS
         !- outputs:
     !            - name: fixPhyll
     !                          - description :  Phyllochron Varietal parameter 
+    !                          - variablecategory : auxiliary
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 1000
@@ -116,5 +117,6 @@ CONTAINS
                 fixPhyll = p
             END IF
         END IF
-    END SUBROUTINE phylsowingdatecorrection_
+    END SUBROUTINE model_phylsowingdatecorrection
+
 END MODULE
