@@ -1,10 +1,10 @@
-import numpy as np 
+import numpy 
 from math import *
 
 def model_ismomentregistredzc_39(list calendarMoments=['Sowing']):
     """
 
-    IsMomentRegistredZC39 Model
+    Is FlagLeafLiguleJustVisible Model
     Author: Pierre Martre
     Reference: Modeling development phase in the 
                 Wheat Simulation Model SiriusQuality.

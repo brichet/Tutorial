@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy 
 from math import *
 
 def model_leafnumber(float deltaTT=23.5895677277199,

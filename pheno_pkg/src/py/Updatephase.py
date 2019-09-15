@@ -77,7 +77,7 @@ def model_updatephase(cumulTT = 354.582294511779,
     #                          - inputtype : variable
     #            - name: gai
     #                          - description : used to calculate Terminal spikelet
-    #                          - variablecategory : state
+    #                          - variablecategory : auxiliary
     #                          - datatype : DOUBLE
     #                          - min : 0
     #                          - max : 10000

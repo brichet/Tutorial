@@ -8,7 +8,7 @@ CONTAINS
                 calendarMoments
         INTEGER, INTENT(OUT) :: isMomentRegistredZC_39
         !- Description:
-    !            - Model Name: IsMomentRegistredZC39 Model
+    !            - Model Name: Is FlagLeafLiguleJustVisible Model
     !            - Author: Pierre Martre
     !            - Reference: Modeling development phase in the 
     !                Wheat Simulation Model SiriusQuality.

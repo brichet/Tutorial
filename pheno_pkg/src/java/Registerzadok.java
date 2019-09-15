@@ -39,7 +39,7 @@ public class Registerzadok
     {
            
     }
-    public void  Calculate_registerzadok(state s, rate r, auxiliary a)
+    public void  Calculate_registerzadok(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: RegisterZadok Model

@@ -65,6 +65,7 @@ def model_leafnumber(deltaTT = 23.5895677277199,
     #- outputs:
     #            - name: leafNumber
     #                          - description : Actual number of phytomers
+    #                          - variablecategory : state
     #                          - datatype : DOUBLE
     #                          - min : 0
     #                          - max : 10000

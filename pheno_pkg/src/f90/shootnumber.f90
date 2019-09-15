@@ -140,10 +140,12 @@ CONTAINS
     SUBROUTINE fibonacci(n, &
         result)
         INTEGER, INTENT(IN) :: n
-        INTEGER, INTENT(OUT) :: result = 0
-        INTEGER:: b = 1
+        INTEGER, INTENT(OUT) :: result
+        INTEGER:: b
         INTEGER:: i
         INTEGER:: temp
+        result = 0
+        b = 1
         DO i = 1 , n, 1
             temp = result
             result = b

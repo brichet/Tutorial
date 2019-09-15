@@ -7,7 +7,7 @@ public class Cumulttfrom
     {
            
     }
-    public void  Calculate_cumulttfrom(state s, rate r, auxiliary a)
+    public void  Calculate_cumulttfrom(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: CumulTTFrom Model

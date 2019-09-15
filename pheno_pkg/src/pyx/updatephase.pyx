@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy 
 from math import *
 
 def model_updatephase(float cumulTT=354.582294511779,

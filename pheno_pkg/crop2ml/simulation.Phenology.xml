@@ -12,21 +12,21 @@
     <Parameterset name="wheat" description="some values in there" >
     </Parameterset>
     <Inputs>
-        <Input name ="dayLength" file="data/inputs.csv" title="dayLength">
-        <Input name ="deltaTT" file="data/inputs.csv" title="deltaTT">
-        <Input name ="gai" file="data/inputs.csv" title="gai">
-        <Input name ="par" file="data/inputs.csv" title="par">
-        <Input name ="cumulTT" file="data/inputs.csv" title="cumulTT">
-        <Input name ="grainCumulTT" file="data/inputs.csv" title="grainCumulTT">
+        <Input name ="dayLength" file="data/inputs.csv" col="dayLength"/>
+        <Input name ="deltaTT" file="data/inputs.csv" col="deltaTT"/>
+        <Input name ="gai" file="data/inputs.csv" col"gai"/>
+        <Input name ="par" file="data/inputs.csv" col="par"/>
+        <Input name ="cumulTT" file="data/inputs.csv"col="cumulTT"/>
+        <Input name ="grainCumulTT" file="data/inputs.csv" col="grainCumulTT"/>
     </Inputs>
     <Outputs>
-        <Output name ="phyllochron" file="data/inputs.csv" title="phyllochron">
-        <Output name ="phase" file="data/inputs.csv" title="phase">
-        <Output name ="finalLeafNumber" file="data/inputs.csv" title="finalLeafNumber">
-        <Output name ="leafNumber" file="data/inputs.csv" title="leafNumber">
-        <Output name ="canopyShootNumber" file="data/inputs.csv" title="canopyShootNumber">
-        <Output name ="currentZadokStage" file="data/inputs.csv" title="currentZadokStage">
-        <Output name ="tillerNumber" file="data/inputs.csv" title="tillerNumber">
-        <Output name ="minFinalNumber" file="data/inputs.csv" title="minFinalNumber">
+        <Output name ="phyllochron" file="data/outputs.csv" col="phyllochron"/>
+        <Output name ="phase" file="data/outputs.csv" col="phase"/>
+        <Output name ="finalLeafNumber" file="data/outputs.csv" col="finalLeafNumber"/>
+        <Output name ="leafNumber" file="data/outputs.csv" col="leafNumber"/>
+        <Output name ="canopyShootNumber" file="data/outputs.csv" col="canopyShootNumber"/>
+        <Output name ="currentZadokStage" file="data/outputs.csv" col="currentZadokStage"/>
+        <Output name ="tillerNumber" file="data/outputs.csv" col="tillerNumber"/>
+        <Output name ="minFinalNumber" file="data/outputs.csv"col="minFinalNumber"/>
     </Outputs>
 </ModelSimulation>

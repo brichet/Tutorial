@@ -116,7 +116,7 @@ public class Vernalizationprogress
     {
            
     }
-    public void  Calculate_vernalizationprogress(state s, rate r, auxiliary a)
+    public void  Calculate_vernalizationprogress(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: VernalizationProgress Model

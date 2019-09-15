@@ -70,6 +70,7 @@ CONTAINS
         !- outputs:
     !            - name: leafNumber
     !                          - description : Actual number of phytomers
+    !                          - variablecategory : state
     !                          - datatype : DOUBLE
     !                          - min : 0
     !                          - max : 10000
