@@ -43,7 +43,7 @@ public class Netradiation
            
     }
     
-    public void  Calculate_netradiation(state s, rate r, auxiliary a)
+    public void  Calculate_netradiation(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: NetRadiation Model

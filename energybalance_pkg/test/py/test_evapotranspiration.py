@@ -1,13 +1,13 @@
-#'Test generation'
+'Test generation'
 
-from evapotranspiration import *
+from Evapotranspiration import *
 from math import *
 import numpy as np
 
 
 
 def test_test1():
-    params= evapotranspiration(
+    params= model_evapotranspiration(
     isWindVpDefined = 1,
     evapoTranspirationPriestlyTaylor = 449.367,
     evapoTranspirationPenman = 830.957,

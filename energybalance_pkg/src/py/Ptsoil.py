@@ -21,7 +21,7 @@ def model_ptsoil(evapoTranspirationPriestlyTaylor = 120.0,
     #                          - default : 120
     #                          - min : 0
     #                          - max : 1000
-    #                          - unit : °g m-2 d-1
+    #                          - unit : g m-2 d-1
     #                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     #                          - inputtype : variable
     #            - name: Alpha

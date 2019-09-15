@@ -1,13 +1,13 @@
-#'Test generation'
+'Test generation'
 
-from soilheatflux import *
+from Soilheatflux import *
 from math import *
 import numpy as np
 
 
 
 def test_test1():
-    params= soilheatflux(
+    params= model_soilheatflux(
     tau = 0.9983,
     netRadiationEquivalentEvaporation = 638.142,
     soilEvaporation = 448.240,

@@ -67,7 +67,7 @@ public class Conductance
            
     }
     
-    public void  Calculate_conductance(state s, rate r, auxiliary a)
+    public void  Calculate_conductance(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: Conductance Model

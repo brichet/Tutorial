@@ -8,7 +8,7 @@ public class Cropheatflux
            
     }
     
-    public void  Calculate_cropheatflux(state s, rate r, auxiliary a)
+    public void  Calculate_cropheatflux(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: CropHeatFlux Model
@@ -40,6 +40,7 @@ public class Cropheatflux
     //                          - inputtype : variable
     //            - name: potentialTranspiration
     //                          - description : potential Transpiration
+    //                          - variablecategory : rate
     //                          - datatype : DOUBLE
     //                          - default :  1.413
     //                          - min : 0
@@ -58,7 +59,7 @@ public class Cropheatflux
     //                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
         double netRadiationEquivalentEvaporation = a.netRadiationEquivalentEvaporation;
         double soilHeatFlux = r.soilHeatFlux;
-        double potentialTranspiration;
+        double potentialTranspiration = r.potentialTranspiration;
         double cropHeatFlux;
         cropHeatFlux = netRadiationEquivalentEvaporation - soilHeatFlux - potentialTranspiration;
         r.cropHeatFlux = cropHeatFlux;

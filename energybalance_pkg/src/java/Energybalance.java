@@ -181,7 +181,7 @@ public class Energybalance
     {
         _Evapotranspiration.setisWindVpDefined(isWindVpDefined);
     } 
-    public void  Calculate_energybalance(state s, rate r, auxiliary a)
+    public void  Calculate_energybalance(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         _Diffusionlimitedevaporation.Calculate_diffusionlimitedevaporation(s, r, a);
         _Conductance.Calculate_conductance(s, r, a);

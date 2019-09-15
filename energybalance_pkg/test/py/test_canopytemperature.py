@@ -1,13 +1,13 @@
-#'Test generation'
+'Test generation'
 
-from canopytemperature import *
+from Canopytemperature import *
 from math import *
 import numpy as np
 
 
 
 def test_test1():
-    params= canopytemperature(
+    params= model_canopytemperature(
     rhoDensityAir = 1.225,
     minTair = 0.7,
     maxTair = 7.2,

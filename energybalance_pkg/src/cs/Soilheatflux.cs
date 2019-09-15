@@ -19,7 +19,7 @@ public class Soilheatflux
            
     }
     
-    public void  Calculate_soilheatflux(state s, rate r, auxiliary a)
+    public void  Calculate_soilheatflux(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: SoilHeatFlux Model

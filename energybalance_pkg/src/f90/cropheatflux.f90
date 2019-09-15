@@ -39,6 +39,7 @@ CONTAINS
     !                          - inputtype : variable
     !            - name: potentialTranspiration
     !                          - description : potential Transpiration
+    !                          - variablecategory : rate
     !                          - datatype : DOUBLE
     !                          - default :  1.413
     !                          - min : 0

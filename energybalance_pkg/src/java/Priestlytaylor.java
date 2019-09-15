@@ -28,7 +28,7 @@ public class Priestlytaylor
     {
            
     }
-    public void  Calculate_priestlytaylor(state s, rate r, auxiliary a)
+    public void  Calculate_priestlytaylor(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: evapoTranspirationPriestlyTaylor  Model

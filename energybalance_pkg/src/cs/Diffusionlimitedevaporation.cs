@@ -19,7 +19,7 @@ public class Diffusionlimitedevaporation
            
     }
     
-    public void  Calculate_diffusionlimitedevaporation(state s, rate r, auxiliary a)
+    public void  Calculate_diffusionlimitedevaporation(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: DiffusionLimitedEvaporation Model

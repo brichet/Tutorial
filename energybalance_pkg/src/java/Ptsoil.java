@@ -39,7 +39,7 @@ public class Ptsoil
     {
            
     }
-    public void  Calculate_ptsoil(state s, rate r, auxiliary a)
+    public void  Calculate_ptsoil(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: PtSoil EnergyLimitedEvaporation Model
@@ -56,7 +56,7 @@ public class Ptsoil
     //                          - default : 120
     //                          - min : 0
     //                          - max : 1000
-    //                          - unit : °g m-2 d-1
+    //                          - unit : g m-2 d-1
     //                          - uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     //                          - inputtype : variable
     //            - name: Alpha
