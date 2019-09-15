@@ -1,46 +1,46 @@
 import  java.io.*;
 import  java.util.*;
 
-public class auxiliary
+public class EnergybalanceAuxiliary
 {
     private double minTair;
     private double maxTair;
-    private double plantHeight;
-    private double wind;
-    private double netRadiationEquivalentEvaporation;
-    private double deficitOnTopLayers;
     private double solarRadiation;
     private double vaporPressure;
     private double extraSolarRadiation;
+    private double hslope;
+    private double plantHeight;
+    private double wind;
+    private double deficitOnTopLayers;
+    private double VPDair;
     private double netRadiation;
     private double netOutGoingLongWaveRadiation;
-    private double hslope;
-    private double VPDair;
+    private double netRadiationEquivalentEvaporation;
     private double energyLimitedEvaporation;
     private double soilEvaporation;
     
-    public auxiliary()
+    public EnergybalanceAuxiliary()
     {
            
     }
     
-    public auxiliary(auxiliary toCopy, boolean copyAll) // copy constructor 
+    public EnergybalanceAuxiliary(EnergybalanceAuxiliary toCopy, boolean copyAll) // copy constructor 
     {
         if (copyAll)
         {
             this.minTair = toCopy.minTair;
             this.maxTair = toCopy.maxTair;
-            this.plantHeight = toCopy.plantHeight;
-            this.wind = toCopy.wind;
-            this.netRadiationEquivalentEvaporation = toCopy.netRadiationEquivalentEvaporation;
-            this.deficitOnTopLayers = toCopy.deficitOnTopLayers;
             this.solarRadiation = toCopy.solarRadiation;
             this.vaporPressure = toCopy.vaporPressure;
             this.extraSolarRadiation = toCopy.extraSolarRadiation;
+            this.hslope = toCopy.hslope;
+            this.plantHeight = toCopy.plantHeight;
+            this.wind = toCopy.wind;
+            this.deficitOnTopLayers = toCopy.deficitOnTopLayers;
+            this.VPDair = toCopy.VPDair;
             this.netRadiation = toCopy.netRadiation;
             this.netOutGoingLongWaveRadiation = toCopy.netOutGoingLongWaveRadiation;
-            this.hslope = toCopy.hslope;
-            this.VPDair = toCopy.VPDair;
+            this.netRadiationEquivalentEvaporation = toCopy.netRadiationEquivalentEvaporation;
             this.energyLimitedEvaporation = toCopy.energyLimitedEvaporation;
             this.soilEvaporation = toCopy.soilEvaporation;
         }
@@ -63,46 +63,6 @@ public class auxiliary
     public void setmaxTair(double _maxTair)
     {
         this.maxTair= _maxTair;
-    } 
-    
-    public double getplantHeight()
-    {
-        return plantHeight;
-    }
-
-    public void setplantHeight(double _plantHeight)
-    {
-        this.plantHeight= _plantHeight;
-    } 
-    
-    public double getwind()
-    {
-        return wind;
-    }
-
-    public void setwind(double _wind)
-    {
-        this.wind= _wind;
-    } 
-    
-    public double getnetRadiationEquivalentEvaporation()
-    {
-        return netRadiationEquivalentEvaporation;
-    }
-
-    public void setnetRadiationEquivalentEvaporation(double _netRadiationEquivalentEvaporation)
-    {
-        this.netRadiationEquivalentEvaporation= _netRadiationEquivalentEvaporation;
-    } 
-    
-    public double getdeficitOnTopLayers()
-    {
-        return deficitOnTopLayers;
-    }
-
-    public void setdeficitOnTopLayers(double _deficitOnTopLayers)
-    {
-        this.deficitOnTopLayers= _deficitOnTopLayers;
     } 
     
     public double getsolarRadiation()
@@ -135,6 +95,56 @@ public class auxiliary
         this.extraSolarRadiation= _extraSolarRadiation;
     } 
     
+    public double gethslope()
+    {
+        return hslope;
+    }
+
+    public void sethslope(double _hslope)
+    {
+        this.hslope= _hslope;
+    } 
+    
+    public double getplantHeight()
+    {
+        return plantHeight;
+    }
+
+    public void setplantHeight(double _plantHeight)
+    {
+        this.plantHeight= _plantHeight;
+    } 
+    
+    public double getwind()
+    {
+        return wind;
+    }
+
+    public void setwind(double _wind)
+    {
+        this.wind= _wind;
+    } 
+    
+    public double getdeficitOnTopLayers()
+    {
+        return deficitOnTopLayers;
+    }
+
+    public void setdeficitOnTopLayers(double _deficitOnTopLayers)
+    {
+        this.deficitOnTopLayers= _deficitOnTopLayers;
+    } 
+    
+    public double getVPDair()
+    {
+        return VPDair;
+    }
+
+    public void setVPDair(double _VPDair)
+    {
+        this.VPDair= _VPDair;
+    } 
+    
     public double getnetRadiation()
     {
         return netRadiation;
@@ -155,24 +165,14 @@ public class auxiliary
         this.netOutGoingLongWaveRadiation= _netOutGoingLongWaveRadiation;
     } 
     
-    public double gethslope()
+    public double getnetRadiationEquivalentEvaporation()
     {
-        return hslope;
+        return netRadiationEquivalentEvaporation;
     }
 
-    public void sethslope(double _hslope)
+    public void setnetRadiationEquivalentEvaporation(double _netRadiationEquivalentEvaporation)
     {
-        this.hslope= _hslope;
-    } 
-    
-    public double getVPDair()
-    {
-        return VPDair;
-    }
-
-    public void setVPDair(double _VPDair)
-    {
-        this.VPDair= _VPDair;
+        this.netRadiationEquivalentEvaporation= _netRadiationEquivalentEvaporation;
     } 
     
     public double getenergyLimitedEvaporation()

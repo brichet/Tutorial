@@ -1,27 +1,37 @@
 import  java.io.*;
 import  java.util.*;
-public class state
+public class EnergybalanceState
 {
+    private double diffusionLimitedEvaporation;
     private double conductance;
     private double minCanopyTemperature;
     private double maxCanopyTemperature;
-    private double diffusionLimitedEvaporation;
     
-    public state()
+    public EnergybalanceState()
     {
            
     }
     
-    public state(state toCopy, boolean copyAll) // copy constructor 
+    public EnergybalanceState(EnergybalanceState toCopy, boolean copyAll) // copy constructor 
     {
         if (copyAll)
         {
+            this.diffusionLimitedEvaporation = toCopy.diffusionLimitedEvaporation;
             this.conductance = toCopy.conductance;
             this.minCanopyTemperature = toCopy.minCanopyTemperature;
             this.maxCanopyTemperature = toCopy.maxCanopyTemperature;
-            this.diffusionLimitedEvaporation = toCopy.diffusionLimitedEvaporation;
         }
     }
+    public double getdiffusionLimitedEvaporation()
+    {
+        return diffusionLimitedEvaporation;
+    }
+
+    public void setdiffusionLimitedEvaporation(double _diffusionLimitedEvaporation)
+    {
+        this.diffusionLimitedEvaporation= _diffusionLimitedEvaporation;
+    } 
+    
     public double getconductance()
     {
         return conductance;
@@ -50,16 +60,6 @@ public class state
     public void setmaxCanopyTemperature(double _maxCanopyTemperature)
     {
         this.maxCanopyTemperature= _maxCanopyTemperature;
-    } 
-    
-    public double getdiffusionLimitedEvaporation()
-    {
-        return diffusionLimitedEvaporation;
-    }
-
-    public void setdiffusionLimitedEvaporation(double _diffusionLimitedEvaporation)
-    {
-        this.diffusionLimitedEvaporation= _diffusionLimitedEvaporation;
     } 
     
 }

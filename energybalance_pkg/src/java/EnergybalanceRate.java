@@ -1,50 +1,32 @@
 import  java.io.*;
 import  java.util.*;
 
-public class rate
+public class EnergybalanceRate
 {
-    private double cropHeatFlux;
-    private double soilHeatFlux;
     private double evapoTranspirationPriestlyTaylor;
     private double evapoTranspirationPenman;
     private double evapoTranspiration;
+    private double potentialTranspiration;
+    private double soilHeatFlux;
+    private double cropHeatFlux;
     
-    public rate()
+    public EnergybalanceRate()
     {
            
     }
     
-    public rate(rate toCopy, boolean copyAll) // copy constructor 
+    public EnergybalanceRate(EnergybalanceRate toCopy, boolean copyAll) // copy constructor 
     {
         if (copyAll)
         {
-            this.cropHeatFlux = toCopy.cropHeatFlux;
-            this.soilHeatFlux = toCopy.soilHeatFlux;
             this.evapoTranspirationPriestlyTaylor = toCopy.evapoTranspirationPriestlyTaylor;
             this.evapoTranspirationPenman = toCopy.evapoTranspirationPenman;
             this.evapoTranspiration = toCopy.evapoTranspiration;
+            this.potentialTranspiration = toCopy.potentialTranspiration;
+            this.soilHeatFlux = toCopy.soilHeatFlux;
+            this.cropHeatFlux = toCopy.cropHeatFlux;
         }
     }
-    public double getcropHeatFlux()
-    {
-        return cropHeatFlux;
-    }
-
-    public void setcropHeatFlux(double _cropHeatFlux)
-    {
-        this.cropHeatFlux= _cropHeatFlux;
-    } 
-    
-    public double getsoilHeatFlux()
-    {
-        return soilHeatFlux;
-    }
-
-    public void setsoilHeatFlux(double _soilHeatFlux)
-    {
-        this.soilHeatFlux= _soilHeatFlux;
-    } 
-    
     public double getevapoTranspirationPriestlyTaylor()
     {
         return evapoTranspirationPriestlyTaylor;
@@ -73,6 +55,36 @@ public class rate
     public void setevapoTranspiration(double _evapoTranspiration)
     {
         this.evapoTranspiration= _evapoTranspiration;
+    } 
+    
+    public double getpotentialTranspiration()
+    {
+        return potentialTranspiration;
+    }
+
+    public void setpotentialTranspiration(double _potentialTranspiration)
+    {
+        this.potentialTranspiration= _potentialTranspiration;
+    } 
+    
+    public double getsoilHeatFlux()
+    {
+        return soilHeatFlux;
+    }
+
+    public void setsoilHeatFlux(double _soilHeatFlux)
+    {
+        this.soilHeatFlux= _soilHeatFlux;
+    } 
+    
+    public double getcropHeatFlux()
+    {
+        return cropHeatFlux;
+    }
+
+    public void setcropHeatFlux(double _cropHeatFlux)
+    {
+        this.cropHeatFlux= _cropHeatFlux;
     } 
     
 }

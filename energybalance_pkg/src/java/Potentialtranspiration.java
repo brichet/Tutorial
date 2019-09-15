@@ -17,7 +17,7 @@ public class Potentialtranspiration
     {
            
     }
-    public void  Calculate_potentialtranspiration(state s, rate r, auxiliary a)
+    public void  Calculate_potentialtranspiration(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: PotentialTranspiration Model

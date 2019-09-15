@@ -1,28 +1,39 @@
 using System;
 using System.Collections.Generic;
-public class state
+public class EnergybalanceState
 {
+    private double _diffusionLimitedEvaporation;
     private double _conductance;
     private double _minCanopyTemperature;
     private double _maxCanopyTemperature;
-    private double _diffusionLimitedEvaporation;
     
-    public state()
+    public EnergybalanceState()
     {
            
     }
     
     
-    public state(state toCopy, bool copyAll) // copy constructor 
+    public EnergybalanceState(EnergybalanceState toCopy, bool copyAll) // copy constructor 
     {
     if (copyAll)
     {
     
+    _diffusionLimitedEvaporation = toCopy._diffusionLimitedEvaporation;
     _conductance = toCopy._conductance;
     _minCanopyTemperature = toCopy._minCanopyTemperature;
     _maxCanopyTemperature = toCopy._maxCanopyTemperature;
-    _diffusionLimitedEvaporation = toCopy._diffusionLimitedEvaporation;
     }
+    }
+    public double diffusionLimitedEvaporation
+    {
+        get
+        {
+            return this._diffusionLimitedEvaporation;
+        }
+        set
+        {
+            this._diffusionLimitedEvaporation= value;
+        } 
     }
     public double conductance
     {
@@ -55,17 +66,6 @@ public class state
         set
         {
             this._maxCanopyTemperature= value;
-        } 
-    }
-    public double diffusionLimitedEvaporation
-    {
-        get
-        {
-            return this._diffusionLimitedEvaporation;
-        }
-        set
-        {
-            this._diffusionLimitedEvaporation= value;
         } 
     }
 }

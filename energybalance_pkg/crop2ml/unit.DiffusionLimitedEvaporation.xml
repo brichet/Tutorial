@@ -42,8 +42,7 @@
                     description="some values in there" >
         	<Test name ="test1">
         		<InputValue name="deficitOnTopLayers">5341</InputValue>
-				<OutputValue name="diffusionLimitedEvaporation" precision ="3"> 
-                                6605.505</OutputValue>
+				<OutputValue name="diffusionLimitedEvaporation" precision ="3">6605.505</OutputValue>
         	</Test>
         </Testset>
     </Testsets>

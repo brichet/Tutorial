@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy 
 from math import *
 
 def model_penman(float evapoTranspirationPriestlyTaylor=449.367,

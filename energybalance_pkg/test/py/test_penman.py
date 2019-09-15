@@ -1,13 +1,13 @@
-#'Test generation'
+'Test generation'
 
-from penman import *
+from Penman import *
 from math import *
 import numpy as np
 
 
 
 def test_test1():
-    params= penman(
+    params= model_penman(
     Alpha = 1.5,
     lambdaV = 2.454,
     evapoTranspirationPriestlyTaylor = 449.367,

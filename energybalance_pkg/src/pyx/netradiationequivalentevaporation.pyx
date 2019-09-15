@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy 
 from math import *
 
 def model_netradiationequivalentevaporation(float lambdaV=2.454,

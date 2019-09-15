@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy 
 from math import *
 
 def model_cropheatflux(float netRadiationEquivalentEvaporation=638.142,

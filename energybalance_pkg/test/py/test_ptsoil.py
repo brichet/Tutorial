@@ -1,13 +1,13 @@
-#'Test generation'
+'Test generation'
 
-from ptsoil import *
+from Ptsoil import *
 from math import *
 import numpy as np
 
 
 
 def test_test1():
-    params= ptsoil(
+    params= model_ptsoil(
     tau = 0.9983,
     evapoTranspirationPriestlyTaylor = 449.367,
      )

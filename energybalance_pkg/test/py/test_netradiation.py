@@ -1,13 +1,13 @@
-#'Test generation'
+'Test generation'
 
-from netradiation import *
+from Netradiation import *
 from math import *
 import numpy as np
 
 
 
 def test_test1():
-    params= netradiation(
+    params= model_netradiation(
     elevation = 0,
     solarRadiation = 3,
     vaporPressure = 6.1,

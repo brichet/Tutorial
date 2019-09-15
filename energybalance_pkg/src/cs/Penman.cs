@@ -67,7 +67,7 @@ public class Penman
            
     }
     
-    public void  Calculate_penman(state s, rate r, auxiliary a)
+    public void  Calculate_penman(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
     {
         //- Description:
     //            - Model Name: Penman Model
