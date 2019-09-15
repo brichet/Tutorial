@@ -31,7 +31,7 @@ public class Shootnumber
            
     }
     
-    public void  Calculate_shootnumber(state s, rate r, auxiliary a)
+    public void  Calculate_shootnumber(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: CalculateShootNumber Model
@@ -165,10 +165,12 @@ public class Shootnumber
     }
     public static int fibonacci(int n)
     {
-        int result = 0;
-        int b = 1;
+        int result;
+        int b;
         int i;
         int temp;
+        result = 0;
+        b = 1;
         for (i=0 ; i<n ; i+=1)
         {
             temp = result;

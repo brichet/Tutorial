@@ -151,7 +151,7 @@ public class Updatephase
            
     }
     
-    public void  Calculate_updatephase(state s, rate r, auxiliary a)
+    public void  Calculate_updatephase(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: UpdatePhase Model

@@ -7,7 +7,7 @@ public class Updatecalendar
     {
            
     }
-    public void  Calculate_updatecalendar(state s, rate r, auxiliary a)
+    public void  Calculate_updatecalendar(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: Calendar Model

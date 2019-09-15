@@ -116,7 +116,7 @@ public class Phyllochron
     {
            
     }
-    public void  Calculate_phyllochron(state s, rate r, auxiliary a)
+    public void  Calculate_phyllochron(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: Phyllochron Model

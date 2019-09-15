@@ -4,7 +4,7 @@ from math import *
 
 def model_ismomentregistredzc_39(calendarMoments = ["Sowing"]):
     #- Description:
-    #            - Model Name: IsMomentRegistredZC39 Model
+    #            - Model Name: Is FlagLeafLiguleJustVisible Model
     #            - Author: Pierre Martre
     #            - Reference: Modeling development phase in the 
     #                Wheat Simulation Model SiriusQuality.

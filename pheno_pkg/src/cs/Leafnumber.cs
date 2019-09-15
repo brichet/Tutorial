@@ -8,7 +8,7 @@ public class Leafnumber
            
     }
     
-    public void  Calculate_leafnumber(state s, rate r, auxiliary a)
+    public void  Calculate_leafnumber(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: CalculateLeafNumber Model
@@ -68,6 +68,7 @@ public class Leafnumber
         //- outputs:
     //            - name: leafNumber
     //                          - description : Actual number of phytomers
+    //                          - variablecategory : state
     //                          - datatype : DOUBLE
     //                          - min : 0
     //                          - max : 10000

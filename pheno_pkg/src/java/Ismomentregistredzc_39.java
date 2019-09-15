@@ -7,10 +7,10 @@ public class Ismomentregistredzc_39
     {
            
     }
-    public void  Calculate_ismomentregistredzc_39(state s, rate r, auxiliary a)
+    public void  Calculate_ismomentregistredzc_39(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
-    //            - Model Name: IsMomentRegistredZC39 Model
+    //            - Model Name: Is FlagLeafLiguleJustVisible Model
     //            - Author: Pierre Martre
     //            - Reference: Modeling development phase in the 
     //                Wheat Simulation Model SiriusQuality.

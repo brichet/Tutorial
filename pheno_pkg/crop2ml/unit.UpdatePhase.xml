@@ -59,7 +59,7 @@
             <Param name="degfm">0.0</Param>
             <Param name="maxDL">15.0</Param>
             <Param name="sLDL">0.85</Param>
-            <Param name="ignoreGrainMaturation">1</Param>
+            <Param name="ignoreGrainMaturation">TRUE</Param>
             <Param name="pHEADANTH">1.0</Param>
             <Param name="p">120</Param>
         </Parameterset>

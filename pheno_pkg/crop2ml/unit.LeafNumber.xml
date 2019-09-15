@@ -20,7 +20,7 @@
     
     </Inputs>
     <Outputs>
-        <Output name="leafNumber" description="Actual number of phytomers" datatype="DOUBLE" min="0" max="10000"  unit="leaf" uri="some url"/>
+        <Output name="leafNumber" description="Actual number of phytomers" variablecategory="state" datatype="DOUBLE" min="0" max="10000"  unit="leaf" uri="some url"/>
     </Outputs>
     
     <Algorithm  language="Cyml" platform="" filename="algo/pyx/LeafNumberModule.pyx"/>

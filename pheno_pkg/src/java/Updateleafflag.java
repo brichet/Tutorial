@@ -7,7 +7,7 @@ public class Updateleafflag
     {
            
     }
-    public void  Calculate_updateleafflag(state s, rate r, auxiliary a)
+    public void  Calculate_updateleafflag(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
     //            - Model Name: UpdateLeafFlag Model

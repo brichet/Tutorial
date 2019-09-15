@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 public class Phenology
 {
     
@@ -21,15 +19,308 @@ public class Phenology
     Updatecalendar _Updatecalendar = new Updatecalendar();
     Registerzadok _Registerzadok = new Registerzadok();
 
-    public double lincr
+    public double sLDL
     {
         get
         {
-            return _Phyllochron.lincr;
+            return _Updatephase.sLDL;
         }
         set
         {
-            _Phyllochron.lincr = value;
+            _Updatephase.sLDL = value;
+        } 
+    }
+    
+    public double p
+    {
+        get
+        {
+            return _Updatephase.p;
+        }
+        set
+        {
+            _Updatephase.p = value;
+            _Phylsowingdatecorrection.p = value;
+            _Phyllochron.p = value;
+        } 
+    }
+    
+    public string choosePhyllUse
+    {
+        get
+        {
+            return _Updatephase.choosePhyllUse;
+        }
+        set
+        {
+            _Updatephase.choosePhyllUse = value;
+            _Phyllochron.choosePhyllUse = value;
+        } 
+    }
+    
+    public double pHEADANTH
+    {
+        get
+        {
+            return _Updatephase.pHEADANTH;
+        }
+        set
+        {
+            _Updatephase.pHEADANTH = value;
+        } 
+    }
+    
+    public bool ignoreGrainMaturation
+    {
+        get
+        {
+            return _Updatephase.ignoreGrainMaturation;
+        }
+        set
+        {
+            _Updatephase.ignoreGrainMaturation = value;
+        } 
+    }
+    
+    public double maxDL
+    {
+        get
+        {
+            return _Updatephase.maxDL;
+        }
+        set
+        {
+            _Updatephase.maxDL = value;
+            _Vernalizationprogress.maxDL = value;
+        } 
+    }
+    
+    public double degfm
+    {
+        get
+        {
+            return _Updatephase.degfm;
+        }
+        set
+        {
+            _Updatephase.degfm = value;
+        } 
+    }
+    
+    public double dgf
+    {
+        get
+        {
+            return _Updatephase.dgf;
+        }
+        set
+        {
+            _Updatephase.dgf = value;
+        } 
+    }
+    
+    public double dcd
+    {
+        get
+        {
+            return _Updatephase.dcd;
+        }
+        set
+        {
+            _Updatephase.dcd = value;
+        } 
+    }
+    
+    public double pFLLAnth
+    {
+        get
+        {
+            return _Updatephase.pFLLAnth;
+        }
+        set
+        {
+            _Updatephase.pFLLAnth = value;
+        } 
+    }
+    
+    public int isVernalizable
+    {
+        get
+        {
+            return _Updatephase.isVernalizable;
+        }
+        set
+        {
+            _Updatephase.isVernalizable = value;
+            _Vernalizationprogress.isVernalizable = value;
+        } 
+    }
+    
+    public double der
+    {
+        get
+        {
+            return _Registerzadok.der;
+        }
+        set
+        {
+            _Registerzadok.der = value;
+        } 
+    }
+    
+    public double intTSFLN
+    {
+        get
+        {
+            return _Registerzadok.intTSFLN;
+        }
+        set
+        {
+            _Registerzadok.intTSFLN = value;
+        } 
+    }
+    
+    public double slopeTSFLN
+    {
+        get
+        {
+            return _Registerzadok.slopeTSFLN;
+        }
+        set
+        {
+            _Registerzadok.slopeTSFLN = value;
+        } 
+    }
+    
+    public double dse
+    {
+        get
+        {
+            return _Updatephase.dse;
+        }
+        set
+        {
+            _Updatephase.dse = value;
+        } 
+    }
+    
+    public double targetFertileShoot
+    {
+        get
+        {
+            return _Shootnumber.targetFertileShoot;
+        }
+        set
+        {
+            _Shootnumber.targetFertileShoot = value;
+        } 
+    }
+    
+    public double sowingDensity
+    {
+        get
+        {
+            return _Shootnumber.sowingDensity;
+        }
+        set
+        {
+            _Shootnumber.sowingDensity = value;
+        } 
+    }
+    
+    public int sDsa_nh
+    {
+        get
+        {
+            return _Phylsowingdatecorrection.sDsa_nh;
+        }
+        set
+        {
+            _Phylsowingdatecorrection.sDsa_nh = value;
+        } 
+    }
+    
+    public int sDws
+    {
+        get
+        {
+            return _Phylsowingdatecorrection.sDws;
+        }
+        set
+        {
+            _Phylsowingdatecorrection.sDws = value;
+        } 
+    }
+    
+    public int sowingDay
+    {
+        get
+        {
+            return _Phylsowingdatecorrection.sowingDay;
+        }
+        set
+        {
+            _Phylsowingdatecorrection.sowingDay = value;
+        } 
+    }
+    
+    public double phylPTQ1
+    {
+        get
+        {
+            return _Phyllochron.phylPTQ1;
+        }
+        set
+        {
+            _Phyllochron.phylPTQ1 = value;
+        } 
+    }
+    
+    public double rp
+    {
+        get
+        {
+            return _Phylsowingdatecorrection.rp;
+        }
+        set
+        {
+            _Phylsowingdatecorrection.rp = value;
+        } 
+    }
+    
+    public double aPTQ
+    {
+        get
+        {
+            return _Phyllochron.aPTQ;
+        }
+        set
+        {
+            _Phyllochron.aPTQ = value;
+        } 
+    }
+    
+    public double ptq
+    {
+        get
+        {
+            return _Phyllochron.ptq;
+        }
+        set
+        {
+            _Phyllochron.ptq = value;
+        } 
+    }
+    
+    public double pincr
+    {
+        get
+        {
+            return _Phyllochron.pincr;
+        }
+        set
+        {
+            _Phyllochron.pincr = value;
         } 
     }
     
@@ -57,27 +348,15 @@ public class Phenology
         } 
     }
     
-    public double pincr
+    public double lincr
     {
         get
         {
-            return _Phyllochron.pincr;
+            return _Phyllochron.lincr;
         }
         set
         {
-            _Phyllochron.pincr = value;
-        } 
-    }
-    
-    public double ptq
-    {
-        get
-        {
-            return _Phyllochron.ptq;
-        }
-        set
-        {
-            _Phyllochron.ptq = value;
+            _Phyllochron.lincr = value;
         } 
     }
     
@@ -93,117 +372,6 @@ public class Phenology
         } 
     }
     
-    public double aPTQ
-    {
-        get
-        {
-            return _Phyllochron.aPTQ;
-        }
-        set
-        {
-            _Phyllochron.aPTQ = value;
-        } 
-    }
-    
-    public double phylPTQ1
-    {
-        get
-        {
-            return _Phyllochron.phylPTQ1;
-        }
-        set
-        {
-            _Phyllochron.phylPTQ1 = value;
-        } 
-    }
-    
-    public double p
-    {
-        get
-        {
-            return _Phyllochron.p;
-        }
-        set
-        {
-            _Phyllochron.p = value;
-            _Phylsowingdatecorrection.p = value;
-            _Updatephase.p = value;
-        } 
-    }
-    
-    public string choosePhyllUse
-    {
-        get
-        {
-            return _Phyllochron.choosePhyllUse;
-        }
-        set
-        {
-            _Phyllochron.choosePhyllUse = value;
-            _Updatephase.choosePhyllUse = value;
-        } 
-    }
-    
-    public int sowingDay
-    {
-        get
-        {
-            return _Phylsowingdatecorrection.sowingDay;
-        }
-        set
-        {
-            _Phylsowingdatecorrection.sowingDay = value;
-        } 
-    }
-    
-    public int sDsa_sh
-    {
-        get
-        {
-            return _Phylsowingdatecorrection.sDsa_sh;
-        }
-        set
-        {
-            _Phylsowingdatecorrection.sDsa_sh = value;
-        } 
-    }
-    
-    public int sDws
-    {
-        get
-        {
-            return _Phylsowingdatecorrection.sDws;
-        }
-        set
-        {
-            _Phylsowingdatecorrection.sDws = value;
-        } 
-    }
-    
-    public int sDsa_nh
-    {
-        get
-        {
-            return _Phylsowingdatecorrection.sDsa_nh;
-        }
-        set
-        {
-            _Phylsowingdatecorrection.sDsa_nh = value;
-        } 
-    }
-    
-    public double rp
-    {
-        get
-        {
-            return _Phylsowingdatecorrection.rp;
-        }
-        set
-        {
-            _Phylsowingdatecorrection.rp = value;
-        } 
-    }
-    
     public double latitude
     {
         get
@@ -216,101 +384,15 @@ public class Phenology
         } 
     }
     
-    public int isVernalizable
+    public int sDsa_sh
     {
         get
         {
-            return _Vernalizationprogress.isVernalizable;
+            return _Phylsowingdatecorrection.sDsa_sh;
         }
         set
         {
-            _Vernalizationprogress.isVernalizable = value;
-            _Updatephase.isVernalizable = value;
-        } 
-    }
-    
-    public double minTvern
-    {
-        get
-        {
-            return _Vernalizationprogress.minTvern;
-        }
-        set
-        {
-            _Vernalizationprogress.minTvern = value;
-        } 
-    }
-    
-    public double intTvern
-    {
-        get
-        {
-            return _Vernalizationprogress.intTvern;
-        }
-        set
-        {
-            _Vernalizationprogress.intTvern = value;
-        } 
-    }
-    
-    public double vAI
-    {
-        get
-        {
-            return _Vernalizationprogress.vAI;
-        }
-        set
-        {
-            _Vernalizationprogress.vAI = value;
-        } 
-    }
-    
-    public double vBEE
-    {
-        get
-        {
-            return _Vernalizationprogress.vBEE;
-        }
-        set
-        {
-            _Vernalizationprogress.vBEE = value;
-        } 
-    }
-    
-    public double minDL
-    {
-        get
-        {
-            return _Vernalizationprogress.minDL;
-        }
-        set
-        {
-            _Vernalizationprogress.minDL = value;
-        } 
-    }
-    
-    public double maxDL
-    {
-        get
-        {
-            return _Vernalizationprogress.maxDL;
-        }
-        set
-        {
-            _Vernalizationprogress.maxDL = value;
-            _Updatephase.maxDL = value;
-        } 
-    }
-    
-    public double maxTvern
-    {
-        get
-        {
-            return _Vernalizationprogress.maxTvern;
-        }
-        set
-        {
-            _Vernalizationprogress.maxTvern = value;
+            _Phylsowingdatecorrection.sDsa_sh = value;
         } 
     }
     
@@ -338,163 +420,79 @@ public class Phenology
         } 
     }
     
-    public double dse
+    public double maxTvern
     {
         get
         {
-            return _Updatephase.dse;
+            return _Vernalizationprogress.maxTvern;
         }
         set
         {
-            _Updatephase.dse = value;
+            _Vernalizationprogress.maxTvern = value;
         } 
     }
     
-    public double pFLLAnth
+    public double minDL
     {
         get
         {
-            return _Updatephase.pFLLAnth;
+            return _Vernalizationprogress.minDL;
         }
         set
         {
-            _Updatephase.pFLLAnth = value;
+            _Vernalizationprogress.minDL = value;
         } 
     }
     
-    public double dcd
+    public double vAI
     {
         get
         {
-            return _Updatephase.dcd;
+            return _Vernalizationprogress.vAI;
         }
         set
         {
-            _Updatephase.dcd = value;
+            _Vernalizationprogress.vAI = value;
         } 
     }
     
-    public double dgf
+    public double intTvern
     {
         get
         {
-            return _Updatephase.dgf;
+            return _Vernalizationprogress.intTvern;
         }
         set
         {
-            _Updatephase.dgf = value;
+            _Vernalizationprogress.intTvern = value;
         } 
     }
     
-    public double degfm
+    public double minTvern
     {
         get
         {
-            return _Updatephase.degfm;
+            return _Vernalizationprogress.minTvern;
         }
         set
         {
-            _Updatephase.degfm = value;
+            _Vernalizationprogress.minTvern = value;
         } 
     }
     
-    public bool ignoreGrainMaturation
+    public double vBEE
     {
         get
         {
-            return _Updatephase.ignoreGrainMaturation;
+            return _Vernalizationprogress.vBEE;
         }
         set
         {
-            _Updatephase.ignoreGrainMaturation = value;
+            _Vernalizationprogress.vBEE = value;
         } 
     }
     
-    public double pHEADANTH
-    {
-        get
-        {
-            return _Updatephase.pHEADANTH;
-        }
-        set
-        {
-            _Updatephase.pHEADANTH = value;
-        } 
-    }
-    
-    public double sLDL
-    {
-        get
-        {
-            return _Updatephase.sLDL;
-        }
-        set
-        {
-            _Updatephase.sLDL = value;
-        } 
-    }
-    
-    public double sowingDensity
-    {
-        get
-        {
-            return _Shootnumber.sowingDensity;
-        }
-        set
-        {
-            _Shootnumber.sowingDensity = value;
-        } 
-    }
-    
-    public double targetFertileShoot
-    {
-        get
-        {
-            return _Shootnumber.targetFertileShoot;
-        }
-        set
-        {
-            _Shootnumber.targetFertileShoot = value;
-        } 
-    }
-    
-    public double slopeTSFLN
-    {
-        get
-        {
-            return _Registerzadok.slopeTSFLN;
-        }
-        set
-        {
-            _Registerzadok.slopeTSFLN = value;
-        } 
-    }
-    
-    public double intTSFLN
-    {
-        get
-        {
-            return _Registerzadok.intTSFLN;
-        }
-        set
-        {
-            _Registerzadok.intTSFLN = value;
-        } 
-    }
-    
-    public double der
-    {
-        get
-        {
-            return _Registerzadok.der;
-        }
-        set
-        {
-            _Registerzadok.der = value;
-        } 
-    }
-    
-    public void  Calculate_phenology(state s, rate r, auxiliary a)
+    public void  Calculate_phenology(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         _Cumulttfrom.Calculate_cumulttfrom(s, r, a);
         _Ismomentregistredzc_39.Calculate_ismomentregistredzc_39(s, r, a);
@@ -503,54 +501,54 @@ public class Phenology
         _Phyllochron.Calculate_phyllochron(s, r, a);
         _Updatephase.Calculate_updatephase(s, r, a);
         _Leafnumber.Calculate_leafnumber(s, r, a);
-        _Shootnumber.Calculate_shootnumber(s, r, a);
         _Updateleafflag.Calculate_updateleafflag(s, r, a);
         _Registerzadok.Calculate_registerzadok(s, r, a);
         _Updatecalendar.Calculate_updatecalendar(s, r, a);
+        _Shootnumber.Calculate_shootnumber(s, r, a);
     }
     
     public Phenology(Phenology toCopy): this() // copy constructor 
     {
 
-        lincr = toCopy.lincr;
-        ldecr = toCopy.ldecr;
-        pdecr = toCopy.pdecr;
-        pincr = toCopy.pincr;
-        ptq = toCopy.ptq;
-        kl = toCopy.kl;
-        aPTQ = toCopy.aPTQ;
-        phylPTQ1 = toCopy.phylPTQ1;
+        sLDL = toCopy.sLDL;
         p = toCopy.p;
         choosePhyllUse = toCopy.choosePhyllUse;
-        sowingDay = toCopy.sowingDay;
-        sDsa_sh = toCopy.sDsa_sh;
-        sDws = toCopy.sDws;
-        sDsa_nh = toCopy.sDsa_nh;
-        rp = toCopy.rp;
-        latitude = toCopy.latitude;
-        isVernalizable = toCopy.isVernalizable;
-        minTvern = toCopy.minTvern;
-        intTvern = toCopy.intTvern;
-        vAI = toCopy.vAI;
-        vBEE = toCopy.vBEE;
-        minDL = toCopy.minDL;
+        pHEADANTH = toCopy.pHEADANTH;
+        ignoreGrainMaturation = toCopy.ignoreGrainMaturation;
         maxDL = toCopy.maxDL;
-        maxTvern = toCopy.maxTvern;
+        degfm = toCopy.degfm;
+        dgf = toCopy.dgf;
+        dcd = toCopy.dcd;
+        pFLLAnth = toCopy.pFLLAnth;
+        isVernalizable = toCopy.isVernalizable;
+        der = toCopy.der;
+        intTSFLN = toCopy.intTSFLN;
+        slopeTSFLN = toCopy.slopeTSFLN;
+        dse = toCopy.dse;
+        targetFertileShoot = toCopy.targetFertileShoot;
+        sowingDensity = toCopy.sowingDensity;
+        sDsa_nh = toCopy.sDsa_nh;
+        sDws = toCopy.sDws;
+        sowingDay = toCopy.sowingDay;
+        phylPTQ1 = toCopy.phylPTQ1;
+        rp = toCopy.rp;
+        aPTQ = toCopy.aPTQ;
+        ptq = toCopy.ptq;
+        pincr = toCopy.pincr;
+        ldecr = toCopy.ldecr;
+        pdecr = toCopy.pdecr;
+        lincr = toCopy.lincr;
+        kl = toCopy.kl;
+        latitude = toCopy.latitude;
+        sDsa_sh = toCopy.sDsa_sh;
         pNini = toCopy.pNini;
         aMXLFNO = toCopy.aMXLFNO;
-        dse = toCopy.dse;
-        pFLLAnth = toCopy.pFLLAnth;
-        dcd = toCopy.dcd;
-        dgf = toCopy.dgf;
-        degfm = toCopy.degfm;
-        ignoreGrainMaturation = toCopy.ignoreGrainMaturation;
-        pHEADANTH = toCopy.pHEADANTH;
-        sLDL = toCopy.sLDL;
-        sowingDensity = toCopy.sowingDensity;
-        targetFertileShoot = toCopy.targetFertileShoot;
-        slopeTSFLN = toCopy.slopeTSFLN;
-        intTSFLN = toCopy.intTSFLN;
-        der = toCopy.der;
+        maxTvern = toCopy.maxTvern;
+        minDL = toCopy.minDL;
+        vAI = toCopy.vAI;
+        intTvern = toCopy.intTvern;
+        minTvern = toCopy.minTvern;
+        vBEE = toCopy.vBEE;
 
     }
 }
