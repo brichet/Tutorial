@@ -1,6 +1,5 @@
 import numpy 
 from math import *
-
 def model_netradiation(float minTair=0.7,
                        float maxTair=7.2,
                        float albedoCoefficient=0.23,

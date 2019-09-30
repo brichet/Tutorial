@@ -1,11 +1,12 @@
 import numpy 
 from math import *
+from datetime import datetime
 
 def model_updatecalendar(float cumulTT=741.510096671757,
                          list calendarMoments=['Sowing'],
-                         list calendarDates=['21/3/2007'],
+                         list calendarDates=[datetime(2007, 3, 21) ,],
                          list calendarCumuls=[0.0],
-                         str currentdate='27/3/2007',
+                         datetime currentdate=datetime(2007, 3, 27) ,
                          float phase=1.0):
     """
 

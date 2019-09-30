@@ -24,5 +24,6 @@ public void Process()
     Nolr = tstefanBoltzman * averageT * surfaceEmissivity * cloudCoverFactor;
     tnetRadiation = Nsr - Nolr;
     tnetOutGoingLongWaveRadiation = Nolr;
-    netRadiation.setValue(tnetRadiation);netOutGoingLongWaveRadiation.setValue(tnetOutGoingLongWaveRadiation);
+    netRadiation.setValue(tnetRadiation);
+    netOutGoingLongWaveRadiation.setValue(tnetOutGoingLongWaveRadiation);
 }

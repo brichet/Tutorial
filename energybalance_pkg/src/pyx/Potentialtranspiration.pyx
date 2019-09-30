@@ -1,6 +1,5 @@
 import numpy 
 from math import *
-
 def model_potentialtranspiration(float evapoTranspiration=830.958,
                                  float tau=0.9983):
     """

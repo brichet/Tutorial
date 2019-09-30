@@ -11,5 +11,6 @@ public void Process()
     double tmaxCanopyTemperature = maxCanopyTemperature.getValue();
     tminCanopyTemperature = tminTair + (tcropHeatFlux / (trhoDensityAir * tspecificHeatCapacityAir * tconductance / tlambdaV * 1000.0d));
     tmaxCanopyTemperature = tmaxTair + (tcropHeatFlux / (trhoDensityAir * tspecificHeatCapacityAir * tconductance / tlambdaV * 1000.0d));
-    minCanopyTemperature.setValue(tminCanopyTemperature);maxCanopyTemperature.setValue(tmaxCanopyTemperature);
+    minCanopyTemperature.setValue(tminCanopyTemperature);
+    maxCanopyTemperature.setValue(tmaxCanopyTemperature);
 }

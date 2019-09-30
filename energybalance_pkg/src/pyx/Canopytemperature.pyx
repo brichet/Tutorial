@@ -1,6 +1,5 @@
 import numpy 
 from math import *
-
 def model_canopytemperature(float minTair=0.7,
                             float maxTair=7.2,
                             float cropHeatFlux=447.912,
