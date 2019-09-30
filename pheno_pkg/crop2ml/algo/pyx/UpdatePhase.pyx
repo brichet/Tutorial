@@ -39,7 +39,7 @@ elif (phase == 4.0):#AnthesisToEndCellDivision
         phase = 4.5#EndCellDivision
 elif (phase == 4.5):#EndCellDivisionToEndGrainFill
                 # CheckEndGrainFilling
-    if (grainCumulTT >= dgf or gAI <= 0.0):
+    if (grainCumulTT >= dgf or gai <= 0.0):
         phase = 5.0#End of grain filling
 elif (phase >= 5.0 and phase < 6.0):#EndGrainFillToMaturity
                 #CheckMaturity

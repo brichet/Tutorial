@@ -16,7 +16,7 @@
         <Input name="leafNumber" description="Actual number of phytomers" variablecategory="state" datatype="DOUBLE" min="0" max="25" default=" 4.620511621863958" unit="leaf"  inputtype = "variable"/>
         <Input name="cumulTTFromZC_39" description="cumul of the thermal time ( DeltaTT) since the moment ZC_39" variablecategory="auxiliary" datatype="DOUBLE" min="0" max="10000" default="0" unit="°C d-1"  inputtype = "variable"/>
         <Input name="isMomentRegistredZC_39" description="true if ZC_39 is registered in the calendar" variablecategory="state" datatype="INT" min="0" max="1" default="0" unit=""  inputtype = "variable"/>
-        <Input name="gAI" description="used to calculate Terminal spikelet" variablecategory="auxiliary" datatype="DOUBLE" min="0" max="10000" default="0.3255196285135" unit=""  inputtype = "variable"/>
+        <Input name="gai" description="used to calculate Terminal spikelet" variablecategory="auxiliary" datatype="DOUBLE" min="0" max="10000" default="0.3255196285135" unit=""  inputtype = "variable"/>
         <Input name="grainCumulTT" description="cumulTT used for the grain developpment" variablecategory="auxiliary" datatype="DOUBLE" min="0" max="10000" default="0" unit="°C d"  inputtype="variable"/>
         <Input name="dayLength" description="length of the day" datatype="DOUBLE" variablecategory="auxiliary" min="0" max="24" unit="h" default="12.7433275303389" inputtype="variable" />
         <Input name="vernaprog" description="progression on a 0  to 1 scale of the vernalization" variablecategory="state" datatype="DOUBLE" min="0" max="10" default = " 1.0532526829571554" unit=""  inputtype="variable"/>

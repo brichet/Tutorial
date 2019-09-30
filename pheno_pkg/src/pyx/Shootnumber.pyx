@@ -1,5 +1,6 @@
 import numpy 
 from math import *
+
 def model_shootnumber(float canopyShootNumber=288.0,
                       float leafNumber=0.0,
                       float sowingDensity=288.0,
@@ -43,17 +44,3 @@ def fibonacci(int n):
         result = b
         b = temp + b
     return result
-def init_shootnumber(float canopyShootNumber=288.0,
-                     float leafNumber=0.0,
-                     float sowingDensity=288.0,
-                     float targetFertileShoot=600.0,
-                     list tilleringProfile=[288.0],
-                     list leafTillerNumberArray=[1],
-                     int tillerNumber=1):
-    cdef float averageShootNumberPerPlant
-    canopyShootNumber = sowingDensity
-    averageShootNumberPerPlant = 1.0
-    tilleringProfile.append(sowingDensity)
-    tillerNumber = 1
-    leafTillerNumberArray = []
-    return  averageShootNumberPerPlant, canopyShootNumber, leafTillerNumberArray, tilleringProfile, tillerNumber

@@ -30,7 +30,7 @@ def test_test_wheat1():
     calendarMoments_computed = ["Sowing"]
     assert np.all(calendarMoments_estimated == calendarMoments_computed)
     calendarDates_estimated = params[3]
-    calendarDates_computed = ["2007/3/21"]
+    calendarDates_computed = ["21/3/2007"]
     assert np.all(calendarDates_estimated == calendarDates_computed)
     calendarCumuls_estimated = np.around(params[4], 2)
     calendarCumuls_computed = [0.0]

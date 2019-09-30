@@ -1,5 +1,6 @@
 import numpy 
 from math import *
+
 def model_conductance(float vonKarman=0.42,
                       float heightWeatherMeasurements=2.0,
                       float zm=0.13,

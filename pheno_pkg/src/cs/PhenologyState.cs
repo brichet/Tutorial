@@ -3,29 +3,24 @@ using System.Collections.Generic;
 public class PhenologyState
 {
     private double _leafNumber;
-    private double _minFinalNumber;
-    private List<DateTime> _calendarDates;
-    private List<string> _calendarMoments;
-    private double _ptq;
-    private double _gAImean;
-    private List<double> _listTTShootWindowForPTQ;
-    private double _pastMaxAI;
-    private List<double> _listGAITTWindowForPTQ;
-    private List<double> _listPARTTWindowForPTQ;
-    private List<double> _calendarCumuls;
-    private double _vernaprog;
-    private int _hasLastPrimordiumAppeared;
-    private double _phase;
     private double _finalLeafNumber;
+    private double _phase;
+    private int _hasLastPrimordiumAppeared;
     private int _hasZadokStageChanged;
     private string _currentZadokStage;
+    private int _tillerNumber;
+    private List<int> _leafTillerNumberArray;
+    private double _canopyShootNumber;
     private int _hasFlagLeafLiguleAppeared;
     private List<double> _tilleringProfile;
-    private List<int> _leafTillerNumberArray;
-    private int _tillerNumber;
-    private double _canopyShootNumber;
-    private double _phyllochron;
+    private List<double> _calendarCumuls;
+    private List<string> _calendarMoments;
+    private double _pastMaxAI;
+    private List<string> _calendarDates;
+    private double _minFinalNumber;
+    private double _vernaprog;
     private double _averageShootNumberPerPlant;
+    private double _phyllochron;
     private int _isMomentRegistredZC_39;
     
     public PhenologyState()
@@ -40,38 +35,24 @@ public class PhenologyState
     {
     
     _leafNumber = toCopy._leafNumber;
-    _minFinalNumber = toCopy._minFinalNumber;
-    calendarDates = new List<DateTime>();
-        for (int i = 0; i < toCopy.calendarDates.Count; i++)
+    _finalLeafNumber = toCopy._finalLeafNumber;
+    _phase = toCopy._phase;
+    _hasLastPrimordiumAppeared = toCopy._hasLastPrimordiumAppeared;
+    _hasZadokStageChanged = toCopy._hasZadokStageChanged;
+    _currentZadokStage = toCopy._currentZadokStage;
+    _tillerNumber = toCopy._tillerNumber;
+    leafTillerNumberArray = new List<int>();
+        for (int i = 0; i < toCopy.leafTillerNumberArray.Count; i++)
         {
-            calendarDates.Add(toCopy.calendarDates[i]);
+            leafTillerNumberArray.Add(toCopy.leafTillerNumberArray[i]);
         }
     
-    calendarMoments = new List<string>();
-        for (int i = 0; i < toCopy.calendarMoments.Count; i++)
+    _canopyShootNumber = toCopy._canopyShootNumber;
+    _hasFlagLeafLiguleAppeared = toCopy._hasFlagLeafLiguleAppeared;
+    tilleringProfile = new List<double>();
+        for (int i = 0; i < toCopy.tilleringProfile.Count; i++)
         {
-            calendarMoments.Add(toCopy.calendarMoments[i]);
-        }
-    
-    _ptq = toCopy._ptq;
-    _gAImean = toCopy._gAImean;
-    listTTShootWindowForPTQ = new List<double>();
-        for (int i = 0; i < toCopy.listTTShootWindowForPTQ.Count; i++)
-        {
-            listTTShootWindowForPTQ.Add(toCopy.listTTShootWindowForPTQ[i]);
-        }
-    
-    _pastMaxAI = toCopy._pastMaxAI;
-    listGAITTWindowForPTQ = new List<double>();
-        for (int i = 0; i < toCopy.listGAITTWindowForPTQ.Count; i++)
-        {
-            listGAITTWindowForPTQ.Add(toCopy.listGAITTWindowForPTQ[i]);
-        }
-    
-    listPARTTWindowForPTQ = new List<double>();
-        for (int i = 0; i < toCopy.listPARTTWindowForPTQ.Count; i++)
-        {
-            listPARTTWindowForPTQ.Add(toCopy.listPARTTWindowForPTQ[i]);
+            tilleringProfile.Add(toCopy.tilleringProfile[i]);
         }
     
     calendarCumuls = new List<double>();
@@ -80,29 +61,23 @@ public class PhenologyState
             calendarCumuls.Add(toCopy.calendarCumuls[i]);
         }
     
+    calendarMoments = new List<string>();
+        for (int i = 0; i < toCopy.calendarMoments.Count; i++)
+        {
+            calendarMoments.Add(toCopy.calendarMoments[i]);
+        }
+    
+    _pastMaxAI = toCopy._pastMaxAI;
+    calendarDates = new List<string>();
+        for (int i = 0; i < toCopy.calendarDates.Count; i++)
+        {
+            calendarDates.Add(toCopy.calendarDates[i]);
+        }
+    
+    _minFinalNumber = toCopy._minFinalNumber;
     _vernaprog = toCopy._vernaprog;
-    _hasLastPrimordiumAppeared = toCopy._hasLastPrimordiumAppeared;
-    _phase = toCopy._phase;
-    _finalLeafNumber = toCopy._finalLeafNumber;
-    _hasZadokStageChanged = toCopy._hasZadokStageChanged;
-    _currentZadokStage = toCopy._currentZadokStage;
-    _hasFlagLeafLiguleAppeared = toCopy._hasFlagLeafLiguleAppeared;
-    tilleringProfile = new List<double>();
-        for (int i = 0; i < toCopy.tilleringProfile.Count; i++)
-        {
-            tilleringProfile.Add(toCopy.tilleringProfile[i]);
-        }
-    
-    leafTillerNumberArray = new List<int>();
-        for (int i = 0; i < toCopy.leafTillerNumberArray.Count; i++)
-        {
-            leafTillerNumberArray.Add(toCopy.leafTillerNumberArray[i]);
-        }
-    
-    _tillerNumber = toCopy._tillerNumber;
-    _canopyShootNumber = toCopy._canopyShootNumber;
-    _phyllochron = toCopy._phyllochron;
     _averageShootNumberPerPlant = toCopy._averageShootNumberPerPlant;
+    _phyllochron = toCopy._phyllochron;
     _isMomentRegistredZC_39 = toCopy._isMomentRegistredZC_39;
     }
     }
@@ -117,136 +92,15 @@ public class PhenologyState
             this._leafNumber= value;
         } 
     }
-    public double minFinalNumber
+    public double finalLeafNumber
     {
         get
         {
-            return this._minFinalNumber;
+            return this._finalLeafNumber;
         }
         set
         {
-            this._minFinalNumber= value;
-        } 
-    }
-    public List<DateTime> calendarDates
-    {
-        get
-        {
-            return this._calendarDates;
-        }
-        set
-        {
-            this._calendarDates= value;
-        } 
-    }
-    public List<string> calendarMoments
-    {
-        get
-        {
-            return this._calendarMoments;
-        }
-        set
-        {
-            this._calendarMoments= value;
-        } 
-    }
-    public double ptq
-    {
-        get
-        {
-            return this._ptq;
-        }
-        set
-        {
-            this._ptq= value;
-        } 
-    }
-    public double gAImean
-    {
-        get
-        {
-            return this._gAImean;
-        }
-        set
-        {
-            this._gAImean= value;
-        } 
-    }
-    public List<double> listTTShootWindowForPTQ
-    {
-        get
-        {
-            return this._listTTShootWindowForPTQ;
-        }
-        set
-        {
-            this._listTTShootWindowForPTQ= value;
-        } 
-    }
-    public double pastMaxAI
-    {
-        get
-        {
-            return this._pastMaxAI;
-        }
-        set
-        {
-            this._pastMaxAI= value;
-        } 
-    }
-    public List<double> listGAITTWindowForPTQ
-    {
-        get
-        {
-            return this._listGAITTWindowForPTQ;
-        }
-        set
-        {
-            this._listGAITTWindowForPTQ= value;
-        } 
-    }
-    public List<double> listPARTTWindowForPTQ
-    {
-        get
-        {
-            return this._listPARTTWindowForPTQ;
-        }
-        set
-        {
-            this._listPARTTWindowForPTQ= value;
-        } 
-    }
-    public List<double> calendarCumuls
-    {
-        get
-        {
-            return this._calendarCumuls;
-        }
-        set
-        {
-            this._calendarCumuls= value;
-        } 
-    }
-    public double vernaprog
-    {
-        get
-        {
-            return this._vernaprog;
-        }
-        set
-        {
-            this._vernaprog= value;
-        } 
-    }
-    public int hasLastPrimordiumAppeared
-    {
-        get
-        {
-            return this._hasLastPrimordiumAppeared;
-        }
-        set
-        {
-            this._hasLastPrimordiumAppeared= value;
+            this._finalLeafNumber= value;
         } 
     }
     public double phase
@@ -260,15 +114,15 @@ public class PhenologyState
             this._phase= value;
         } 
     }
-    public double finalLeafNumber
+    public int hasLastPrimordiumAppeared
     {
         get
         {
-            return this._finalLeafNumber;
+            return this._hasLastPrimordiumAppeared;
         }
         set
         {
-            this._finalLeafNumber= value;
+            this._hasLastPrimordiumAppeared= value;
         } 
     }
     public int hasZadokStageChanged
@@ -293,6 +147,39 @@ public class PhenologyState
             this._currentZadokStage= value;
         } 
     }
+    public int tillerNumber
+    {
+        get
+        {
+            return this._tillerNumber;
+        }
+        set
+        {
+            this._tillerNumber= value;
+        } 
+    }
+    public List<int> leafTillerNumberArray
+    {
+        get
+        {
+            return this._leafTillerNumberArray;
+        }
+        set
+        {
+            this._leafTillerNumberArray= value;
+        } 
+    }
+    public double canopyShootNumber
+    {
+        get
+        {
+            return this._canopyShootNumber;
+        }
+        set
+        {
+            this._canopyShootNumber= value;
+        } 
+    }
     public int hasFlagLeafLiguleAppeared
     {
         get
@@ -315,48 +202,70 @@ public class PhenologyState
             this._tilleringProfile= value;
         } 
     }
-    public List<int> leafTillerNumberArray
+    public List<double> calendarCumuls
     {
         get
         {
-            return this._leafTillerNumberArray;
+            return this._calendarCumuls;
         }
         set
         {
-            this._leafTillerNumberArray= value;
+            this._calendarCumuls= value;
         } 
     }
-    public int tillerNumber
+    public List<string> calendarMoments
     {
         get
         {
-            return this._tillerNumber;
+            return this._calendarMoments;
         }
         set
         {
-            this._tillerNumber= value;
+            this._calendarMoments= value;
         } 
     }
-    public double canopyShootNumber
+    public double pastMaxAI
     {
         get
         {
-            return this._canopyShootNumber;
+            return this._pastMaxAI;
         }
         set
         {
-            this._canopyShootNumber= value;
+            this._pastMaxAI= value;
         } 
     }
-    public double phyllochron
+    public List<string> calendarDates
     {
         get
         {
-            return this._phyllochron;
+            return this._calendarDates;
         }
         set
         {
-            this._phyllochron= value;
+            this._calendarDates= value;
+        } 
+    }
+    public double minFinalNumber
+    {
+        get
+        {
+            return this._minFinalNumber;
+        }
+        set
+        {
+            this._minFinalNumber= value;
+        } 
+    }
+    public double vernaprog
+    {
+        get
+        {
+            return this._vernaprog;
+        }
+        set
+        {
+            this._vernaprog= value;
         } 
     }
     public double averageShootNumberPerPlant
@@ -368,6 +277,17 @@ public class PhenologyState
         set
         {
             this._averageShootNumberPerPlant= value;
+        } 
+    }
+    public double phyllochron
+    {
+        get
+        {
+            return this._phyllochron;
+        }
+        set
+        {
+            this._phyllochron= value;
         } 
     }
     public int isMomentRegistredZC_39

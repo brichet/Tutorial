@@ -15,8 +15,7 @@ CONTAINS
         intTSFLN, &
         finalLeafNumber, &
         currentZadokStage, &
-        hasZadokStageChanged, &
-        sowingDate)
+        hasZadokStageChanged)
         REAL, INTENT(IN) :: cumulTT
         REAL, INTENT(IN) :: phase
         REAL, INTENT(IN) :: leafNumber
@@ -33,188 +32,178 @@ CONTAINS
         REAL, INTENT(IN) :: finalLeafNumber
         CHARACTER(65), INTENT(INOUT) :: currentZadokStage
         INTEGER, INTENT(INOUT) :: hasZadokStageChanged
-        CHARACTER(65), INTENT(IN) :: sowingDate
         INTEGER:: roundedFinalLeafNumber
         !- Description:
-    !            * Title: RegisterZadok Model
-    !            * Author: Pierre MARTRE
-    !            * Reference: Modeling development phase in the 
+    !            - Model Name: RegisterZadok Model
+    !            - Author: Pierre MARTRE
+    !            - Reference: Modeling development phase in the 
     !                Wheat Simulation Model SiriusQuality.
     !                See documentation at http://www1.clermont.inra.fr/siriusquality/?page_id=427
-    !            * Institution: INRA/LEPSE Montpellier
-    !            * Abstract: Record the zadok stage in the calendar
+    !            - Institution: INRA/LEPSE Montpellier
+    !            - Abstract: Record the zadok stage in the calendar
     !    	
         !- inputs:
-    !            * name: cumulTT
-    !                          ** description : 
-    !                          ** variablecategory : auxiliary
-    !                          ** datatype : DOUBLE
-    !                          ** min : -200
-    !                          ** max : 10000
-    !                          ** default : 354.582294511779
-    !                          ** unit : °C d
-    !                          ** uri : some url
-    !                          ** inputtype : variable
-    !            * name: phase
-    !                          ** description : instance of the phase class . You can get the name of the phase using phase.getPhaseAsString(PhaseValue) 
-    !                          ** variablecategory : state
-    !                          ** inputtype : variable
-    !                          ** datatype : DOUBLE
-    !                          ** min : 0
-    !                          ** max : 7
-    !                          ** default : 2
-    !                          ** unit : 
-    !                          ** uri : some url
-    !            * name: leafNumber
-    !                          ** description : Actual number of phytomers
-    !                          ** variablecategory : state
-    !                          ** datatype : DOUBLE
-    !                          ** min : 0
-    !                          ** max : 25
-    !                          ** default : 4.8854219661087575
-    !                          ** unit : leaf
-    !                          ** uri : some url
-    !                          ** inputtype : variable
-    !            * name: calendarMoments
-    !                          ** description : List containing apparition of each stage
-    !                          ** variablecategory : state
-    !                          ** datatype : STRINGLIST
-    !                          ** default : ['Sowing']
-    !                          ** unit : 
-    !                          ** inputtype : variable
-    !            * name: calendarDates
-    !                          ** description : List containing  the dates of the wheat developmental phases
-    !                          ** variablecategory : state
-    !                          ** datatype : DATELIST
-    !                          ** default : ['2007/3/21']
-    !                          ** unit : 
-    !                          ** inputtype : variable
-    !            * name: calendarCumuls
-    !                          ** description : list containing for each stage occured its cumulated thermal times
-    !                          ** variablecategory : state
-    !                          ** datatype : DOUBLELIST
-    !                          ** default : [0.0]
-    !                          ** unit : °C d
-    !                          ** inputtype : variable
-    !            * name: cumulTTFromZC_65
-    !                          ** description : cumul of the thermal time (DeltaTT) since the moment ZC_65
-    !                          ** variablecategory : auxiliary
-    !                          ** datatype : DOUBLE
-    !                          ** min : -200
-    !                          ** max : 10000
-    !                          ** default : 0
-    !                          ** unit : °C d
-    !                          ** uri : some url
-    !                          ** inputtype : variable
-    !            * name: currentdate
-    !                          ** description : current date
-    !                          ** variablecategory : auxiliary
-    !                          ** datatype : DATE
-    !                          ** min : 
-    !                          ** max : 
-    !                          ** default : 2007/4/9
-    !                          ** unit : 
-    !                          ** uri : some url
-    !                          ** inputtype : variable
-    !            * name: der
-    !                          ** description : Duration of the endosperm endoreduplication phase
-    !                          ** parametercategory : species
-    !                          ** datatype : DOUBLE
-    !                          ** min : 0
-    !                          ** max : 10000
-    !                          ** default : 300.0
-    !                          ** unit : °C d
-    !                          ** uri : some url
-    !                          ** inputtype : parameter
-    !            * name: slopeTSFLN
-    !                          ** description : used to calculate Terminal spikelet
-    !                          ** parametercategory : species
-    !                          ** datatype : DOUBLE
-    !                          ** min : 0
-    !                          ** max : 10000
-    !                          ** default : 0.9
-    !                          ** unit : 
-    !                          ** uri : some url
-    !                          ** inputtype : parameter
-    !            * name: intTSFLN
-    !                          ** description : used to calculate Terminal spikelet
-    !                          ** parametercategory : species
-    !                          ** datatype : DOUBLE
-    !                          ** min : 0
-    !                          ** max : 10000
-    !                          ** default : 0.9
-    !                          ** unit : 
-    !                          ** uri : some url
-    !                          ** inputtype : parameter
-    !            * name: finalLeafNumber
-    !                          ** description : final leaf number
-    !                          ** variablecategory : state
-    !                          ** datatype : DOUBLE
-    !                          ** min : 0
-    !                          ** max : 10000
-    !                          ** default : 8.797582013199484
-    !                          ** unit : leaf
-    !                          ** uri : some url
-    !                          ** inputtype : variable
-    !            * name: currentZadokStage
-    !                          ** description : current zadok stage
-    !                          ** variablecategory : state
-    !                          ** datatype : STRING
-    !                          ** min : 
-    !                          ** max : 
-    !                          ** default : MainShootPlus1Tiller
-    !                          ** unit : 
-    !                          ** uri : some url
-    !                          ** inputtype : variable
-    !            * name: hasZadokStageChanged
-    !                          ** description : true if the zadok stage has changed this time step
-    !                          ** variablecategory : state
-    !                          ** datatype : INT
-    !                          ** min : 0
-    !                          ** max : 1
-    !                          ** default : 0
-    !                          ** unit : 
-    !                          ** uri : some url
-    !                          ** inputtype : variable
-    !            * name: sowingDate
-    !                          ** description :  Date of Sowing
-    !                          ** parametercategory : constant
-    !                          ** datatype : DATE
-    !                          ** min : 
-    !                          ** max : 
-    !                          ** default : 2007/3/21
-    !                          ** unit : 
-    !                          ** inputtype : parameter
+    !            - name: cumulTT
+    !                          - description : 
+    !                          - variablecategory : auxiliary
+    !                          - datatype : DOUBLE
+    !                          - min : -200
+    !                          - max : 10000
+    !                          - default : 354.582294511779
+    !                          - unit : °C d
+    !                          - uri : some url
+    !                          - inputtype : variable
+    !            - name: phase
+    !                          - description : instance of the phase class . You can get the name of the phase using phase.getPhaseAsString(PhaseValue) 
+    !                          - variablecategory : state
+    !                          - inputtype : variable
+    !                          - datatype : DOUBLE
+    !                          - min : 0
+    !                          - max : 7
+    !                          - default : 2
+    !                          - unit : 
+    !                          - uri : some url
+    !            - name: leafNumber
+    !                          - description : Actual number of phytomers
+    !                          - variablecategory : state
+    !                          - datatype : DOUBLE
+    !                          - min : 0
+    !                          - max : 25
+    !                          - default : 4.8854219661087575
+    !                          - unit : leaf
+    !                          - uri : some url
+    !                          - inputtype : variable
+    !            - name: calendarMoments
+    !                          - description : List containing apparition of each stage
+    !                          - variablecategory : state
+    !                          - datatype : STRINGLIST
+    !                          - default : ['Sowing']
+    !                          - unit : 
+    !                          - inputtype : variable
+    !            - name: calendarDates
+    !                          - description : List containing  the dates of the wheat developmental phases
+    !                          - variablecategory : state
+    !                          - datatype : DATELIST
+    !                          - default : ['21/3/2007']
+    !                          - unit : 
+    !                          - inputtype : variable
+    !            - name: calendarCumuls
+    !                          - description : list containing for each stage occured its cumulated thermal times
+    !                          - variablecategory : state
+    !                          - datatype : DOUBLELIST
+    !                          - default : [0.0]
+    !                          - unit : °C d
+    !                          - inputtype : variable
+    !            - name: cumulTTFromZC_65
+    !                          - description : cumul of the thermal time (DeltaTT) since the moment ZC_65
+    !                          - variablecategory : auxiliary
+    !                          - datatype : DOUBLE
+    !                          - min : -200
+    !                          - max : 10000
+    !                          - default : 0
+    !                          - unit : °C d
+    !                          - uri : some url
+    !                          - inputtype : variable
+    !            - name: currentdate
+    !                          - description : current date
+    !                          - variablecategory : auxiliary
+    !                          - datatype : DATE
+    !                          - min : 
+    !                          - max : 
+    !                          - default : 9/4/2007
+    !                          - unit : 
+    !                          - uri : some url
+    !                          - inputtype : variable
+    !            - name: der
+    !                          - description : Duration of the endosperm endoreduplication phase
+    !                          - parametercategory : species
+    !                          - datatype : DOUBLE
+    !                          - min : 0
+    !                          - max : 10000
+    !                          - default : 300.0
+    !                          - unit : °C d
+    !                          - uri : some url
+    !                          - inputtype : parameter
+    !            - name: slopeTSFLN
+    !                          - description : used to calculate Terminal spikelet
+    !                          - parametercategory : species
+    !                          - datatype : DOUBLE
+    !                          - min : 0
+    !                          - max : 10000
+    !                          - default : 0.9
+    !                          - unit : 
+    !                          - uri : some url
+    !                          - inputtype : parameter
+    !            - name: intTSFLN
+    !                          - description : used to calculate Terminal spikelet
+    !                          - parametercategory : species
+    !                          - datatype : DOUBLE
+    !                          - min : 0
+    !                          - max : 10000
+    !                          - default : 0.9
+    !                          - unit : 
+    !                          - uri : some url
+    !                          - inputtype : parameter
+    !            - name: finalLeafNumber
+    !                          - description : final leaf number
+    !                          - variablecategory : state
+    !                          - datatype : DOUBLE
+    !                          - min : 0
+    !                          - max : 10000
+    !                          - default : 8.797582013199484
+    !                          - unit : leaf
+    !                          - uri : some url
+    !                          - inputtype : variable
+    !            - name: currentZadokStage
+    !                          - description : current zadok stage
+    !                          - variablecategory : state
+    !                          - datatype : STRING
+    !                          - min : 
+    !                          - max : 
+    !                          - default : MainShootPlus1Tiller
+    !                          - unit : 
+    !                          - uri : some url
+    !                          - inputtype : variable
+    !            - name: hasZadokStageChanged
+    !                          - description : true if the zadok stage has changed this time step
+    !                          - variablecategory : state
+    !                          - datatype : INT
+    !                          - min : 0
+    !                          - max : 1
+    !                          - default : 0
+    !                          - unit : 
+    !                          - uri : some url
+    !                          - inputtype : variable
         !- outputs:
-    !            * name: hasZadokStageChanged
-    !                          ** description : true if the zadok stage has changed this time step
-    !                          ** variablecategory : state
-    !                          ** datatype : INT
-    !                          ** min : 0
-    !                          ** max : 1
-    !                          ** unit : 
-    !                          ** uri : some url
-    !            * name: currentZadokStage
-    !                          ** description : current zadok stage
-    !                          ** variablecategory : state
-    !                          ** datatype : STRING
-    !                          ** unit :  
-    !                          ** uri : some url
-    !            * name: calendarMoments
-    !                          ** description :  List containing apparition of each stage
-    !                          ** variablecategory : state
-    !                          ** datatype : STRINGLIST
-    !                          ** unit : 
-    !            * name: calendarDates
-    !                          ** description :  List containing  the dates of the wheat developmental phases
-    !                          ** variablecategory : state
-    !                          ** datatype : DATELIST
-    !                          ** unit : 
-    !            * name: calendarCumuls
-    !                          ** description :  list containing for each stage occured its cumulated thermal times
-    !                          ** variablecategory : state
-    !                          ** datatype : DOUBLELIST
-    !                          ** unit : °C d
+    !            - name: hasZadokStageChanged
+    !                          - description : true if the zadok stage has changed this time step
+    !                          - variablecategory : state
+    !                          - datatype : INT
+    !                          - min : 0
+    !                          - max : 1
+    !                          - unit : 
+    !                          - uri : some url
+    !            - name: currentZadokStage
+    !                          - description : current zadok stage
+    !                          - variablecategory : state
+    !                          - datatype : STRING
+    !                          - unit :  
+    !                          - uri : some url
+    !            - name: calendarMoments
+    !                          - description :  List containing apparition of each stage
+    !                          - variablecategory : state
+    !                          - datatype : STRINGLIST
+    !                          - unit : 
+    !            - name: calendarDates
+    !                          - description :  List containing  the dates of the wheat developmental phases
+    !                          - variablecategory : state
+    !                          - datatype : DATELIST
+    !                          - unit : 
+    !            - name: calendarCumuls
+    !                          - description :  list containing for each stage occured its cumulated thermal times
+    !                          - variablecategory : state
+    !                          - datatype : DOUBLELIST
+    !                          - unit : °C d
         roundedFinalLeafNumber = INT(finalLeafNumber + 0.5)
         IF(leafNumber .GE. 4.0 .AND. ALL(calendarMoments .NE.  &
                 'MainShootPlus1Tiller')) THEN

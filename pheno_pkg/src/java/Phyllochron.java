@@ -1,7 +1,5 @@
 import  java.io.*;
 import  java.util.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 public class Phyllochron
 {
     private double lincr;
@@ -48,6 +46,17 @@ public class Phyllochron
         this.pincr= _pincr;
     } 
     
+    private double ptq;
+    public double getptq()
+    {
+        return ptq;
+    }
+
+    public void setptq(double _ptq)
+    {
+        this.ptq= _ptq;
+    } 
+    
     private double kl;
     public double getkl()
     {
@@ -59,26 +68,26 @@ public class Phyllochron
         this.kl= _kl;
     } 
     
-    private double pTQhf;
-    public double getpTQhf()
+    private double aPTQ;
+    public double getaPTQ()
     {
-        return pTQhf;
+        return aPTQ;
     }
 
-    public void setpTQhf(double _pTQhf)
+    public void setaPTQ(double _aPTQ)
     {
-        this.pTQhf= _pTQhf;
+        this.aPTQ= _aPTQ;
     } 
     
-    private double B;
-    public double getB()
+    private double phylPTQ1;
+    public double getphylPTQ1()
     {
-        return B;
+        return phylPTQ1;
     }
 
-    public void setB(double _B)
+    public void setphylPTQ1(double _phylPTQ1)
     {
-        this.B= _B;
+        this.phylPTQ1= _phylPTQ1;
     } 
     
     private double p;
@@ -103,72 +112,6 @@ public class Phyllochron
         this.choosePhyllUse= _choosePhyllUse;
     } 
     
-    private double areaSL;
-    public double getareaSL()
-    {
-        return areaSL;
-    }
-
-    public void setareaSL(double _areaSL)
-    {
-        this.areaSL= _areaSL;
-    } 
-    
-    private double areaSS;
-    public double getareaSS()
-    {
-        return areaSS;
-    }
-
-    public void setareaSS(double _areaSS)
-    {
-        this.areaSS= _areaSS;
-    } 
-    
-    private double lARmin;
-    public double getlARmin()
-    {
-        return lARmin;
-    }
-
-    public void setlARmin(double _lARmin)
-    {
-        this.lARmin= _lARmin;
-    } 
-    
-    private double lARmax;
-    public double getlARmax()
-    {
-        return lARmax;
-    }
-
-    public void setlARmax(double _lARmax)
-    {
-        this.lARmax= _lARmax;
-    } 
-    
-    private double sowingDensity;
-    public double getsowingDensity()
-    {
-        return sowingDensity;
-    }
-
-    public void setsowingDensity(double _sowingDensity)
-    {
-        this.sowingDensity= _sowingDensity;
-    } 
-    
-    private double lNeff;
-    public double getlNeff()
-    {
-        return lNeff;
-    }
-
-    public void setlNeff(double _lNeff)
-    {
-        this.lNeff= _lNeff;
-    } 
-    
     public Phyllochron()
     {
            
@@ -176,223 +119,174 @@ public class Phyllochron
     public void  Calculate_phyllochron(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Description:
-    //            * Title: Phyllochron Model
-    //            * Author: Pierre Martre
-    //            * Reference: Modeling development phase in the 
+    //            - Model Name: Phyllochron Model
+    //            - Author: Pierre Martre
+    //            - Reference: Modeling development phase in the 
     //                Wheat Simulation Model SiriusQuality.
     //                See documentation at http://www1.clermont.inra.fr/siriusquality/?page_id=427
-    //            * Institution: INRA Montpellier
-    //            * Abstract: Calculate different types of phyllochron 
+    //            - Institution: INRA Montpellier
+    //            - Abstract: Calculate different types of phyllochron 
         //- inputs:
-    //            * name: fixPhyll
-    //                          ** description : Sowing date corrected Phyllochron
-    //                          ** inputtype : variable
-    //                          ** variablecategory : auxiliary
-    //                          ** datatype : DOUBLE
-    //                          ** default : 5.0
-    //                          ** min : 0.0
-    //                          ** max : 10000.0
-    //                          ** unit : °C d leaf-1
-    //                          ** uri : some url
-    //            * name: leafNumber
-    //                          ** description : Actual number of phytomers
-    //                          ** inputtype : variable
-    //                          ** variablecategory : state
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 25.0
-    //                          ** unit : leaf
-    //                          ** uri : some url
-    //            * name: lincr
-    //                          ** description : Leaf number above which the phyllochron is increased by Pincr
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : species
-    //                          ** datatype : DOUBLE
-    //                          ** default : 8.0
-    //                          ** min : 0.0
-    //                          ** max : 30.0
-    //                          ** unit : leaf
-    //                          ** uri : some url
-    //            * name: ldecr
-    //                          ** description : Leaf number up to which the phyllochron is decreased by Pdecr
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : species
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 100.0
-    //                          ** unit : leaf
-    //                          ** uri : some url
-    //            * name: pdecr
-    //                          ** description : Factor decreasing the phyllochron for leaf number less than Ldecr
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : species
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.4
-    //                          ** min : 0.0
-    //                          ** max : 10.0
-    //                          ** unit : -
-    //                          ** uri : some url
-    //            * name: pincr
-    //                          ** description : Factor increasing the phyllochron for leaf number higher than Lincr
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : species
-    //                          ** datatype : DOUBLE
-    //                          ** default : 1.5
-    //                          ** min : 0.0
-    //                          ** max : 10.0
-    //                          ** unit : -
-    //                          ** uri : some url
-    //            * name: ptq
-    //                          ** description : Photothermal quotient 
-    //                          ** inputtype : variable
-    //                          ** variablecategory : state
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 10000.0
-    //                          ** unit : MJ °C-1 d-1 m-2)
-    //                          ** uri : some url
-    //            * name: gAImean
-    //                          ** description : Green Area Index
-    //                          ** inputtype : variable
-    //                          ** variablecategory : state
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 10000.0
-    //                          ** unit : m2 m-2
-    //                          ** uri : some url
-    //            * name: kl
-    //                          ** description : Exctinction Coefficient
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : species
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.45
-    //                          ** min : 0.0
-    //                          ** max : 50.0
-    //                          ** unit : -
-    //                          ** uri : some url
-    //            * name: pTQhf
-    //                          ** description : Slope to intercept ratio for Phyllochron  parametrization with PhotoThermal Quotient
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : genotypic
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : °C d leaf-1
-    //                          ** uri : some url
-    //            * name: B
-    //                          ** description : Phyllochron at PTQ equal 1
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : species
-    //                          ** datatype : DOUBLE
-    //                          ** default : 20.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : °C d leaf-1
-    //                          ** uri : some url
-    //            * name: p
-    //                          ** description : Phyllochron (Varietal parameter)
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : species
-    //                          ** datatype : DOUBLE
-    //                          ** default : 120.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : °C d leaf-1
-    //                          ** uri : some url
-    //            * name: choosePhyllUse
-    //                          ** description : Switch to choose the type of phyllochron calculation to be used
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : species
-    //                          ** datatype : STRING
-    //                          ** default : Default
-    //                          ** min : 
-    //                          ** max : 
-    //                          ** unit : -
-    //                          ** uri : some url
-    //            * name: areaSL
-    //                          ** description :  Area Leaf
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : genotypic
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : cm2
-    //                          ** uri : some url
-    //            * name: areaSS
-    //                          ** description : Area Sheath
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : genotypic
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : cm2
-    //                          ** uri : some url
-    //            * name: lARmin
-    //                          ** description : LAR minimum
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : genotypic
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : leaf-1 °C
-    //                          ** uri : some url
-    //            * name: lARmax
-    //                          ** description : LAR maximum
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : genotypic
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : leaf-1 °C
-    //                          ** uri : some url
-    //            * name: sowingDensity
-    //                          ** description : Sowing Density
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : genotypic
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : plant m-2
-    //                          ** uri : some url
-    //            * name: lNeff
-    //                          ** description : Leaf Number efficace
-    //                          ** inputtype : parameter
-    //                          ** parametercategory : genotypic
-    //                          ** datatype : DOUBLE
-    //                          ** default : 0.0
-    //                          ** min : 0.0
-    //                          ** max : 1000.0
-    //                          ** unit : leaf
-    //                          ** uri : some url
+    //            - name: fixPhyll
+    //                          - description : Sowing date corrected Phyllochron
+    //                          - variablecategory : auxiliary
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 10000
+    //                          - default : 5
+    //                          - unit : °C d leaf-1
+    //                          - uri : some url
+    //                          - inputtype : variable
+    //            - name: leafNumber
+    //                          - description : Actual number of phytomers
+    //                          - variablecategory : state
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 25
+    //                          - default : 0
+    //                          - unit : leaf
+    //                          - uri : some url
+    //                          - inputtype : variable
+    //            - name: lincr
+    //                          - description : Leaf number above which the phyllochron is increased by Pincr
+    //                          - parametercategory : species
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 30
+    //                          - default : 8
+    //                          - unit : leaf
+    //                          - uri : some url
+    //                          - inputtype : parameter
+    //            - name: ldecr
+    //                          - description : Leaf number up to which the phyllochron is decreased by Pdecr
+    //                          - parametercategory : species
+    //                          - inputtype : parameter
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 30
+    //                          - default : 10
+    //                          - unit : leaf
+    //                          - uri : some url
+    //            - name: pdecr
+    //                          - description : Factor decreasing the phyllochron for leaf number less than Ldecr
+    //                          - parametercategory : species
+    //                          - inputtype : parameter
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 10
+    //                          - default : 0.4
+    //                          - unit : 
+    //                          - uri : some url
+    //            - name: pincr
+    //                          - description : Factor increasing the phyllochron for leaf number higher than Lincr
+    //                          - parametercategory : species
+    //                          - datatype : DOUBLE
+    //                          - default : 1.5
+    //                          - min : 0
+    //                          - max : 10
+    //                          - unit : 
+    //                          - uri : some url
+    //                          - inputtype : parameter
+    //            - name: ptq
+    //                          - description : Photothermal quotient 
+    //                          - parametercategory : species
+    //                          - inputtype : parameter
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 10000
+    //                          - default : 0
+    //                          - unit : MJ °C-1 d-1 m-2)
+    //                          - uri : some url
+    //            - name: gai
+    //                          - description : Green Area Index
+    //                          - variablecategory : auxiliary
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 10000
+    //                          - default : 0
+    //                          - unit : m2 m-2
+    //                          - uri : some url
+    //                          - inputtype : variable
+    //            - name: pastMaxAI
+    //                          - description : Past Maximum GAI
+    //                          - variablecategory : state
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 10000
+    //                          - default : 0
+    //                          - unit : m2 m-2
+    //                          - uri : some url
+    //                          - inputtype : variable
+    //            - name: kl
+    //                          - description : Exctinction Coefficient
+    //                          - parametercategory : species
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 50
+    //                          - default : 0.45
+    //                          - unit : 
+    //                          - uri : some url
+    //                          - inputtype : parameter
+    //            - name: aPTQ
+    //                          - description : Slope to intercept ratio for Phyllochron  parametrization with PhotoThermal Quotient
+    //                          - parametercategory : species
+    //                          - inputtype : variable
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 1000
+    //                          - default : 0.842934
+    //                          - unit : 
+    //                          - uri : some url
+    //            - name: phylPTQ1
+    //                          - description : Phyllochron at PTQ equal 1
+    //                          - parametercategory : species
+    //                          - datatype : DOUBLE
+    //                          - default : 20
+    //                          - min : 0
+    //                          - max : 1000
+    //                          - unit : °C d leaf-1
+    //                          - uri : some url
+    //                          - inputtype : parameter
+    //            - name: p
+    //                          - description : Phyllochron (Varietal parameter)
+    //                          - parametercategory : species
+    //                          - datatype : DOUBLE
+    //                          - default : 120
+    //                          - min : 0
+    //                          - max : 1000
+    //                          - unit : °C d leaf-1
+    //                          - uri : some url
+    //                          - inputtype : parameter
+    //            - name: choosePhyllUse
+    //                          - description : Switch to choose the type of phyllochron calculation to be used
+    //                          - parametercategory : species
+    //                          - datatype : STRING
+    //                          - default : Default
+    //                          - unit : 
+    //                          - uri : some url
+    //                          - inputtype : parameter
         //- outputs:
-    //            * name: phyllochron
-    //                          ** description :  the rate of leaf appearance 
-    //                          ** variablecategory : state
-    //                          ** datatype : DOUBLE
-    //                          ** min : 0
-    //                          ** max : 1000
-    //                          ** unit :  °C d leaf-1
-    //                          ** uri : some url
+    //            - name: phyllochron
+    //                          - description :  the rate of leaf appearance 
+    //                          - variablecategory : state
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 1000
+    //                          - unit :  °C d leaf-1
+    //            - name: pastMaxAI
+    //                          - description : Past maximum GAI
+    //                          - variablecategory : state
+    //                          - datatype : DOUBLE
+    //                          - min : 0
+    //                          - max : 10000
+    //                          - unit : m2 m-2
         double fixPhyll = a.getfixPhyll();
         double leafNumber = s.getleafNumber();
-        double ptq = s.getptq();
-        double gAImean = s.getgAImean();
+        double gai = a.getgai();
+        double pastMaxAI = s.getpastMaxAI();
         double phyllochron;
-        double gaiLim;
-        double LAR;
+        double gai_;
         phyllochron = 0.0d;
-        LAR = 0.0d;
-        gaiLim = lNeff * ((areaSL + areaSS) / 10000.0d) * sowingDensity;
         if (choosePhyllUse == "Default")
         {
             if (leafNumber < ldecr)
@@ -410,15 +304,16 @@ public class Phyllochron
         }
         if (choosePhyllUse == "PTQ")
         {
-            if (gAImean > gaiLim)
+            gai_ = Math.max(pastMaxAI, gai);
+            pastMaxAI = gai_;
+            if (gai_ > 0.0d)
             {
-                LAR = (lARmin + ((lARmax - lARmin) * ptq / (pTQhf + ptq))) / (B * gAImean);
+                phyllochron = phylPTQ1 * (gai_ * kl / (1 - Math.exp(-kl * gai_))) / (ptq + aPTQ);
             }
             else
             {
-                LAR = (lARmin + ((lARmax - lARmin) * ptq / (pTQhf + ptq))) / (B * gaiLim);
+                phyllochron = phylPTQ1;
             }
-            phyllochron = 1.0d / LAR;
         }
         if (choosePhyllUse == "Test")
         {
@@ -435,6 +330,7 @@ public class Phyllochron
                 phyllochron = p * pincr;
             }
         }
+        s.setpastMaxAI(pastMaxAI);
         s.setphyllochron(phyllochron);
     }
 }

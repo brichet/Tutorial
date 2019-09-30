@@ -1,10 +1,11 @@
 import numpy 
 from math import *
+
 def model_updatephase(float cumulTT=354.582294511779,
                       float leafNumber=4.620511621863958,
                       float cumulTTFromZC_39=0.0,
                       int isMomentRegistredZC_39=0,
-                      float gAI=0.3255196285135,
+                      float gai=0.3255196285135,
                       float grainCumulTT=0.0,
                       float dayLength=12.7433275303389,
                       float vernaprog=1.0532526829571554,
@@ -80,7 +81,7 @@ def model_updatephase(float cumulTT=354.582294511779,
             phase = 4.5#EndCellDivision
     elif (phase == 4.5):#EndCellDivisionToEndGrainFill
                     # CheckEndGrainFilling
-        if (grainCumulTT >= dgf or gAI <= 0.0):
+        if (grainCumulTT >= dgf or gai <= 0.0):
             phase = 5.0#End of grain filling
     elif (phase >= 5.0 and phase < 6.0):#EndGrainFillToMaturity
                     #CheckMaturity

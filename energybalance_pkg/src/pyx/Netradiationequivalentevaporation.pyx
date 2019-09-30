@@ -1,5 +1,6 @@
 import numpy 
 from math import *
+
 def model_netradiationequivalentevaporation(float lambdaV=2.454,
                                             float netRadiation=1.566):
     """

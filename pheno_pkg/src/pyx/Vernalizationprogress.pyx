@@ -1,13 +1,12 @@
 import numpy 
 from math import *
-from datetime import datetime
 
 def model_vernalizationprogress(float dayLength=12.3037621834005,
                                 float deltaTT=20.3429985011972,
                                 float cumulTT=112.330110409888,
                                 float leafNumber=0.0,
                                 list calendarMoments=['Sowing'],
-                                list calendarDates=[datetime(2007, 3, 21) ,],
+                                list calendarDates=['21/3/2007'],
                                 list calendarCumuls=[0.0],
                                 float minTvern=0.0,
                                 float intTvern=11.0,
@@ -19,7 +18,7 @@ def model_vernalizationprogress(float dayLength=12.3037621834005,
                                 float pNini=4.0,
                                 float aMXLFNO=24.0,
                                 float vernaprog=0.5517254187376879,
-                                datetime currentdate=datetime(2007, 3, 27) ,
+                                str currentdate='27/3/2007',
                                 int isVernalizable=1,
                                 float minFinalNumber=5.5):
     """

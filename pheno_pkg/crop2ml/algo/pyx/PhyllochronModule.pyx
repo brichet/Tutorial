@@ -1,9 +1,5 @@
-cdef float gaiLim
-cdef float LAR
+cdef float gai_
 phyllochron=0.0
-LAR=0.0
-gaiLim=lNeff * ((areaSL + areaSS)/10000.0) * sowingDensity
-
 if choosePhyllUse =="Default":
     if (leafNumber < ldecr):
         phyllochron = fixPhyll * pdecr
@@ -13,12 +9,12 @@ if choosePhyllUse =="Default":
         phyllochron = fixPhyll * pincr
 
 if choosePhyllUse =="PTQ":
-    if (gAImean > gaiLim):
-        LAR = (lARmin + (((lARmax-lARmin) * ptq) / (pTQhf + ptq))) / (B * gAImean);
+    gai_ = max(pastMaxAI,gai)
+    pastMaxAI = gai_
+    if (gai_ > 0.0):
+        phyllochron = phylPTQ1 * ((gai_ * kl) / (1 - exp(-kl * gai_))) / (ptq + aPTQ)
     else:
-        LAR = (lARmin + (((lARmax - lARmin) * ptq) / (pTQhf + ptq))) / (B * gaiLim)     
-    phyllochron=1.0/LAR
-    
+        phyllochron = phylPTQ1
 if choosePhyllUse == "Test":
     if (leafNumber < ldecr):
         phyllochron = p * pdecr

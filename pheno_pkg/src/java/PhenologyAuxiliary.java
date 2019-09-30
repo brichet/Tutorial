@@ -3,17 +3,16 @@ import  java.util.*;
 
 public class PhenologyAuxiliary
 {
-    private Date currentdate;
+    private double gai;
+    private double grainCumulTT;
     private double cumulTT;
     private double dayLength;
     private double deltaTT;
-    private double gAI;
-    private double pAR;
-    private double grainCumulTT;
+    private String currentdate;
+    private double cumulTTFromZC_65;
     private double fixPhyll;
     private double cumulTTFromZC_39;
     private double cumulTTFromZC_91;
-    private double cumulTTFromZC_65;
     
     public PhenologyAuxiliary()
     {
@@ -24,27 +23,36 @@ public class PhenologyAuxiliary
     {
         if (copyAll)
         {
-            this.currentdate = toCopy.currentdate;
+            this.gai = toCopy.gai;
+            this.grainCumulTT = toCopy.grainCumulTT;
             this.cumulTT = toCopy.cumulTT;
             this.dayLength = toCopy.dayLength;
             this.deltaTT = toCopy.deltaTT;
-            this.gAI = toCopy.gAI;
-            this.pAR = toCopy.pAR;
-            this.grainCumulTT = toCopy.grainCumulTT;
+            this.currentdate = toCopy.currentdate;
+            this.cumulTTFromZC_65 = toCopy.cumulTTFromZC_65;
             this.fixPhyll = toCopy.fixPhyll;
             this.cumulTTFromZC_39 = toCopy.cumulTTFromZC_39;
             this.cumulTTFromZC_91 = toCopy.cumulTTFromZC_91;
-            this.cumulTTFromZC_65 = toCopy.cumulTTFromZC_65;
         }
     }
-    public Date getcurrentdate()
+    public double getgai()
     {
-        return currentdate;
+        return gai;
     }
 
-    public void setcurrentdate(Date _currentdate)
+    public void setgai(double _gai)
     {
-        this.currentdate= _currentdate;
+        this.gai= _gai;
+    } 
+    
+    public double getgrainCumulTT()
+    {
+        return grainCumulTT;
+    }
+
+    public void setgrainCumulTT(double _grainCumulTT)
+    {
+        this.grainCumulTT= _grainCumulTT;
     } 
     
     public double getcumulTT()
@@ -77,34 +85,24 @@ public class PhenologyAuxiliary
         this.deltaTT= _deltaTT;
     } 
     
-    public double getgAI()
+    public String getcurrentdate()
     {
-        return gAI;
+        return currentdate;
     }
 
-    public void setgAI(double _gAI)
+    public void setcurrentdate(String _currentdate)
     {
-        this.gAI= _gAI;
+        this.currentdate= _currentdate;
     } 
     
-    public double getpAR()
+    public double getcumulTTFromZC_65()
     {
-        return pAR;
+        return cumulTTFromZC_65;
     }
 
-    public void setpAR(double _pAR)
+    public void setcumulTTFromZC_65(double _cumulTTFromZC_65)
     {
-        this.pAR= _pAR;
-    } 
-    
-    public double getgrainCumulTT()
-    {
-        return grainCumulTT;
-    }
-
-    public void setgrainCumulTT(double _grainCumulTT)
-    {
-        this.grainCumulTT= _grainCumulTT;
+        this.cumulTTFromZC_65= _cumulTTFromZC_65;
     } 
     
     public double getfixPhyll()
@@ -135,16 +133,6 @@ public class PhenologyAuxiliary
     public void setcumulTTFromZC_91(double _cumulTTFromZC_91)
     {
         this.cumulTTFromZC_91= _cumulTTFromZC_91;
-    } 
-    
-    public double getcumulTTFromZC_65()
-    {
-        return cumulTTFromZC_65;
-    }
-
-    public void setcumulTTFromZC_65(double _cumulTTFromZC_65)
-    {
-        this.cumulTTFromZC_65= _cumulTTFromZC_65;
     } 
     
 }

@@ -12,7 +12,7 @@ def test_test_wheat1():
     intTSFLN = 2.6,
     der = 300.0,
     calendarMoments = ["Sowing","Emergence","EndVernalisation","MainShootPlus1Tiller"],
-    calendarDates = ["2007/3/21","2007/3/27","2007/3/30","2007/4/5"],
+    calendarDates = ["21/3/2007","27/3/2007","30/3/2007","5/4/2007"],
     calendarCumuls = [ 0.0, 112.330110409888,157.969706915664, 280.570678654207],
     phase = 2,
      )

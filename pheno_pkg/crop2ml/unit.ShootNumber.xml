@@ -27,9 +27,9 @@
         <Output name="tillerNumber" description=" store the amount of new tiller created at each time a new tiller appears" variablecategory="state"  datatype="INT" min="0" max="10000"  unit="" />
    	
     </Outputs>
-    <Initialization name = "init_ShootNumber" language="Cyml" filename="algo/pyx/init.ShootNumber.pyx"/>  
-   
+    
     <Function name = "fibonacci" language="Cyml" type="internal" filename="algo/pyx/Fibonacci.pyx" description="calculate fibonacci number"/>  
+
 
     <Algorithm  language="Cyml" platform="" filename="algo/pyx/ShootNumber.pyx" />
 
