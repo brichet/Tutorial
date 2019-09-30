@@ -1,12 +1,13 @@
 import numpy 
 from math import *
+from datetime import datetime
 
 def model_updateleafflag(float cumulTT=741.510096671757,
                          float leafNumber=8.919453833361189,
                          list calendarMoments=['Sowing'],
-                         list calendarDates=['21/3/2007'],
+                         list calendarDates=[datetime(2007, 3, 21) ,],
                          list calendarCumuls=[0.0],
-                         str currentdate='29/4/2007',
+                         datetime currentdate=datetime(2007, 4, 29) ,
                          float finalLeafNumber=8.797582013199484,
                          int hasFlagLeafLiguleAppeared=1,
                          float phase=1.0):

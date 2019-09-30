@@ -3,24 +3,29 @@ import  java.util.*;
 public class PhenologyState
 {
     private double leafNumber;
-    private double finalLeafNumber;
-    private double phase;
+    private double minFinalNumber;
+    private List<Date> calendarDates;
+    private List<String> calendarMoments;
+    private double ptq;
+    private double gAImean;
+    private List<Double> listTTShootWindowForPTQ;
+    private double pastMaxAI;
+    private List<Double> listGAITTWindowForPTQ;
+    private List<Double> listPARTTWindowForPTQ;
+    private List<Double> calendarCumuls;
+    private double vernaprog;
     private int hasLastPrimordiumAppeared;
+    private double phase;
+    private double finalLeafNumber;
     private int hasZadokStageChanged;
     private String currentZadokStage;
-    private int tillerNumber;
-    private List<Integer> leafTillerNumberArray;
-    private double canopyShootNumber;
     private int hasFlagLeafLiguleAppeared;
     private List<Double> tilleringProfile;
-    private List<Double> calendarCumuls;
-    private List<String> calendarMoments;
-    private double pastMaxAI;
-    private List<String> calendarDates;
-    private double minFinalNumber;
-    private double vernaprog;
-    private double averageShootNumberPerPlant;
+    private List<Integer> leafTillerNumberArray;
+    private int tillerNumber;
+    private double canopyShootNumber;
     private double phyllochron;
+    private double averageShootNumberPerPlant;
     private int isMomentRegistredZC_39;
     
     public PhenologyState()
@@ -33,19 +38,52 @@ public class PhenologyState
         if (copyAll)
         {
             this.leafNumber = toCopy.leafNumber;
-            this.finalLeafNumber = toCopy.finalLeafNumber;
-            this.phase = toCopy.phase;
+            this.minFinalNumber = toCopy.minFinalNumber;
+            List <Date> _calendarDates = new ArrayList<>();
+            for (Date c : toCopy.calendarDates)
+            {
+                _calendarDates.add(c);
+            }
+            this.calendarDates = _calendarDates;
+            List <String> _calendarMoments = new ArrayList<>();
+            for (String c : toCopy.calendarMoments)
+            {
+                _calendarMoments.add(c);
+            }
+            this.calendarMoments = _calendarMoments;
+            this.ptq = toCopy.ptq;
+            this.gAImean = toCopy.gAImean;
+            List <Double> _listTTShootWindowForPTQ = new ArrayList<>();
+            for (Double c : toCopy.listTTShootWindowForPTQ)
+            {
+                _listTTShootWindowForPTQ.add(c);
+            }
+            this.listTTShootWindowForPTQ = _listTTShootWindowForPTQ;
+            this.pastMaxAI = toCopy.pastMaxAI;
+            List <Double> _listGAITTWindowForPTQ = new ArrayList<>();
+            for (Double c : toCopy.listGAITTWindowForPTQ)
+            {
+                _listGAITTWindowForPTQ.add(c);
+            }
+            this.listGAITTWindowForPTQ = _listGAITTWindowForPTQ;
+            List <Double> _listPARTTWindowForPTQ = new ArrayList<>();
+            for (Double c : toCopy.listPARTTWindowForPTQ)
+            {
+                _listPARTTWindowForPTQ.add(c);
+            }
+            this.listPARTTWindowForPTQ = _listPARTTWindowForPTQ;
+            List <Double> _calendarCumuls = new ArrayList<>();
+            for (Double c : toCopy.calendarCumuls)
+            {
+                _calendarCumuls.add(c);
+            }
+            this.calendarCumuls = _calendarCumuls;
+            this.vernaprog = toCopy.vernaprog;
             this.hasLastPrimordiumAppeared = toCopy.hasLastPrimordiumAppeared;
+            this.phase = toCopy.phase;
+            this.finalLeafNumber = toCopy.finalLeafNumber;
             this.hasZadokStageChanged = toCopy.hasZadokStageChanged;
             this.currentZadokStage = toCopy.currentZadokStage;
-            this.tillerNumber = toCopy.tillerNumber;
-            List <Integer> _leafTillerNumberArray = new ArrayList<>();
-            for (Integer c : toCopy.leafTillerNumberArray)
-            {
-                _leafTillerNumberArray.add(c);
-            }
-            this.leafTillerNumberArray = _leafTillerNumberArray;
-            this.canopyShootNumber = toCopy.canopyShootNumber;
             this.hasFlagLeafLiguleAppeared = toCopy.hasFlagLeafLiguleAppeared;
             List <Double> _tilleringProfile = new ArrayList<>();
             for (Double c : toCopy.tilleringProfile)
@@ -53,29 +91,16 @@ public class PhenologyState
                 _tilleringProfile.add(c);
             }
             this.tilleringProfile = _tilleringProfile;
-            List <Double> _calendarCumuls = new ArrayList<>();
-            for (Double c : toCopy.calendarCumuls)
+            List <Integer> _leafTillerNumberArray = new ArrayList<>();
+            for (Integer c : toCopy.leafTillerNumberArray)
             {
-                _calendarCumuls.add(c);
+                _leafTillerNumberArray.add(c);
             }
-            this.calendarCumuls = _calendarCumuls;
-            List <String> _calendarMoments = new ArrayList<>();
-            for (String c : toCopy.calendarMoments)
-            {
-                _calendarMoments.add(c);
-            }
-            this.calendarMoments = _calendarMoments;
-            this.pastMaxAI = toCopy.pastMaxAI;
-            List <String> _calendarDates = new ArrayList<>();
-            for (String c : toCopy.calendarDates)
-            {
-                _calendarDates.add(c);
-            }
-            this.calendarDates = _calendarDates;
-            this.minFinalNumber = toCopy.minFinalNumber;
-            this.vernaprog = toCopy.vernaprog;
-            this.averageShootNumberPerPlant = toCopy.averageShootNumberPerPlant;
+            this.leafTillerNumberArray = _leafTillerNumberArray;
+            this.tillerNumber = toCopy.tillerNumber;
+            this.canopyShootNumber = toCopy.canopyShootNumber;
             this.phyllochron = toCopy.phyllochron;
+            this.averageShootNumberPerPlant = toCopy.averageShootNumberPerPlant;
             this.isMomentRegistredZC_39 = toCopy.isMomentRegistredZC_39;
         }
     }
@@ -89,14 +114,124 @@ public class PhenologyState
         this.leafNumber= _leafNumber;
     } 
     
-    public double getfinalLeafNumber()
+    public double getminFinalNumber()
     {
-        return finalLeafNumber;
+        return minFinalNumber;
     }
 
-    public void setfinalLeafNumber(double _finalLeafNumber)
+    public void setminFinalNumber(double _minFinalNumber)
     {
-        this.finalLeafNumber= _finalLeafNumber;
+        this.minFinalNumber= _minFinalNumber;
+    } 
+    
+    public List<Date> getcalendarDates()
+    {
+        return calendarDates;
+    }
+
+    public void setcalendarDates(List<Date> _calendarDates)
+    {
+        this.calendarDates= _calendarDates;
+    } 
+    
+    public List<String> getcalendarMoments()
+    {
+        return calendarMoments;
+    }
+
+    public void setcalendarMoments(List<String> _calendarMoments)
+    {
+        this.calendarMoments= _calendarMoments;
+    } 
+    
+    public double getptq()
+    {
+        return ptq;
+    }
+
+    public void setptq(double _ptq)
+    {
+        this.ptq= _ptq;
+    } 
+    
+    public double getgAImean()
+    {
+        return gAImean;
+    }
+
+    public void setgAImean(double _gAImean)
+    {
+        this.gAImean= _gAImean;
+    } 
+    
+    public List<Double> getlistTTShootWindowForPTQ()
+    {
+        return listTTShootWindowForPTQ;
+    }
+
+    public void setlistTTShootWindowForPTQ(List<Double> _listTTShootWindowForPTQ)
+    {
+        this.listTTShootWindowForPTQ= _listTTShootWindowForPTQ;
+    } 
+    
+    public double getpastMaxAI()
+    {
+        return pastMaxAI;
+    }
+
+    public void setpastMaxAI(double _pastMaxAI)
+    {
+        this.pastMaxAI= _pastMaxAI;
+    } 
+    
+    public List<Double> getlistGAITTWindowForPTQ()
+    {
+        return listGAITTWindowForPTQ;
+    }
+
+    public void setlistGAITTWindowForPTQ(List<Double> _listGAITTWindowForPTQ)
+    {
+        this.listGAITTWindowForPTQ= _listGAITTWindowForPTQ;
+    } 
+    
+    public List<Double> getlistPARTTWindowForPTQ()
+    {
+        return listPARTTWindowForPTQ;
+    }
+
+    public void setlistPARTTWindowForPTQ(List<Double> _listPARTTWindowForPTQ)
+    {
+        this.listPARTTWindowForPTQ= _listPARTTWindowForPTQ;
+    } 
+    
+    public List<Double> getcalendarCumuls()
+    {
+        return calendarCumuls;
+    }
+
+    public void setcalendarCumuls(List<Double> _calendarCumuls)
+    {
+        this.calendarCumuls= _calendarCumuls;
+    } 
+    
+    public double getvernaprog()
+    {
+        return vernaprog;
+    }
+
+    public void setvernaprog(double _vernaprog)
+    {
+        this.vernaprog= _vernaprog;
+    } 
+    
+    public int gethasLastPrimordiumAppeared()
+    {
+        return hasLastPrimordiumAppeared;
+    }
+
+    public void sethasLastPrimordiumAppeared(int _hasLastPrimordiumAppeared)
+    {
+        this.hasLastPrimordiumAppeared= _hasLastPrimordiumAppeared;
     } 
     
     public double getphase()
@@ -109,14 +244,14 @@ public class PhenologyState
         this.phase= _phase;
     } 
     
-    public int gethasLastPrimordiumAppeared()
+    public double getfinalLeafNumber()
     {
-        return hasLastPrimordiumAppeared;
+        return finalLeafNumber;
     }
 
-    public void sethasLastPrimordiumAppeared(int _hasLastPrimordiumAppeared)
+    public void setfinalLeafNumber(double _finalLeafNumber)
     {
-        this.hasLastPrimordiumAppeared= _hasLastPrimordiumAppeared;
+        this.finalLeafNumber= _finalLeafNumber;
     } 
     
     public int gethasZadokStageChanged()
@@ -139,36 +274,6 @@ public class PhenologyState
         this.currentZadokStage= _currentZadokStage;
     } 
     
-    public int gettillerNumber()
-    {
-        return tillerNumber;
-    }
-
-    public void settillerNumber(int _tillerNumber)
-    {
-        this.tillerNumber= _tillerNumber;
-    } 
-    
-    public List<Integer> getleafTillerNumberArray()
-    {
-        return leafTillerNumberArray;
-    }
-
-    public void setleafTillerNumberArray(List<Integer> _leafTillerNumberArray)
-    {
-        this.leafTillerNumberArray= _leafTillerNumberArray;
-    } 
-    
-    public double getcanopyShootNumber()
-    {
-        return canopyShootNumber;
-    }
-
-    public void setcanopyShootNumber(double _canopyShootNumber)
-    {
-        this.canopyShootNumber= _canopyShootNumber;
-    } 
-    
     public int gethasFlagLeafLiguleAppeared()
     {
         return hasFlagLeafLiguleAppeared;
@@ -189,74 +294,34 @@ public class PhenologyState
         this.tilleringProfile= _tilleringProfile;
     } 
     
-    public List<Double> getcalendarCumuls()
+    public List<Integer> getleafTillerNumberArray()
     {
-        return calendarCumuls;
+        return leafTillerNumberArray;
     }
 
-    public void setcalendarCumuls(List<Double> _calendarCumuls)
+    public void setleafTillerNumberArray(List<Integer> _leafTillerNumberArray)
     {
-        this.calendarCumuls= _calendarCumuls;
+        this.leafTillerNumberArray= _leafTillerNumberArray;
     } 
     
-    public List<String> getcalendarMoments()
+    public int gettillerNumber()
     {
-        return calendarMoments;
+        return tillerNumber;
     }
 
-    public void setcalendarMoments(List<String> _calendarMoments)
+    public void settillerNumber(int _tillerNumber)
     {
-        this.calendarMoments= _calendarMoments;
+        this.tillerNumber= _tillerNumber;
     } 
     
-    public double getpastMaxAI()
+    public double getcanopyShootNumber()
     {
-        return pastMaxAI;
+        return canopyShootNumber;
     }
 
-    public void setpastMaxAI(double _pastMaxAI)
+    public void setcanopyShootNumber(double _canopyShootNumber)
     {
-        this.pastMaxAI= _pastMaxAI;
-    } 
-    
-    public List<String> getcalendarDates()
-    {
-        return calendarDates;
-    }
-
-    public void setcalendarDates(List<String> _calendarDates)
-    {
-        this.calendarDates= _calendarDates;
-    } 
-    
-    public double getminFinalNumber()
-    {
-        return minFinalNumber;
-    }
-
-    public void setminFinalNumber(double _minFinalNumber)
-    {
-        this.minFinalNumber= _minFinalNumber;
-    } 
-    
-    public double getvernaprog()
-    {
-        return vernaprog;
-    }
-
-    public void setvernaprog(double _vernaprog)
-    {
-        this.vernaprog= _vernaprog;
-    } 
-    
-    public double getaverageShootNumberPerPlant()
-    {
-        return averageShootNumberPerPlant;
-    }
-
-    public void setaverageShootNumberPerPlant(double _averageShootNumberPerPlant)
-    {
-        this.averageShootNumberPerPlant= _averageShootNumberPerPlant;
+        this.canopyShootNumber= _canopyShootNumber;
     } 
     
     public double getphyllochron()
@@ -267,6 +332,16 @@ public class PhenologyState
     public void setphyllochron(double _phyllochron)
     {
         this.phyllochron= _phyllochron;
+    } 
+    
+    public double getaverageShootNumberPerPlant()
+    {
+        return averageShootNumberPerPlant;
+    }
+
+    public void setaverageShootNumberPerPlant(double _averageShootNumberPerPlant)
+    {
+        this.averageShootNumberPerPlant= _averageShootNumberPerPlant;
     } 
     
     public int getisMomentRegistredZC_39()

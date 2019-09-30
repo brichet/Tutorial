@@ -1,6 +1,5 @@
 import numpy 
 from math import *
-
 def model_evapotranspiration(int isWindVpDefined=1,
                              float evapoTranspirationPriestlyTaylor=449.367,
                              float evapoTranspirationPenman=830.958):
