@@ -9,7 +9,7 @@
                 See documentation at http://www1.clermont.inra.fr/siriusquality/?page_id=427</Reference>
 		<Abstract>see documentation</Abstract>
 	</Description>
-
+	<Initialization name="init.Phenology" language="Cyml" filename="algo/pyx/init.Phenology.pyx"></Initialization>
 	<Composition>
 		<Model name="Phyllochron" id="pheno_pkg.Phyllochron" filename="unit.Phyllochron.xml" />
 		<Model name="PhylSowingDateCorrection" id="pheno_pkg.PhylSowingDateCorrection" filename="unit.PhylSowingDateCorrection.xml" />
@@ -26,7 +26,7 @@
 		<Model name="GAImean" id="pheno_pkg.GAImean" filename="unit.GAImean.xml" />
 
 		<Links>
-			<InputLink target="Phyllochron.leafNumber" source="leafNumber" />
+			<InputLink target="LeafNumber.phyllochron" source="phyllochron" />
 			<InputLink target="VernalizationProgress.minFinalNumber" source="minFinalNumber" />
 			<InputLink target="VernalizationProgress.aMXLFNO" source="aMXLFNO" />
 			<InputLink target="VernalizationProgress.currentdate" source="currentdate" />
@@ -56,18 +56,15 @@
 			<InputLink target="VernalizationProgress.leafNumber" source="leafNumber" />
 			<InputLink target="VernalizationProgress.maxTvern" source="maxTvern" />
 			<InputLink target="VernalizationProgress.dayLength" source="dayLength" />
-			<InputLink target="GAImean.listTTShootWindowForPTQ" source="listTTShootWindowForPTQ" />
 			<InputLink target="GAImean.deltaTT" source="deltaTT" />
 			<InputLink target="GAImean.pastMaxAI" source="pastMaxAI" />
-
-
 			<InputLink target="GAImean.tTWindowForPTQ" source="tTWindowForPTQ" />
 			<InputLink target="GAImean.listGAITTWindowForPTQ" source="listGAITTWindowForPTQ" />
 			<InputLink target="GAImean.gAI" source="gAI" />
 			<InputLink target="PTQ.deltaTT" source="deltaTT" />
 			<InputLink target="PTQ.pAR" source="pAR" />
-			<InputLink target="PTQ.listGAITTWindowForPTQ" source="listGAITTWindowForPTQ" />
 			<InputLink target="PTQ.listPARTTWindowForPTQ" source="listPARTTWindowForPTQ" />
+			<InputLink target="GAImean.listTTShootWindowForPTQ1" source="listTTShootWindowForPTQ1" />
 			<InputLink target="PTQ.listTTShootWindowForPTQ" source="listTTShootWindowForPTQ" />			
 			<InputLink target="PTQ.kl" source="kl" />
 			<InputLink target="PTQ.tTWindowForPTQ" source="tTWindowForPTQ" />
@@ -139,8 +136,7 @@
 			<InternalLink target="UpdatePhase.cumulTTFromZC_39" source="CumulTTFrom.cumulTTFromZC_39" />
 			<InternalLink target="UpdatePhase.cumulTTFromZC_91" source="CumulTTFrom.cumulTTFromZC_91" />
 			<InternalLink target="LeafNumber.phase" source="UpdatePhase.phase" />
-			<InternalLink target="UpdatePhase.phyllochron" source="Phyllochron.phyllochron" />
-			<InternalLink target="LeafNumber.phyllochron" source="Phyllochron.phyllochron" />
+			<InternalLink target="Phyllochron.leafNumber" source="LeafNumber.leafNumber" />
 			<InternalLink target="UpdatePhase.fixPhyll" source="PhylSowingDateCorrection.fixPhyll" />
 			<InternalLink target="UpdateLeafFlag.leafNumber" source="LeafNumber.leafNumber" />
 			<InternalLink target="UpdateLeafFlag.finalLeafNumber" source="UpdatePhase.finalLeafNumber" />
@@ -151,7 +147,6 @@
 			<InternalLink target="UpdateLeafFlag.phase" source="UpdatePhase.phase" />
 			<InternalLink target="RegisterZadok.leafNumber" source="LeafNumber.leafNumber" />
 			<InternalLink target="PTQ.listGAITTWindowForPTQ" source="GAImean.listGAITTWindowForPTQ" />
-			<InternalLink target="PTQ.listTTShootWindowForPTQ" source="GAImean.listTTShootWindowForPTQ" />
 			<InternalLink target="UpdateCalendar.phase" source="UpdatePhase.phase" />
 			<InternalLink target="ShootNumber.leafNumber" source="LeafNumber.leafNumber" />
 			<InternalLink target="UpdateCalendar.calendarMoments" source="RegisterZadok.calendarMoments" />
@@ -169,6 +164,7 @@
 			<OutputLink target="listPARTTWindowForPTQ" source="PTQ.listPARTTWindowForPTQ" />
 			<OutputLink target="hasLastPrimordiumAppeared" source="UpdatePhase.hasLastPrimordiumAppeared" />
 			<OutputLink target="listTTShootWindowForPTQ" source="PTQ.listTTShootWindowForPTQ" />
+			<OutputLink target="listTTShootWindowForPTQ1" source="GAImean.listTTShootWindowForPTQ1" />
 			<OutputLink target="ptq" source="PTQ.ptq" />
 			<OutputLink target="calendarMoments" source="UpdateCalendar.calendarMoments" />
 			<OutputLink target="canopyShootNumber" source="ShootNumber.canopyShootNumber" />
@@ -186,7 +182,7 @@
 			<OutputLink target="listGAITTWindowForPTQ" source="GAImean.listGAITTWindowForPTQ" />
 			<OutputLink target="calendarCumuls" source="UpdateCalendar.calendarCumuls" />
 			<OutputLink target="gAImean" source="GAImean.gAImean" />
-			<OutputLink target="gAImean" source="GAImean.pastMaxAI" />
+			<OutputLink target="pastMaxAI" source="GAImean.pastMaxAI" />
 		</Links>
 	</Composition>
 </ModelComposition>

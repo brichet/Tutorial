@@ -23,7 +23,7 @@
         <Input name="minFinalNumber" description="minimum final leaf number"  variablecategory="state" datatype="DOUBLE" min="0" max="25" default="6.879410413987549" unit="leaf" inputtype="variable" />
         <Input name="fixPhyll" description="Phyllochron with sowing date fix" variablecategory="auxiliary" datatype="DOUBLE" min="0" max="10000" default="91.2" unit="°C d"  inputtype="variable"/>
         <Input name="isVernalizable" description="true if the plant is vernalizable" parametercategory="species" datatype="INT" min="0" max="1" unit="" default="1"  inputtype = "parameter"/>
-        <Input name="dse" description="Thermal time from sowing to emergence" parametercategory="species" datatype="DOUBLE" min="0" max="1000" default="105" unit="°C d"  inputtype = "parameter"/>
+        <Input name="dse" description="Thermal time from sowing to emergence" parametercategory="genotypic" datatype="DOUBLE" min="0" max="1000" default="105" unit="°C d"  inputtype = "parameter"/>
         <Input name="pFLLAnth" description="Phyllochronic duration of the period between flag leaf ligule appearance and anthesis" parametercategory="species" datatype="DOUBLE" min="0" max="1000" unit=""  default="2.22" inputtype = "parameter"/>
         <Input name="dcd" description="Duration of the endosperm cell division phase" parametercategory="species" datatype="DOUBLE" min="0" max="10000" default="100" unit="°C d"  inputtype = "parameter"/>
         <Input name="dgf" description="Grain filling duration (from anthesis to physiological maturity)" parametercategory="species" datatype="DOUBLE" min="0" max="10000" default="450" unit="°C d"  inputtype = "parameter"/>
