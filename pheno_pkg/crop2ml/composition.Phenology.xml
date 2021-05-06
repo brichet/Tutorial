@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE ModelComposition PUBLIC " " "https://raw.githubusercontent.com/AgriculturalModelExchangeInitiative/crop2ml/master/ModelComposition.dtd"><ModelComposition name="Phenology" id="SQ.pheno_pkg.Phenology" version="001" timestep ="1">
+<!DOCTYPE ModelComposition PUBLIC " " "https://raw.githubusercontent.com/AgriculturalModelExchangeInitiative/crop2ml/master/ModelComposition.dtd">
+<ModelComposition name="Phenology" id="SQ.pheno_pkg.Phenology" version="001" timestep ="1">
 	<Description>
 		<Title>Phenology</Title>
 		<Authors>Pierre MARTRE</Authors>
@@ -9,7 +10,7 @@
                 See documentation at http://www1.clermont.inra.fr/siriusquality/?page_id=427</Reference>
 		<Abstract>see documentation</Abstract>
 	</Description>
-	<Initialization name="init.Phenology" language="Cyml" filename="algo/pyx/init.Phenology.pyx"></Initialization>
+	<Initialization name="init.Phenology" language="Cyml" filename="algo/pyx/init.Phenology.pyx"/>
 	<Composition>
 		<Model name="Phyllochron" id="pheno_pkg.Phyllochron" filename="unit.Phyllochron.xml" />
 		<Model name="PhylSowingDateCorrection" id="pheno_pkg.PhylSowingDateCorrection" filename="unit.PhylSowingDateCorrection.xml" />
@@ -26,8 +27,8 @@
 		<Model name="GAImean" id="pheno_pkg.GAImean" filename="unit.GAImean.xml" />
 
 		<Links>
-			<InputLink target="LeafNumber.phyllochron" source="phyllochron" />
-			<InputLink target="VernalizationProgress.minFinalNumber" source="minFinalNumber" />
+			<InputLink target="LeafNumber.phyllochron_t1" source="phyllochron_t1" />
+			<InputLink target="VernalizationProgress.minFinalNumber_t1" source="minFinalNumber_t1" />
 			<InputLink target="VernalizationProgress.aMXLFNO" source="aMXLFNO" />
 			<InputLink target="VernalizationProgress.currentdate" source="currentdate" />
 			<InputLink target="VernalizationProgress.cumulTT" source="cumulTT" />
@@ -35,13 +36,12 @@
 			<InputLink target="PhylSowingDateCorrection.sDsa_sh" source="sDsa_sh" />
 			<InputLink target="PhylSowingDateCorrection.latitude" source="latitude" />
 			<InputLink target="Phyllochron.kl" source="kl" />
-			<InputLink target="VernalizationProgress.calendarDates" source="calendarDates" />
-			<InputLink target="CumulTTFrom.calendarMoments" source="calendarMoments" />
+			<InputLink target="VernalizationProgress.calendarDates_t1" source="calendarDates_t1" />
+			<InputLink target="CumulTTFrom.calendarMoments_t1" source="calendarMoments_t1" />
 			<InputLink target="Phyllochron.lincr" source="lincr" />
 			<InputLink target="Phyllochron.ldecr" source="ldecr" />
 			<InputLink target="Phyllochron.pincr" source="pincr" />
 			<InputLink target="Phyllochron.ptq" source="ptq" />
-			<InputLink target="Phyllochron.gAImean" source="gAImean" />
 			<InputLink target="Phyllochron.pTQhf" source="pTQhf" />
 			<InputLink target="Phyllochron.B" source="B" />
 			<InputLink target="Phyllochron.areaSL" source="areaSL" />
@@ -53,39 +53,39 @@
 			<InputLink target="PhylSowingDateCorrection.rp" source="rp" />
 			<InputLink target="Phyllochron.p" source="p" />
 			<InputLink target="Phyllochron.pdecr" source="pdecr" />
-			<InputLink target="VernalizationProgress.leafNumber" source="leafNumber" />
+			<InputLink target="VernalizationProgress.leafNumber_t1" source="leafNumber_t1" />
 			<InputLink target="VernalizationProgress.maxTvern" source="maxTvern" />
 			<InputLink target="VernalizationProgress.dayLength" source="dayLength" />
 			<InputLink target="GAImean.deltaTT" source="deltaTT" />
-			<InputLink target="GAImean.pastMaxAI" source="pastMaxAI" />
+			<InputLink target="GAImean.pastMaxAI_t1" source="pastMaxAI_t1" />
 			<InputLink target="GAImean.tTWindowForPTQ" source="tTWindowForPTQ" />
-			<InputLink target="GAImean.listGAITTWindowForPTQ" source="listGAITTWindowForPTQ" />
+			<InputLink target="GAImean.listGAITTWindowForPTQ_t1" source="listGAITTWindowForPTQ_t1" />
 			<InputLink target="GAImean.gAI" source="gAI" />
 			<InputLink target="PTQ.deltaTT" source="deltaTT" />
 			<InputLink target="PTQ.pAR" source="pAR" />
-			<InputLink target="PTQ.listPARTTWindowForPTQ" source="listPARTTWindowForPTQ" />
-			<InputLink target="GAImean.listTTShootWindowForPTQ1" source="listTTShootWindowForPTQ1" />
-			<InputLink target="PTQ.listTTShootWindowForPTQ" source="listTTShootWindowForPTQ" />			
+			<InputLink target="PTQ.listPARTTWindowForPTQ_t1" source="listPARTTWindowForPTQ_t1" />
+			<InputLink target="GAImean.listTTShootWindowForPTQ1_t1" source="listTTShootWindowForPTQ1_t1" />
+			<InputLink target="PTQ.listTTShootWindowForPTQ_t1" source="listTTShootWindowForPTQ_t1" />			
 			<InputLink target="PTQ.kl" source="kl" />
 			<InputLink target="PTQ.tTWindowForPTQ" source="tTWindowForPTQ" />
 			<InputLink target="VernalizationProgress.vBEE" source="vBEE" />
-			<InputLink target="CumulTTFrom.calendarCumuls" source="calendarCumuls" />
+			<InputLink target="CumulTTFrom.calendarCumuls_t1" source="calendarCumuls_t1" />
 			<InputLink target="CumulTTFrom.cumulTT" source="cumulTT" />
 			<InputLink target="VernalizationProgress.isVernalizable" source="isVernalizable" />
-			<InputLink target="VernalizationProgress.vernaprog" source="vernaprog" />
+			<InputLink target="VernalizationProgress.vernaprog_t1" source="vernaprog_t1" />
 			<InputLink target="VernalizationProgress.deltaTT" source="deltaTT" />
 			<InputLink target="VernalizationProgress.minTvern" source="minTvern" />
 			<InputLink target="VernalizationProgress.intTvern" source="intTvern" />
 			<InputLink target="VernalizationProgress.vAI" source="vAI" />
 			<InputLink target="VernalizationProgress.maxDL" source="maxDL" />
 			<InputLink target="Phyllochron.choosePhyllUse" source="choosePhyllUse" />
-			<InputLink target="IsMomentRegistredZC_39.calendarMoments" source="calendarMoments" />
+			<InputLink target="IsMomentRegistredZC_39.calendarMoments_t1" source="calendarMoments_t1" />
 			<InputLink target="VernalizationProgress.minDL" source="minDL" />
 			<InputLink target="PhylSowingDateCorrection.p" source="p" />
 			<InputLink target="LeafNumber.deltaTT" source="deltaTT" />
-			<InputLink target="LeafNumber.leafNumber" source="leafNumber" />
-			<InputLink target="UpdatePhase.hasLastPrimordiumAppeared" source="hasLastPrimordiumAppeared" />
-			<InputLink target="UpdatePhase.phase" source="phase" />
+			<InputLink target="LeafNumber.leafNumber_t1" source="leafNumber_t1" />
+			<InputLink target="UpdatePhase.hasLastPrimordiumAppeared_t1" source="hasLastPrimordiumAppeared_t1" />
+			<InputLink target="UpdatePhase.phase_t1" source="phase_t1" />
 			<InputLink target="UpdatePhase.pFLLAnth" source="pFLLAnth" />
 			<InputLink target="UpdatePhase.dcd" source="dcd" />
 			<InputLink target="UpdatePhase.dgf" source="dgf" />
@@ -94,41 +94,41 @@
 			<InputLink target="UpdatePhase.ignoreGrainMaturation" source="ignoreGrainMaturation" />
 			<InputLink target="UpdatePhase.pHEADANTH" source="pHEADANTH" />
 			<InputLink target="UpdatePhase.choosePhyllUse" source="choosePhyllUse" />
-			<InputLink target="UpdatePhase.finalLeafNumber" source="finalLeafNumber" />
+			<InputLink target="UpdatePhase.finalLeafNumber_t1" source="finalLeafNumber_t1" />
 			<InputLink target="UpdatePhase.p" source="p" />
 			<InputLink target="UpdatePhase.dayLength" source="dayLength" />
 			<InputLink target="UpdatePhase.sLDL" source="sLDL" />
 			<InputLink target="UpdatePhase.cumulTT" source="cumulTT" />
-			<InputLink target="UpdatePhase.leafNumber" source="leafNumber" />
+			<InputLink target="UpdatePhase.leafNumber_t1" source="leafNumber_t1" />
 			<InputLink target="UpdatePhase.grainCumulTT" source="grainCumulTT" />
 			<InputLink target="UpdatePhase.gAI" source="gAI" />
 			<InputLink target="PhylSowingDateCorrection.sowingDay" source="sowingDay" />
-			<InputLink target="RegisterZadok.hasZadokStageChanged" source="hasZadokStageChanged" />
+			<InputLink target="RegisterZadok.hasZadokStageChanged_t1" source="hasZadokStageChanged_t1" />
 			<InputLink target="RegisterZadok.currentZadokStage" source="currentZadokStage" />
 			<InputLink target="UpdatePhase.isVernalizable" source="isVernalizable" />
 			<InputLink target="RegisterZadok.sowingDate" source="sowingDate" />
 			<InputLink target="PhylSowingDateCorrection.sDws" source="sDws" />
 			<InputLink target="PhylSowingDateCorrection.sDsa_nh" source="sDsa_nh" />
-			<InputLink target="VernalizationProgress.calendarMoments" source="calendarMoments" />
+			<InputLink target="VernalizationProgress.calendarMoments_t1" source="calendarMoments_t1" />
 			<InputLink target="LeafNumber.hasFlagLeafLiguleAppeared" source="hasFlagLeafLiguleAppeared" />
-			<InputLink target="VernalizationProgress.calendarCumuls" source="calendarCumuls" />
+			<InputLink target="VernalizationProgress.calendarCumuls_t1" source="calendarCumuls_t1" />
 			<InputLink target="RegisterZadok.der" source="der" />
-			<InputLink target="UpdateLeafFlag.hasFlagLeafLiguleAppeared" source="hasFlagLeafLiguleAppeared" />
+			<InputLink target="UpdateLeafFlag.hasFlagLeafLiguleAppeared_t1" source="hasFlagLeafLiguleAppeared_t1" />
 			<InputLink target="UpdateLeafFlag.currentdate" source="currentdate" />
 			<InputLink target="UpdateLeafFlag.cumulTT" source="cumulTT" />
 			<InputLink target="UpdateCalendar.currentdate" source="currentdate" />
 			<InputLink target="UpdateCalendar.cumulTT" source="cumulTT" />
-			<InputLink target="ShootNumber.tilleringProfile" source="tilleringProfile" />
+			<InputLink target="ShootNumber.tilleringProfile_t1" source="tilleringProfile_t1" />
 			<InputLink target="ShootNumber.sowingDensity" source="sowingDensity" />
 			<InputLink target="ShootNumber.targetFertileShoot" source="targetFertileShoot" />
-			<InputLink target="ShootNumber.leafTillerNumberArray" source="leafTillerNumberArray" />
+			<InputLink target="ShootNumber.leafTillerNumberArray_t1" source="leafTillerNumberArray_t1" />
 			<InputLink target="UpdatePhase.dse" source="dse" />
-			<InputLink target="ShootNumber.tillerNumber" source="tillerNumber" />
 			<InputLink target="RegisterZadok.currentdate" source="currentdate" />
 			<InputLink target="RegisterZadok.cumulTT" source="cumulTT" />
 			<InputLink target="RegisterZadok.slopeTSFLN" source="slopeTSFLN" />
 			<InputLink target="RegisterZadok.intTSFLN" source="intTSFLN" />
-			<InputLink target="ShootNumber.canopyShootNumber" source="canopyShootNumber" />
+			<InputLink target="ShootNumber.canopyShootNumber_t1" source="canopyShootNumber_t1" />
+			
 			<InternalLink target="UpdateLeafFlag.calendarMoments" source="VernalizationProgress.calendarMoments" />
 			<InternalLink target="UpdateLeafFlag.calendarDates" source="VernalizationProgress.calendarDates" />
 			<InternalLink target="Phyllochron.fixPhyll" source="PhylSowingDateCorrection.fixPhyll" />
@@ -158,6 +158,8 @@
 			<InternalLink target="RegisterZadok.calendarCumuls" source="UpdateLeafFlag.calendarCumuls" />
 			<InternalLink target="UpdateCalendar.calendarDates" source="RegisterZadok.calendarDates" />
 			<InternalLink target="RegisterZadok.phase" source="UpdatePhase.phase" />
+			<InternalLink target="Phyllochron.gAImean" source="GAImean.gAImean" />
+
 			<OutputLink target="currentZadokStage" source="RegisterZadok.currentZadokStage" />
 			<OutputLink target="hasZadokStageChanged" source="RegisterZadok.hasZadokStageChanged" />
 			<OutputLink target="hasFlagLeafLiguleAppeared" source="UpdateLeafFlag.hasFlagLeafLiguleAppeared" />
@@ -173,7 +175,7 @@
 			<OutputLink target="vernaprog" source="VernalizationProgress.vernaprog" />
 			<OutputLink target="phyllochron" source="Phyllochron.phyllochron" />
 			<OutputLink target="leafNumber" source="LeafNumber.leafNumber" />
-			<OutputLink target="tillerNumber" source="ShootNumber.tillerNumber" />
+			<OutputLink target="numberTillerCohort" source="ShootNumber.numberTillerCohort" />
 			<OutputLink target="tilleringProfile" source="ShootNumber.tilleringProfile" />
 			<OutputLink target="averageShootNumberPerPlant" source="ShootNumber.averageShootNumberPerPlant" />
 			<OutputLink target="minFinalNumber" source="VernalizationProgress.minFinalNumber" />

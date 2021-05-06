@@ -1,6 +1,6 @@
 import numpy 
 from math import *
-def model_phyllochron(float fixPhyll=5.0,
+def model_Phyllochron(float fixPhyll=5.0,
                       float leafNumber=0.0,
                       float lincr=8.0,
                       float ldecr=0.0,

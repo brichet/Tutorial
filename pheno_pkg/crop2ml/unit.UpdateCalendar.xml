@@ -22,7 +22,7 @@
     </Inputs>
     <Outputs>
         <Output name="calendarMoments" description=" List containing apparition of each stage" variablecategory="state" datatype="STRINGLIST"  unit="" />
-        <Output name="calendarDates" description=" List containing  the dates of the wheat developmental phases" variablecategory="state"  datatype="DATELIST "  unit=""/>
+        <Output name="calendarDates" description=" List containing  the dates of the wheat developmental phases" variablecategory="state"  datatype="DATELIST"  unit=""/>
         <Output name="calendarCumuls" description=" list containing for each stage occured its cumulated thermal times" variablecategory="state"  datatype="DOUBLELIST"  unit="°C d" />
 
     </Outputs>

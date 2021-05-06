@@ -1,4 +1,4 @@
-
+hasFlagLeafLiguleAppeared=0
 if (phase >= 1.0 and phase< 4.0):
     if (leafNumber > 0.0):
         if (hasFlagLeafLiguleAppeared == 0 and (finalLeafNumber > 0.0 and leafNumber >= finalLeafNumber)):
@@ -7,8 +7,6 @@ if (phase >= 1.0 and phase< 4.0):
                 calendarMoments.append("FlagLeafLiguleJustVisible")
                 calendarCumuls.append(cumulTT)
                 calendarDates.append(currentdate)
-    else:
-        hasFlagLeafLiguleAppeared = 0
 
 
     

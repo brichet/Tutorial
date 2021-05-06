@@ -109,9 +109,9 @@ cdef float gaiMean_=0.0
 cdef int countGaiMean=0
 cdef int i
 
-for i in range(0,len(listTTShootWindowForPTQ1)):
-    TTList.append(listTTShootWindowForPTQ1[i])
-    GAIList.append(listGAITTWindowForPTQ[i])
+for i in range(0,len(listTTShootWindowForPTQ1_t1)):
+    TTList.append(listTTShootWindowForPTQ1_t1[i])
+    GAIList.append(listGAITTWindowForPTQ_t1[i])
 
 TTList.append(deltaTT);
 GAIList.append(gAI);
@@ -121,9 +121,6 @@ SumTT=sum(TTList)
 while (SumTT > tTWindowForPTQ):
     SumTT -=TTList[count]
     count=count+1
-
-listTTShootWindowForPTQ1 = [];
-listGAITTWindowForPTQ = [];
 
 for i in range(count,len(TTList)):
     listTTShootWindowForPTQ1.append(TTList[i])
@@ -135,6 +132,6 @@ for i in range(0,len(listGAITTWindowForPTQ)):
 
 gaiMean_=gaiMean_/countGaiMean               
 
-gai_=max(pastMaxAI, gaiMean_)
+gai_=max(pastMaxAI_t1, gaiMean_)
 pastMaxAI = gai_
 gAImean = gai_

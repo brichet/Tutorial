@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-public class PhenologyAuxiliary
+public class PhenologyAuxiliary 
 {
-    private DateTime _currentdate;
+    private DateTime _currentdate = new DateTime();
     private double _cumulTT;
     private double _dayLength;
     private double _deltaTT;
@@ -15,10 +15,7 @@ public class PhenologyAuxiliary
     private double _cumulTTFromZC_91;
     private double _cumulTTFromZC_65;
     
-    public PhenologyAuxiliary()
-    {
-           
-    }
+    public PhenologyAuxiliary() { }
     
     
     public PhenologyAuxiliary(PhenologyAuxiliary toCopy, bool copyAll) // copy constructor 
@@ -40,124 +37,58 @@ public class PhenologyAuxiliary
     }
     }
     public DateTime currentdate
-    {
-        get
         {
-            return this._currentdate;
+            get { return this._currentdate; }
+            set { this._currentdate= value; } 
         }
-        set
-        {
-            this._currentdate= value;
-        } 
-    }
     public double cumulTT
-    {
-        get
         {
-            return this._cumulTT;
+            get { return this._cumulTT; }
+            set { this._cumulTT= value; } 
         }
-        set
-        {
-            this._cumulTT= value;
-        } 
-    }
     public double dayLength
-    {
-        get
         {
-            return this._dayLength;
+            get { return this._dayLength; }
+            set { this._dayLength= value; } 
         }
-        set
-        {
-            this._dayLength= value;
-        } 
-    }
     public double deltaTT
-    {
-        get
         {
-            return this._deltaTT;
+            get { return this._deltaTT; }
+            set { this._deltaTT= value; } 
         }
-        set
-        {
-            this._deltaTT= value;
-        } 
-    }
     public double gAI
-    {
-        get
         {
-            return this._gAI;
+            get { return this._gAI; }
+            set { this._gAI= value; } 
         }
-        set
-        {
-            this._gAI= value;
-        } 
-    }
     public double pAR
-    {
-        get
         {
-            return this._pAR;
+            get { return this._pAR; }
+            set { this._pAR= value; } 
         }
-        set
-        {
-            this._pAR= value;
-        } 
-    }
     public double grainCumulTT
-    {
-        get
         {
-            return this._grainCumulTT;
+            get { return this._grainCumulTT; }
+            set { this._grainCumulTT= value; } 
         }
-        set
-        {
-            this._grainCumulTT= value;
-        } 
-    }
     public double fixPhyll
-    {
-        get
         {
-            return this._fixPhyll;
+            get { return this._fixPhyll; }
+            set { this._fixPhyll= value; } 
         }
-        set
-        {
-            this._fixPhyll= value;
-        } 
-    }
     public double cumulTTFromZC_39
-    {
-        get
         {
-            return this._cumulTTFromZC_39;
+            get { return this._cumulTTFromZC_39; }
+            set { this._cumulTTFromZC_39= value; } 
         }
-        set
-        {
-            this._cumulTTFromZC_39= value;
-        } 
-    }
     public double cumulTTFromZC_91
-    {
-        get
         {
-            return this._cumulTTFromZC_91;
+            get { return this._cumulTTFromZC_91; }
+            set { this._cumulTTFromZC_91= value; } 
         }
-        set
-        {
-            this._cumulTTFromZC_91= value;
-        } 
-    }
     public double cumulTTFromZC_65
-    {
-        get
         {
-            return this._cumulTTFromZC_65;
+            get { return this._cumulTTFromZC_65; }
+            set { this._cumulTTFromZC_65= value; } 
         }
-        set
-        {
-            this._cumulTTFromZC_65= value;
-        } 
-    }
 }

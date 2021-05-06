@@ -1,6 +1,6 @@
 import numpy 
 from math import *
-def model_penman(float evapoTranspirationPriestlyTaylor=449.367,
+def model_Penman(float evapoTranspirationPriestlyTaylor=449.367,
                  float hslope=0.584,
                  float VPDair=2.19,
                  float psychrometricConstant=0.66,

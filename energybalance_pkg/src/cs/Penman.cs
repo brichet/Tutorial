@@ -1,73 +1,41 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 public class Penman
 {
     private double _psychrometricConstant;
     public double psychrometricConstant
-    {
-        get
         {
-            return this._psychrometricConstant;
+            get { return this._psychrometricConstant; }
+            set { this._psychrometricConstant= value; } 
         }
-        set
-        {
-            this._psychrometricConstant= value;
-        } 
-    }
     private double _Alpha;
     public double Alpha
-    {
-        get
         {
-            return this._Alpha;
+            get { return this._Alpha; }
+            set { this._Alpha= value; } 
         }
-        set
-        {
-            this._Alpha= value;
-        } 
-    }
     private double _lambdaV;
     public double lambdaV
-    {
-        get
         {
-            return this._lambdaV;
+            get { return this._lambdaV; }
+            set { this._lambdaV= value; } 
         }
-        set
-        {
-            this._lambdaV= value;
-        } 
-    }
     private double _rhoDensityAir;
     public double rhoDensityAir
-    {
-        get
         {
-            return this._rhoDensityAir;
+            get { return this._rhoDensityAir; }
+            set { this._rhoDensityAir= value; } 
         }
-        set
-        {
-            this._rhoDensityAir= value;
-        } 
-    }
     private double _specificHeatCapacityAir;
     public double specificHeatCapacityAir
-    {
-        get
         {
-            return this._specificHeatCapacityAir;
+            get { return this._specificHeatCapacityAir; }
+            set { this._specificHeatCapacityAir= value; } 
         }
-        set
-        {
-            this._specificHeatCapacityAir= value;
-        } 
-    }
-    public Penman()
-    {
-           
-    }
+    public Penman() { }
     
-    public void  Calculate_penman(EnergybalanceState s, EnergybalanceRate r, EnergybalanceAuxiliary a)
+    public void  CalculateModel(EnergyBalanceState s, EnergyBalanceState s1, EnergyBalanceRate r, EnergyBalanceAuxiliary a)
     {
         //- Name: Penman -Version: 1.0, -Time step: 1
         //- Description:
@@ -86,7 +54,7 @@ public class Penman
     //                          ** default : 449.367
     //                          ** min : 0
     //                          ** max : 10000
-    //                          ** unit : g m-2 d-1
+    //                          ** unit : (g/m**2)/d
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     //                          ** inputtype : variable
     //            * name: hslope
@@ -96,7 +64,7 @@ public class Penman
     //                          ** default : 0.584
     //                          ** min : 0
     //                          ** max : 1000
-    //                          ** unit : hPa °C-1
+    //                          ** unit : hPa/degC
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     //                          ** inputtype : variable
     //            * name: VPDair
@@ -116,7 +84,7 @@ public class Penman
     //                          ** default : 0.66
     //                          ** min : 0
     //                          ** max : 1
-    //                          ** unit : 
+    //                          ** unit : hPa/degC
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     //                          ** inputtype : parameter
     //            * name: Alpha
@@ -136,7 +104,7 @@ public class Penman
     //                          ** default : 2.454
     //                          ** min : 0
     //                          ** max : 10
-    //                          ** unit : 
+    //                          ** unit : MJ/kg
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     //                          ** inputtype : parameter
     //            * name: rhoDensityAir
@@ -144,7 +112,7 @@ public class Penman
     //                          ** parametercategory : constant
     //                          ** datatype : DOUBLE
     //                          ** default : 1.225
-    //                          ** unit : 
+    //                          ** unit : kg/m**3
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     //                          ** inputtype : parameter
     //            * name: specificHeatCapacityAir
@@ -154,7 +122,7 @@ public class Penman
     //                          ** default : 0.00101
     //                          ** min : 0
     //                          ** max : 1
-    //                          ** unit : 
+    //                          ** unit : (MJ/kg)/degC
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     //                          ** inputtype : parameter
     //            * name: conductance
@@ -164,7 +132,7 @@ public class Penman
     //                          ** min : 0
     //                          ** max : 10000
     //                          ** default : 598.685
-    //                          ** unit : m d-1
+    //                          ** unit : m/d
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     //                          ** inputtype : variable
         //- outputs:
@@ -174,7 +142,7 @@ public class Penman
     //                          ** datatype : DOUBLE
     //                          ** min : 0
     //                          ** max : 5000
-    //                          ** unit : g m-2 d-1
+    //                          ** unit : g/m**2/d
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
         double evapoTranspirationPriestlyTaylor = r.evapoTranspirationPriestlyTaylor;
         double hslope = a.hslope;

@@ -11,7 +11,7 @@
         <Abstract>if FlagLeafLiguleJustVisible is already Registred </Abstract>
     </Description>
     <Inputs>
-        <Input name="calendarMoments" description="List containing appearance of each stage" variablecategory="state"  datatype="STRINGLIST"  default= "['Sowing']" unit=""  inputtype = "variable"/>
+        <Input name="calendarMoments_t1" description="List containing appearance of each stage at previous time" variablecategory="state"  datatype="STRINGLIST"  default= "['Sowing']" unit=""  inputtype = "variable"/>
     </Inputs>
     <Outputs>
         <Output name="isMomentRegistredZC_39" description=" if Flag leaf ligule has already appeared " variablecategory="state" datatype="INT" min="0" max="1"  unit="" />
@@ -27,7 +27,7 @@
      <Testsets>
         <Testset name="check wheat model" parameterset = "wheat" description="some values in there" >
         	<Test name ="test_wheat1">
- 				<InputValue name="calendarMoments">["Sowing", "Emergence", "FloralInitiation", "FlagLeafLiguleJustVisible", "Heading", "Anthesis"]</InputValue>
+ 				<InputValue name="calendarMoments_t1">["Sowing", "Emergence", "FloralInitiation", "FlagLeafLiguleJustVisible", "Heading", "Anthesis"]</InputValue>
 				<OutputValue name="isMomentRegistredZC_39" >1</OutputValue>
         	</Test>
         </Testset>

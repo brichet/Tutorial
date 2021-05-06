@@ -2,179 +2,119 @@ import  java.io.*;
 import  java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javafx.util.*;
+import java.time.LocalDateTime;
 public class Phyllochron
 {
     private double lincr;
     public double getlincr()
-    {
-        return lincr;
-    }
+    { return lincr; }
 
     public void setlincr(double _lincr)
-    {
-        this.lincr= _lincr;
-    } 
+    { this.lincr= _lincr; } 
     
     private double ldecr;
     public double getldecr()
-    {
-        return ldecr;
-    }
+    { return ldecr; }
 
     public void setldecr(double _ldecr)
-    {
-        this.ldecr= _ldecr;
-    } 
+    { this.ldecr= _ldecr; } 
     
     private double pdecr;
     public double getpdecr()
-    {
-        return pdecr;
-    }
+    { return pdecr; }
 
     public void setpdecr(double _pdecr)
-    {
-        this.pdecr= _pdecr;
-    } 
+    { this.pdecr= _pdecr; } 
     
     private double pincr;
     public double getpincr()
-    {
-        return pincr;
-    }
+    { return pincr; }
 
     public void setpincr(double _pincr)
-    {
-        this.pincr= _pincr;
-    } 
+    { this.pincr= _pincr; } 
     
     private double kl;
     public double getkl()
-    {
-        return kl;
-    }
+    { return kl; }
 
     public void setkl(double _kl)
-    {
-        this.kl= _kl;
-    } 
+    { this.kl= _kl; } 
     
     private double pTQhf;
     public double getpTQhf()
-    {
-        return pTQhf;
-    }
+    { return pTQhf; }
 
     public void setpTQhf(double _pTQhf)
-    {
-        this.pTQhf= _pTQhf;
-    } 
+    { this.pTQhf= _pTQhf; } 
     
     private double B;
     public double getB()
-    {
-        return B;
-    }
+    { return B; }
 
     public void setB(double _B)
-    {
-        this.B= _B;
-    } 
+    { this.B= _B; } 
     
     private double p;
     public double getp()
-    {
-        return p;
-    }
+    { return p; }
 
     public void setp(double _p)
-    {
-        this.p= _p;
-    } 
+    { this.p= _p; } 
     
     private String choosePhyllUse;
     public String getchoosePhyllUse()
-    {
-        return choosePhyllUse;
-    }
+    { return choosePhyllUse; }
 
     public void setchoosePhyllUse(String _choosePhyllUse)
-    {
-        this.choosePhyllUse= _choosePhyllUse;
-    } 
+    { this.choosePhyllUse= _choosePhyllUse; } 
     
     private double areaSL;
     public double getareaSL()
-    {
-        return areaSL;
-    }
+    { return areaSL; }
 
     public void setareaSL(double _areaSL)
-    {
-        this.areaSL= _areaSL;
-    } 
+    { this.areaSL= _areaSL; } 
     
     private double areaSS;
     public double getareaSS()
-    {
-        return areaSS;
-    }
+    { return areaSS; }
 
     public void setareaSS(double _areaSS)
-    {
-        this.areaSS= _areaSS;
-    } 
+    { this.areaSS= _areaSS; } 
     
     private double lARmin;
     public double getlARmin()
-    {
-        return lARmin;
-    }
+    { return lARmin; }
 
     public void setlARmin(double _lARmin)
-    {
-        this.lARmin= _lARmin;
-    } 
+    { this.lARmin= _lARmin; } 
     
     private double lARmax;
     public double getlARmax()
-    {
-        return lARmax;
-    }
+    { return lARmax; }
 
     public void setlARmax(double _lARmax)
-    {
-        this.lARmax= _lARmax;
-    } 
+    { this.lARmax= _lARmax; } 
     
     private double sowingDensity;
     public double getsowingDensity()
-    {
-        return sowingDensity;
-    }
+    { return sowingDensity; }
 
     public void setsowingDensity(double _sowingDensity)
-    {
-        this.sowingDensity= _sowingDensity;
-    } 
+    { this.sowingDensity= _sowingDensity; } 
     
     private double lNeff;
     public double getlNeff()
-    {
-        return lNeff;
-    }
+    { return lNeff; }
 
     public void setlNeff(double _lNeff)
-    {
-        this.lNeff= _lNeff;
-    } 
+    { this.lNeff= _lNeff; } 
     
-    public Phyllochron()
+    public Phyllochron() { }
+    public void  Calculate_phyllochron(PhenologyState s, PhenologyState s1, PhenologyRate r, PhenologyAuxiliary a)
     {
-           
-    }
-    public void  Calculate_phyllochron(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
-    {
+        //- Name: Phyllochron -Version: 1.0, -Time step: 1
         //- Description:
     //            * Title: Phyllochron Model
     //            * Author: Pierre Martre

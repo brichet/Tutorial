@@ -1,13 +1,13 @@
 
-cdef float oldCanopyShootNumber
 cdef int emergedLeaves, shoots, i
-oldCanopyShootNumber = canopyShootNumber
-emergedLeaves = int(max(1.0, ceil(leafNumber - 1.0)))
+cdef intlist lNumberArray_rate
+emergedLeaves = max(1, ceil(leafNumber - 1.0))
 shoots = fibonacci(emergedLeaves)
 canopyShootNumber = min(shoots * sowingDensity, targetFertileShoot)
 averageShootNumberPerPlant = canopyShootNumber / sowingDensity
-if (canopyShootNumber != oldCanopyShootNumber):
-    tilleringProfile.append(canopyShootNumber - oldCanopyShootNumber)
-tillerNumber = len(tilleringProfile)
-for i in range(len(leafTillerNumberArray),int(ceil(leafNumber)),1):
-    leafTillerNumberArray.append(tillerNumber)
+if (canopyShootNumber != canopyShootNumber_t1):
+    tilleringProfile = integr(tilleringProfile_t1,canopyShootNumber - canopyShootNumber_t1)
+numberTillerCohort = len(tilleringProfile)
+for i in range(len(leafTillerNumberArray_t1),ceil(leafNumber),1):
+    lNumberArray_rate.append(numberTillerCohort)
+leafTillerNumberArray = integr(leafTillerNumberArray_t1, lNumberArray_rate)

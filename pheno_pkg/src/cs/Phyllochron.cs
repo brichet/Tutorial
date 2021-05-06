@@ -1,193 +1,101 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 public class Phyllochron
 {
     private double _lincr;
     public double lincr
-    {
-        get
         {
-            return this._lincr;
+            get { return this._lincr; }
+            set { this._lincr= value; } 
         }
-        set
-        {
-            this._lincr= value;
-        } 
-    }
     private double _ldecr;
     public double ldecr
-    {
-        get
         {
-            return this._ldecr;
+            get { return this._ldecr; }
+            set { this._ldecr= value; } 
         }
-        set
-        {
-            this._ldecr= value;
-        } 
-    }
     private double _pdecr;
     public double pdecr
-    {
-        get
         {
-            return this._pdecr;
+            get { return this._pdecr; }
+            set { this._pdecr= value; } 
         }
-        set
-        {
-            this._pdecr= value;
-        } 
-    }
     private double _pincr;
     public double pincr
-    {
-        get
         {
-            return this._pincr;
+            get { return this._pincr; }
+            set { this._pincr= value; } 
         }
-        set
-        {
-            this._pincr= value;
-        } 
-    }
     private double _kl;
     public double kl
-    {
-        get
         {
-            return this._kl;
+            get { return this._kl; }
+            set { this._kl= value; } 
         }
-        set
-        {
-            this._kl= value;
-        } 
-    }
     private double _pTQhf;
     public double pTQhf
-    {
-        get
         {
-            return this._pTQhf;
+            get { return this._pTQhf; }
+            set { this._pTQhf= value; } 
         }
-        set
-        {
-            this._pTQhf= value;
-        } 
-    }
     private double _B;
     public double B
-    {
-        get
         {
-            return this._B;
+            get { return this._B; }
+            set { this._B= value; } 
         }
-        set
-        {
-            this._B= value;
-        } 
-    }
     private double _p;
     public double p
-    {
-        get
         {
-            return this._p;
+            get { return this._p; }
+            set { this._p= value; } 
         }
-        set
-        {
-            this._p= value;
-        } 
-    }
     private string _choosePhyllUse;
     public string choosePhyllUse
-    {
-        get
         {
-            return this._choosePhyllUse;
+            get { return this._choosePhyllUse; }
+            set { this._choosePhyllUse= value; } 
         }
-        set
-        {
-            this._choosePhyllUse= value;
-        } 
-    }
     private double _areaSL;
     public double areaSL
-    {
-        get
         {
-            return this._areaSL;
+            get { return this._areaSL; }
+            set { this._areaSL= value; } 
         }
-        set
-        {
-            this._areaSL= value;
-        } 
-    }
     private double _areaSS;
     public double areaSS
-    {
-        get
         {
-            return this._areaSS;
+            get { return this._areaSS; }
+            set { this._areaSS= value; } 
         }
-        set
-        {
-            this._areaSS= value;
-        } 
-    }
     private double _lARmin;
     public double lARmin
-    {
-        get
         {
-            return this._lARmin;
+            get { return this._lARmin; }
+            set { this._lARmin= value; } 
         }
-        set
-        {
-            this._lARmin= value;
-        } 
-    }
     private double _lARmax;
     public double lARmax
-    {
-        get
         {
-            return this._lARmax;
+            get { return this._lARmax; }
+            set { this._lARmax= value; } 
         }
-        set
-        {
-            this._lARmax= value;
-        } 
-    }
     private double _sowingDensity;
     public double sowingDensity
-    {
-        get
         {
-            return this._sowingDensity;
+            get { return this._sowingDensity; }
+            set { this._sowingDensity= value; } 
         }
-        set
-        {
-            this._sowingDensity= value;
-        } 
-    }
     private double _lNeff;
     public double lNeff
-    {
-        get
         {
-            return this._lNeff;
+            get { return this._lNeff; }
+            set { this._lNeff= value; } 
         }
-        set
-        {
-            this._lNeff= value;
-        } 
-    }
-    public Phyllochron()
-    {
-           
-    }
+    public Phyllochron() { }
     
-    public void  Calculate_phyllochron(PhenologyState s, PhenologyRate r, PhenologyAuxiliary a)
+    public void  CalculateModel(PhenologyState s, PhenologyState s1, PhenologyRate r, PhenologyAuxiliary a)
     {
         //- Name: Phyllochron -Version: 1.0, -Time step: 1
         //- Description:

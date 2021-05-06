@@ -1,5 +1,6 @@
 import  java.io.*;
 import  java.util.*;
+import java.time.LocalDateTime;
 
 public class EnergybalanceAuxiliary
 {
@@ -19,10 +20,7 @@ public class EnergybalanceAuxiliary
     private double energyLimitedEvaporation;
     private double soilEvaporation;
     
-    public EnergybalanceAuxiliary()
-    {
-           
-    }
+    public EnergybalanceAuxiliary() { }
     
     public EnergybalanceAuxiliary(EnergybalanceAuxiliary toCopy, boolean copyAll) // copy constructor 
     {
@@ -46,153 +44,93 @@ public class EnergybalanceAuxiliary
         }
     }
     public double getminTair()
-    {
-        return minTair;
-    }
+    { return minTair; }
 
     public void setminTair(double _minTair)
-    {
-        this.minTair= _minTair;
-    } 
+    { this.minTair= _minTair; } 
     
     public double getmaxTair()
-    {
-        return maxTair;
-    }
+    { return maxTair; }
 
     public void setmaxTair(double _maxTair)
-    {
-        this.maxTair= _maxTair;
-    } 
+    { this.maxTair= _maxTair; } 
     
     public double getsolarRadiation()
-    {
-        return solarRadiation;
-    }
+    { return solarRadiation; }
 
     public void setsolarRadiation(double _solarRadiation)
-    {
-        this.solarRadiation= _solarRadiation;
-    } 
+    { this.solarRadiation= _solarRadiation; } 
     
     public double getvaporPressure()
-    {
-        return vaporPressure;
-    }
+    { return vaporPressure; }
 
     public void setvaporPressure(double _vaporPressure)
-    {
-        this.vaporPressure= _vaporPressure;
-    } 
+    { this.vaporPressure= _vaporPressure; } 
     
     public double getextraSolarRadiation()
-    {
-        return extraSolarRadiation;
-    }
+    { return extraSolarRadiation; }
 
     public void setextraSolarRadiation(double _extraSolarRadiation)
-    {
-        this.extraSolarRadiation= _extraSolarRadiation;
-    } 
+    { this.extraSolarRadiation= _extraSolarRadiation; } 
     
     public double gethslope()
-    {
-        return hslope;
-    }
+    { return hslope; }
 
     public void sethslope(double _hslope)
-    {
-        this.hslope= _hslope;
-    } 
+    { this.hslope= _hslope; } 
     
     public double getplantHeight()
-    {
-        return plantHeight;
-    }
+    { return plantHeight; }
 
     public void setplantHeight(double _plantHeight)
-    {
-        this.plantHeight= _plantHeight;
-    } 
+    { this.plantHeight= _plantHeight; } 
     
     public double getwind()
-    {
-        return wind;
-    }
+    { return wind; }
 
     public void setwind(double _wind)
-    {
-        this.wind= _wind;
-    } 
+    { this.wind= _wind; } 
     
     public double getdeficitOnTopLayers()
-    {
-        return deficitOnTopLayers;
-    }
+    { return deficitOnTopLayers; }
 
     public void setdeficitOnTopLayers(double _deficitOnTopLayers)
-    {
-        this.deficitOnTopLayers= _deficitOnTopLayers;
-    } 
+    { this.deficitOnTopLayers= _deficitOnTopLayers; } 
     
     public double getVPDair()
-    {
-        return VPDair;
-    }
+    { return VPDair; }
 
     public void setVPDair(double _VPDair)
-    {
-        this.VPDair= _VPDair;
-    } 
+    { this.VPDair= _VPDair; } 
     
     public double getnetRadiation()
-    {
-        return netRadiation;
-    }
+    { return netRadiation; }
 
     public void setnetRadiation(double _netRadiation)
-    {
-        this.netRadiation= _netRadiation;
-    } 
+    { this.netRadiation= _netRadiation; } 
     
     public double getnetOutGoingLongWaveRadiation()
-    {
-        return netOutGoingLongWaveRadiation;
-    }
+    { return netOutGoingLongWaveRadiation; }
 
     public void setnetOutGoingLongWaveRadiation(double _netOutGoingLongWaveRadiation)
-    {
-        this.netOutGoingLongWaveRadiation= _netOutGoingLongWaveRadiation;
-    } 
+    { this.netOutGoingLongWaveRadiation= _netOutGoingLongWaveRadiation; } 
     
     public double getnetRadiationEquivalentEvaporation()
-    {
-        return netRadiationEquivalentEvaporation;
-    }
+    { return netRadiationEquivalentEvaporation; }
 
     public void setnetRadiationEquivalentEvaporation(double _netRadiationEquivalentEvaporation)
-    {
-        this.netRadiationEquivalentEvaporation= _netRadiationEquivalentEvaporation;
-    } 
+    { this.netRadiationEquivalentEvaporation= _netRadiationEquivalentEvaporation; } 
     
     public double getenergyLimitedEvaporation()
-    {
-        return energyLimitedEvaporation;
-    }
+    { return energyLimitedEvaporation; }
 
     public void setenergyLimitedEvaporation(double _energyLimitedEvaporation)
-    {
-        this.energyLimitedEvaporation= _energyLimitedEvaporation;
-    } 
+    { this.energyLimitedEvaporation= _energyLimitedEvaporation; } 
     
     public double getsoilEvaporation()
-    {
-        return soilEvaporation;
-    }
+    { return soilEvaporation; }
 
     public void setsoilEvaporation(double _soilEvaporation)
-    {
-        this.soilEvaporation= _soilEvaporation;
-    } 
+    { this.soilEvaporation= _soilEvaporation; } 
     
 }
