@@ -1,12 +1,17 @@
+#ifndef _SOIL_HEAT_FLUX
+#define _SOIL_HEAT_FLUX
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
+#include <vector>
+#include <string>
+
 #include "EnergybalanceState.h"
 #include "EnergybalanceRate.h"
 #include "EnergybalanceAuxiliary.h"
-using namespace std;
+
+//using namespace std;
+
 class Soilheatflux
 {
     private:
@@ -18,3 +23,5 @@ class Soilheatflux
         void settau(double _tau);
 
 };
+
+#endif

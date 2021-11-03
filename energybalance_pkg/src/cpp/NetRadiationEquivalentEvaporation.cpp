@@ -1,14 +1,17 @@
+#ifndef _NET_RADIATION_EQUIVALENT_EVAPORATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Netradiationequivalentevaporation.h"
+
 using namespace std;
 
 Netradiationequivalentevaporation::Netradiationequivalentevaporation() { }
@@ -54,8 +57,10 @@ void Netradiationequivalentevaporation::Calculate_Model(EnergybalanceState& s, E
     //                          ** max : 5000
     //                          ** unit : g m-2 d-1
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
-    double netRadiation = s.getnetRadiation();
+    double netRadiation = a.getnetRadiation();
     double netRadiationEquivalentEvaporation;
-    netRadiationEquivalentEvaporation = netRadiation / lambdaV * 1000.0d;
+    netRadiationEquivalentEvaporation = netRadiation / lambdaV * 1000.0;
     a.setnetRadiationEquivalentEvaporation(netRadiationEquivalentEvaporation);
 }
+
+#endif

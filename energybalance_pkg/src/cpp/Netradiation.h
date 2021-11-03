@@ -1,12 +1,17 @@
+#ifndef _NET_RADIATION
+#define _NET_RADIATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
+#include <vector>
+#include <string>
+
 #include "EnergybalanceState.h"
 #include "EnergybalanceRate.h"
 #include "EnergybalanceAuxiliary.h"
-using namespace std;
+
+//using namespace std;
+
 class Netradiation
 {
     private:
@@ -24,3 +29,5 @@ class Netradiation
         void setelevation(double _elevation);
 
 };
+
+#endif

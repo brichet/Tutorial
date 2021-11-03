@@ -1,11 +1,13 @@
-#ifndef _EnergybalanceRate_
-#define _EnergybalanceRate_
+#ifndef _ENERGY_BALANCE_RATE
+#define _ENERGY_BALANCE_RATE
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-using namespace std;
+#include <vector>
+#include <string>
+
+//using namespace std;
+
 class EnergybalanceRate
 {
     private:
@@ -31,4 +33,5 @@ class EnergybalanceRate
         void setcropHeatFlux(double _cropHeatFlux);
 
 };
+
 #endif

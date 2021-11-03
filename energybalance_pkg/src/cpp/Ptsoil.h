@@ -1,12 +1,17 @@
+#ifndef _PT_SOIL
+#define _PT_SOIL
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
+#include <vector>
+#include <string>
+
 #include "EnergybalanceState.h"
 #include "EnergybalanceRate.h"
 #include "EnergybalanceAuxiliary.h"
-using namespace std;
+
+//using namespace std;
+
 class Ptsoil
 {
     private:
@@ -24,3 +29,5 @@ class Ptsoil
         void settauAlpha(double _tauAlpha);
 
 };
+
+#endif

@@ -1,12 +1,17 @@
+#ifndef _POTENTIAL_TRANSPIRATION
+#define _POTENTIAL_TRANSPIRATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
+#include <vector>
+#include <string>
+
 #include "EnergybalanceState.h"
 #include "EnergybalanceRate.h"
 #include "EnergybalanceAuxiliary.h"
-using namespace std;
+
+//using namespace std;
+
 class Potentialtranspiration
 {
     private:
@@ -18,3 +23,5 @@ class Potentialtranspiration
         void settau(double _tau);
 
 };
+
+#endif

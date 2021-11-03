@@ -1,9 +1,7 @@
+#ifndef _ENERGY_BALANCE_COMPONENT
 #include "EnergybalanceComponent.h"
 
-    EnergybalanceComponent::EnergybalanceComponent()
-    {
-           
-    }
+EnergybalanceComponent::EnergybalanceComponent() { }
     
 
 double EnergybalanceComponent::getalbedoCoefficient() {return this-> albedoCoefficient; }
@@ -137,3 +135,5 @@ EnergybalanceComponent::EnergybalanceComponent(const EnergybalanceComponent& toC
     tauAlpha = toCopy.tauAlpha;
     isWindVpDefined = toCopy.isWindVpDefined;
 }
+
+#endif

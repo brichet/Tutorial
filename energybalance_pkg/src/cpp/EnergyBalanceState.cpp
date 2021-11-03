@@ -1,4 +1,6 @@
+#ifndef ENERGY_BALANCE_STATE
 #include "EnergybalanceState.h"
+
 EnergybalanceState::EnergybalanceState() { }
 
 double EnergybalanceState::getdiffusionLimitedEvaporation() {return this-> diffusionLimitedEvaporation; }
@@ -10,3 +12,5 @@ void EnergybalanceState::setdiffusionLimitedEvaporation(double _diffusionLimited
 void EnergybalanceState::setconductance(double _conductance) { this->conductance = _conductance; }
 void EnergybalanceState::setminCanopyTemperature(double _minCanopyTemperature) { this->minCanopyTemperature = _minCanopyTemperature; }
 void EnergybalanceState::setmaxCanopyTemperature(double _maxCanopyTemperature) { this->maxCanopyTemperature = _maxCanopyTemperature; }
+
+#endif

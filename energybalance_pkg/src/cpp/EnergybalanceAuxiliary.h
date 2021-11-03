@@ -1,11 +1,13 @@
-#ifndef _EnergybalanceAuxiliary_
-#define _EnergybalanceAuxiliary_
+#ifndef _ENERGY_BALANCE_AUXILIARY
+#define _ENERGY_BALANCE_AUXILIARY
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-using namespace std;
+#include <vector>
+#include <string>
+
+//using namespace std;
+
 class EnergybalanceAuxiliary
 {
     private:
@@ -58,4 +60,5 @@ class EnergybalanceAuxiliary
         void setsoilEvaporation(double _soilEvaporation);
 
 };
+
 #endif

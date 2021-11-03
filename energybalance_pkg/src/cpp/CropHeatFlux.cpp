@@ -1,17 +1,20 @@
+#ifndef _CROP_HEAT_FLUX
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
 #include "Cropheatflux.h"
+
 using namespace std;
 
 Cropheatflux::Cropheatflux() { }
+
 void Cropheatflux::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1, EnergybalanceRate& r, EnergybalanceAuxiliary& a)
 {
     //- Name: CropHeatFlux -Version: 1.0, -Time step: 1
@@ -69,3 +72,5 @@ void Cropheatflux::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1
     cropHeatFlux = netRadiationEquivalentEvaporation - soilHeatFlux - potentialTranspiration;
     r.setcropHeatFlux(cropHeatFlux);
 }
+
+#endif

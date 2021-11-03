@@ -1,3 +1,4 @@
+#ifndef _ENERGY_BALANCE_RATE
 #include "EnergybalanceRate.h"
 EnergybalanceRate::EnergybalanceRate() { }
 
@@ -14,3 +15,5 @@ void EnergybalanceRate::setevapoTranspiration(double _evapoTranspiration) { this
 void EnergybalanceRate::setpotentialTranspiration(double _potentialTranspiration) { this->potentialTranspiration = _potentialTranspiration; }
 void EnergybalanceRate::setsoilHeatFlux(double _soilHeatFlux) { this->soilHeatFlux = _soilHeatFlux; }
 void EnergybalanceRate::setcropHeatFlux(double _cropHeatFlux) { this->cropHeatFlux = _cropHeatFlux; }
+
+#endif

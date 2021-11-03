@@ -1,19 +1,25 @@
+#ifndef _SOIL_HEAT_FLUX
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Soilheatflux.h"
+
 using namespace std;
 
 Soilheatflux::Soilheatflux() { }
+
 double Soilheatflux::gettau() {return this-> tau; }
+
 void Soilheatflux::settau(double _tau) { this->tau = _tau; }
+
 void Soilheatflux::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1, EnergybalanceRate& r, EnergybalanceAuxiliary& a)
 {
     //- Name: SoilHeatFlux -Version: 1.0, -Time step: 1
@@ -64,9 +70,11 @@ void Soilheatflux::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1
     //                          ** max : 10000
     //                          ** unit : g m-2 d-1
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
-    double netRadiationEquivalentEvaporation = s.getnetRadiationEquivalentEvaporation();
-    double soilEvaporation = s.getsoilEvaporation();
+    double netRadiationEquivalentEvaporation = a.getnetRadiationEquivalentEvaporation();
+    double soilEvaporation = a.getsoilEvaporation();
     double soilHeatFlux;
     soilHeatFlux = tau * netRadiationEquivalentEvaporation - soilEvaporation;
     r.setsoilHeatFlux(soilHeatFlux);
 }
+
+#endif

@@ -1,14 +1,17 @@
+#ifndef _CANOPY_TEMPERATURE
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Canopytemperature.h"
+
 using namespace std;
 
 Canopytemperature::Canopytemperature() { }
@@ -118,8 +121,10 @@ void Canopytemperature::Calculate_Model(EnergybalanceState& s, EnergybalanceStat
     double conductance = s.getconductance();
     double minCanopyTemperature;
     double maxCanopyTemperature;
-    minCanopyTemperature = minTair + (cropHeatFlux / (rhoDensityAir * specificHeatCapacityAir * conductance / lambdaV * 1000.0d));
-    maxCanopyTemperature = maxTair + (cropHeatFlux / (rhoDensityAir * specificHeatCapacityAir * conductance / lambdaV * 1000.0d));
+    minCanopyTemperature = minTair + (cropHeatFlux / (rhoDensityAir * specificHeatCapacityAir * conductance / lambdaV * 1000.0));
+    maxCanopyTemperature = maxTair + (cropHeatFlux / (rhoDensityAir * specificHeatCapacityAir * conductance / lambdaV * 1000.0));
     s.setminCanopyTemperature(minCanopyTemperature);
     s.setmaxCanopyTemperature(maxCanopyTemperature);
 }
+
+#endif

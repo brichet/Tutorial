@@ -1,12 +1,17 @@
+#ifndef _CONDUCTANCE
+#define _CONDUCTANCE
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
+#include <vector>
+#include <string>
+
 #include "EnergybalanceState.h"
 #include "EnergybalanceRate.h"
 #include "EnergybalanceAuxiliary.h"
-using namespace std;
+
+//using namespace std;
+
 class Conductance
 {
     private:
@@ -30,3 +35,5 @@ class Conductance
         void setd(double _d);
 
 };
+
+#endif

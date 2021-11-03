@@ -1,12 +1,17 @@
+#ifndef _DIFFUSION_LIMITED_EVAPORATION
+#define _DIFFUSION_LIMITED_EVAPORATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
+#include <vector>
+#include <string>
+
 #include "EnergybalanceState.h"
 #include "EnergybalanceRate.h"
 #include "EnergybalanceAuxiliary.h"
-using namespace std;
+
+//using namespace std;
+
 class Diffusionlimitedevaporation
 {
     private:
@@ -18,3 +23,5 @@ class Diffusionlimitedevaporation
         void setsoilDiffusionConstant(double _soilDiffusionConstant);
 
 };
+
+#endif

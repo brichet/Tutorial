@@ -1,14 +1,17 @@
+#ifndef _PT_SOIL
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Ptsoil.h"
+
 using namespace std;
 
 Ptsoil::Ptsoil() { }
@@ -83,12 +86,14 @@ void Ptsoil::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1, Ener
     double AlphaE;
     if (tau < tauAlpha)
     {
-        AlphaE = 1.0d;
+        AlphaE = 1.0;
     }
     else
     {
-        AlphaE = Alpha - ((Alpha - 1.0d) * (1.0d - tau) / (1.0d - tauAlpha));
+        AlphaE = Alpha - ((Alpha - 1.0) * (1.0 - tau) / (1.0 - tauAlpha));
     }
     energyLimitedEvaporation = evapoTranspirationPriestlyTaylor / Alpha * AlphaE * tau;
     a.setenergyLimitedEvaporation(energyLimitedEvaporation);
 }
+
+#endif

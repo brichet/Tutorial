@@ -1,3 +1,5 @@
+#ifndef _ENERGY_BALANCE_COMPONENT
+#define _ENERGY_BALANCE_COMPONENT
 #include "Netradiation.h"
 #include "Netradiationequivalentevaporation.h"
 #include "Priestlytaylor.h"
@@ -11,7 +13,8 @@
 #include "Potentialtranspiration.h"
 #include "Cropheatflux.h"
 #include "Canopytemperature.h"
-using namespace std;
+
+//using namespace std;
 
 class EnergybalanceComponent
 {
@@ -88,3 +91,5 @@ class EnergybalanceComponent
         Canopytemperature _Canopytemperature;
 
 };
+
+#endif

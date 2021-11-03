@@ -1,12 +1,17 @@
+#ifndef EVAPOTRANSPIRATION
+#define EVAPOTRANSPIRATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
+#include <vector>
+#include <string>
+
 #include "EnergybalanceState.h"
 #include "EnergybalanceRate.h"
 #include "EnergybalanceAuxiliary.h"
-using namespace std;
+
+//using namespace std;
+
 class Evapotranspiration
 {
     private:
@@ -18,3 +23,4 @@ class Evapotranspiration
         void setisWindVpDefined(int _isWindVpDefined);
 
 };
+#endif

@@ -1,17 +1,21 @@
+#ifndef _SOIL_EVAPORATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Soilevaporation.h"
+
 using namespace std;
 
 Soilevaporation::Soilevaporation() { }
+
 void Soilevaporation::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1, EnergybalanceRate& r, EnergybalanceAuxiliary& a)
 {
     //- Name: SoilEvaporation -Version: 1.0, -Time step: 1
@@ -57,8 +61,10 @@ void Soilevaporation::Calculate_Model(EnergybalanceState& s, EnergybalanceState&
     //                          ** unit : g m-2 d-1
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     double diffusionLimitedEvaporation = s.getdiffusionLimitedEvaporation();
-    double energyLimitedEvaporation = s.getenergyLimitedEvaporation();
+    double energyLimitedEvaporation = a.getenergyLimitedEvaporation();
     double soilEvaporation;
     soilEvaporation = min(diffusionLimitedEvaporation, energyLimitedEvaporation);
     a.setsoilEvaporation(soilEvaporation);
 }
+
+#endif

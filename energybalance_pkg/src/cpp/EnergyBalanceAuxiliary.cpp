@@ -1,3 +1,4 @@
+#ifndef _ENERGY_BALANCE_AUXILIARY
 #include "EnergybalanceAuxiliary.h"
 EnergybalanceAuxiliary::EnergybalanceAuxiliary() { }
 
@@ -32,3 +33,5 @@ void EnergybalanceAuxiliary::setnetOutGoingLongWaveRadiation(double _netOutGoing
 void EnergybalanceAuxiliary::setnetRadiationEquivalentEvaporation(double _netRadiationEquivalentEvaporation) { this->netRadiationEquivalentEvaporation = _netRadiationEquivalentEvaporation; }
 void EnergybalanceAuxiliary::setenergyLimitedEvaporation(double _energyLimitedEvaporation) { this->energyLimitedEvaporation = _energyLimitedEvaporation; }
 void EnergybalanceAuxiliary::setsoilEvaporation(double _soilEvaporation) { this->soilEvaporation = _soilEvaporation; }
+
+#endif

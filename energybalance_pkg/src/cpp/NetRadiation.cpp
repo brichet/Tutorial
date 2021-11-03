@@ -1,14 +1,17 @@
+#ifndef _NET_RADIATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Netradiation.h"
+
 using namespace std;
 
 Netradiation::Netradiation() { }
@@ -140,14 +143,16 @@ void Netradiation::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1
     double surfaceEmissivity;
     double cloudCoverFactor;
     double Nolr;
-    Nsr = (1.0d - albedoCoefficient) * solarRadiation;
-    clearSkySolarRadiation = (0.75d + (2 * pow(10.0d, -5) * elevation)) * extraSolarRadiation;
-    averageT = (pow(maxTair + 273.16d, 4) + pow(minTair + 273.16d, 4)) / 2.0d;
-    surfaceEmissivity = 0.34d - (0.14d * sqrt(vaporPressure / 10.0d));
-    cloudCoverFactor = 1.35d * (solarRadiation / clearSkySolarRadiation) - 0.35d;
+    Nsr = (1.0 - albedoCoefficient) * solarRadiation;
+    clearSkySolarRadiation = (0.75 + (2 * pow(10.0, -5) * elevation)) * extraSolarRadiation;
+    averageT = (pow(maxTair + 273.16, 4) + pow(minTair + 273.16, 4)) / 2.0;
+    surfaceEmissivity = 0.34 - (0.14 * sqrt(vaporPressure / 10.0));
+    cloudCoverFactor = 1.35 * (solarRadiation / clearSkySolarRadiation) - 0.35;
     Nolr = stefanBoltzman * averageT * surfaceEmissivity * cloudCoverFactor;
     netRadiation = Nsr - Nolr;
     netOutGoingLongWaveRadiation = Nolr;
     a.setnetRadiation(netRadiation);
     a.setnetOutGoingLongWaveRadiation(netOutGoingLongWaveRadiation);
 }
+
+#endif

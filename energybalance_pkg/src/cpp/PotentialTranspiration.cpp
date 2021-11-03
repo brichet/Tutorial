@@ -1,14 +1,17 @@
+#ifndef _POTENTIAL_TRANSPIRATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Potentialtranspiration.h"
+
 using namespace std;
 
 Potentialtranspiration::Potentialtranspiration() { }
@@ -57,6 +60,8 @@ void Potentialtranspiration::Calculate_Model(EnergybalanceState& s, Energybalanc
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     double evapoTranspiration = r.getevapoTranspiration();
     double potentialTranspiration;
-    potentialTranspiration = evapoTranspiration * (1.0d - tau);
+    potentialTranspiration = evapoTranspiration * (1.0 - tau);
     r.setpotentialTranspiration(potentialTranspiration);
 }
+
+#endif

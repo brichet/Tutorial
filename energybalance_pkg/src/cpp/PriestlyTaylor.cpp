@@ -1,14 +1,17 @@
+#ifndef _PRIESTLY_TAYLOR
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Priestlytaylor.h"
+
 using namespace std;
 
 Priestlytaylor::Priestlytaylor() { }
@@ -76,9 +79,11 @@ void Priestlytaylor::Calculate_Model(EnergybalanceState& s, EnergybalanceState& 
     //                          ** max : 10000
     //                          ** unit : g m-2 d-1
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
-    double netRadiationEquivalentEvaporation = s.getnetRadiationEquivalentEvaporation();
+    double netRadiationEquivalentEvaporation = a.getnetRadiationEquivalentEvaporation();
     double hslope = a.gethslope();
     double evapoTranspirationPriestlyTaylor;
-    evapoTranspirationPriestlyTaylor = max(Alpha * hslope * netRadiationEquivalentEvaporation / (hslope + psychrometricConstant), 0.0d);
+    evapoTranspirationPriestlyTaylor = max(Alpha * hslope * netRadiationEquivalentEvaporation / (hslope + psychrometricConstant), 0.0);
     r.setevapoTranspirationPriestlyTaylor(evapoTranspirationPriestlyTaylor);
 }
+
+#endif

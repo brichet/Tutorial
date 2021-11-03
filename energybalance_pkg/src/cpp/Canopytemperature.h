@@ -1,12 +1,16 @@
-#define _USE_MATH_DEFINES
+#ifndef _CANOPY_TEMPERATURE
+#define _CANOPY_TEMPERATURE
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
+#include <vector>
+#include <string>
+
 #include "EnergybalanceState.h"
 #include "EnergybalanceRate.h"
 #include "EnergybalanceAuxiliary.h"
-using namespace std;
+
+//using namespace std;
+
 class Canopytemperature
 {
     private:
@@ -24,3 +28,5 @@ class Canopytemperature
         void setspecificHeatCapacityAir(double _specificHeatCapacityAir);
 
 };
+
+#endif

@@ -1,14 +1,16 @@
+#ifndef EVAPOTRANSPIRATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
 #include "Evapotranspiration.h"
+
 using namespace std;
 
 Evapotranspiration::Evapotranspiration() { }
@@ -80,3 +82,5 @@ void Evapotranspiration::Calculate_Model(EnergybalanceState& s, EnergybalanceSta
     }
     r.setevapoTranspiration(evapoTranspiration);
 }
+
+#endif

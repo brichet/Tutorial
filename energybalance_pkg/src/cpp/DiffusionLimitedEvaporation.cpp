@@ -1,14 +1,16 @@
+#ifndef _DIFFUSION_LIMITED_EVAPORATION
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
 #include "Diffusionlimitedevaporation.h"
+
 using namespace std;
 
 Diffusionlimitedevaporation::Diffusionlimitedevaporation() { }
@@ -56,20 +58,22 @@ void Diffusionlimitedevaporation::Calculate_Model(EnergybalanceState& s, Energyb
     //                          ** uri : http://www1.clermont.inra.fr/siriusquality/?page_id=547
     double deficitOnTopLayers = a.getdeficitOnTopLayers();
     double diffusionLimitedEvaporation;
-    if (deficitOnTopLayers / 1000.0d <= 0.0d)
+    if (deficitOnTopLayers / 1000.0 <= 0.0)
     {
-        diffusionLimitedEvaporation = 8.3d * 1000.0d;
+        diffusionLimitedEvaporation = 8.3 * 1000.0;
     }
     else
     {
-        if (deficitOnTopLayers / 1000.0d < 25.0d)
+        if (deficitOnTopLayers / 1000.0 < 25.0)
         {
-            diffusionLimitedEvaporation = 2.0d * soilDiffusionConstant * soilDiffusionConstant / (deficitOnTopLayers / 1000.0d) * 1000.0d;
+            diffusionLimitedEvaporation = 2.0 * soilDiffusionConstant * soilDiffusionConstant / (deficitOnTopLayers / 1000.0) * 1000.0;
         }
         else
         {
-            diffusionLimitedEvaporation = 0.0d;
+            diffusionLimitedEvaporation = 0.0;
         }
     }
     s.setdiffusionLimitedEvaporation(diffusionLimitedEvaporation);
 }
+
+#endif

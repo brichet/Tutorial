@@ -1,14 +1,17 @@
+#ifndef _CONDUCTANCE
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Conductance.h"
+
 using namespace std;
 
 Conductance::Conductance() { }
@@ -120,7 +123,9 @@ void Conductance::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1,
     double wind = a.getwind();
     double conductance;
     double h;
-    h = max(10.0d, plantHeight) / 100.0d;
+    h = max(10.0, plantHeight) / 100.0;
     conductance = wind * pow(vonKarman, 2) / (log((heightWeatherMeasurements - (d * h)) / (zm * h)) * log((heightWeatherMeasurements - (d * h)) / (zh * h)));
     s.setconductance(conductance);
 }
+
+#endif

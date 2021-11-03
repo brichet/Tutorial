@@ -1,14 +1,17 @@
+#ifndef _PENMAN
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-# include<numeric>
-# include<algorithm>
-# include<array>
+#include <vector>
+#include <string>
+#include <numeric>
+#include <algorithm>
+#include <array>
 #include <map>
-# include <tuple>
+#include <tuple>
+
 #include "Penman.h"
+
 using namespace std;
 
 Penman::Penman() { }
@@ -136,6 +139,8 @@ void Penman::Calculate_Model(EnergybalanceState& s, EnergybalanceState& s1, Ener
     double VPDair = a.getVPDair();
     double conductance = s.getconductance();
     double evapoTranspirationPenman;
-    evapoTranspirationPenman = evapoTranspirationPriestlyTaylor / Alpha + (1000.0d * (rhoDensityAir * specificHeatCapacityAir * VPDair * conductance / (lambdaV * (hslope + psychrometricConstant))));
+    evapoTranspirationPenman = evapoTranspirationPriestlyTaylor / Alpha + (1000.0 * (rhoDensityAir * specificHeatCapacityAir * VPDair * conductance / (lambdaV * (hslope + psychrometricConstant))));
     r.setevapoTranspirationPenman(evapoTranspirationPenman);
 }
+
+#endif

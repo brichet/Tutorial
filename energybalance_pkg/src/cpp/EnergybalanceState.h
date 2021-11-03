@@ -1,11 +1,13 @@
-#ifndef _EnergybalanceState_
-#define _EnergybalanceState_
+#ifndef ENERGY_BALANCE_STATE
+#define ENERGY_BALANCE_STATE
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
-# include<vector>
-# include<string>
-using namespace std;
+#include <vector>
+#include <string>
+
+//using namespace std;
+
 class EnergybalanceState
 {
     private:
@@ -25,4 +27,5 @@ class EnergybalanceState
         void setmaxCanopyTemperature(double _maxCanopyTemperature);
 
 };
+
 #endif
